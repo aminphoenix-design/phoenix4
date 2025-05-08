@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhoenixFrame</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#bienvenida">Bienvenida</a></li>
+                <li><a href="#grimorio">Grimorio</a></li>
+                <li><a href="#profecia">Profecía</a></li>
+                <li><a href="#ritual">Ritual</a></li>
+                <li><a href="#visiones">Visiones</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="bienvenida">
+        <h1>Bienvenido al PhoenixFrame</h1>
+        <p>Un viaje que te llevará a lo desconocido, donde el tiempo y el poder se entrelazan.</p>
+        <button class="boton">Comienza tu viaje</button>
+    </section>
+
+    <section id="grimorio">
+        <h1>Grimorio</h1>
+        <div class="imagen-galeria">
+            <img src="imagenes/grimorio1.jpg" alt="Grimorio 1">
+            <img src="imagenes/grimorio2.jpg" alt="Grimorio 2">
+            <img src="imagenes/grimorio3.jpg" alt="Grimorio 3">
+        </div>
+    </section>
+
+    <section id="profecia">
+        <h1>Profecía</h1>
+        <div class="imagen-galeria">
+            <img src="imagenes/profecia1.jpg" alt="Profecía 1">
+            <img src="imagenes/profecia2.jpg" alt="Profecía 2">
+        </div>
+    </section>
+
+    <section id="ritual">
+        <h1>Ritual</h1>
+        <form>
+            <input type="text" id="nombre" placeholder="Tu nombre" required>
+            <textarea id="invocacion" placeholder="Invoca tus palabras..." required></textarea>
+            <button type="submit">Realizar Ritual</button>
+        </form>
+    </section>
+
+    <section id="visiones">
+        <h1>Visiones</h1>
+        <div class="imagen-galeria">
+            <img src="imagenes/vision1.jpg" alt="Visión 1">
+            <img src="imagenes/vision2.jpg" alt="Visión 2">
+        </div>
+    </section>
+
+    <section id="contacto">
+        <h2>Contacto</h2>
+        <p>Si tienes preguntas, contáctanos:</p>
+        <h3>Teléfono: 123-456-789</h3>
+        <p class="razon">Una razón para vivir el ritual: Para despertar tu verdadero poder.</p>
+    </section>
+
+    <div class="revelacion">
+        <div id="mensaje-revelacion">
+            <h2>¡Comienza el viaje!</h2>
+            <button id="cerrar-revelacion">Cerrar</button>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
