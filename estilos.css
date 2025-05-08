@@ -1,0 +1,34 @@
+
+body {
+  background-color: #0d0d0d;
+  color: #eaeaea;
+  font-family: 'Cinzel', serif;
+}
+nav ul {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  gap: 1rem;
+}
+nav a {
+  color: #ccc;
+  text-decoration: none;
+}
+#hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+#video-fondo {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.contenido-hero {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding-top: 20%;
+}
