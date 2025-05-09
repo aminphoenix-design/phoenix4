@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-  
+
 <nav>
   <ul>
     <li><a href="index.html">Inicio</a></li>
@@ -21,23 +21,20 @@
 
 <section id="ritual">
   <h2>Invoca Tu Esencia</h2>
-  <form id="ritual-form">
-    <input type="text" id="nombre-ritual" placeholder="Nombre ritual" required>
-    <select id="tipo-ritual">
-      <option value="⏳ Tiempo">⏳ Tiempo</option>
-      <option value="🔥 Vida">🔥 Vida</option>
-      <option value="💀 Muerte">💀 Muerte</option>
-      <option value="⚡ Poder">⚡ Poder</option>
+  <form id="form-ritual">
+    <input type="text" id="nombre" placeholder="Nombre ritual" required>
+    <select id="tipo">
+      <option value="Tiempo">⏳ Tiempo</option>
+      <option value="Vida">🔥 Vida</option>
+      <option value="Muerte">💀 Muerte</option>
+      <option value="Poder">⚡ Poder</option>
     </select>
     <button type="submit">Recibir Oráculo</button>
   </form>
-
-  <section id="rituales-guardados">
-    <h3>Rituales Guardados</h3>
-    <ul id="lista-rituales"></ul>
-  </section>
+  <div id="lista-rituales"></div>
 </section>
 
-<script src="ritual.js"></script>
+<script src="rituales.js"></script>
+
 </body>
 </html>
