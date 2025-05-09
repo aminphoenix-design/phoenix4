@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rituales - PhoenixFrame</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script src="rituales.js" defer></script>
 </head>
 <body>
@@ -15,37 +14,33 @@
 
     <div class="container">
         <header>
-            <h1>Rituales de Renacimiento - PhoenixFrame</h1>
+            <h1>Rituales de Renacimiento</h1>
+            <p>Conecta con tu esencia y permite que la runa del renacer se revele a través de tu nombre.</p>
         </header>
 
-        <section class="ritual-form">
-            <h2>Crea tu Ritual</h2>
+        <section class="formulario-ritual">
+            <!-- Formulario para realizar el ritual -->
             <form id="formulario-ritual">
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" required>
+                <label for="nombre">Nombre (o runa generada):</label>
+                <input type="text" id="nombre" name="nombre" readonly>
 
-                <label for="pilar">Pilar:</label>
-                <select id="pilar" name="pilar" required>
-                    <option value="tiempo">Tiempo</option>
-                    <option value="vida">Vida</option>
-                    <option value="muerte">Muerte</option>
-                    <option value="poder">Poder</option>
-                </select>
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" required>
 
-                <label for="razon">Razón para Renacer:</label>
+                <label for="razon">Razón para el Renacer:</label>
                 <textarea id="razon" name="razon" rows="4" required></textarea>
 
-                <button type="submit">Realizar Ritual</button>
+                <button type="submit" class="btn-enviar">Realizar Ritual</button>
             </form>
-        </section>
 
-        <section class="rituales-list">
-            <h2>Rituales Realizados</h2>
-            <ul id="lista-rituales">
-                <!-- Ritual List will be populated here -->
-            </ul>
+            <!-- Mensaje de éxito o error -->
+            <div id="mensaje-exito" class="mensaje-exito">
+                <p>¡Ritual realizado exitosamente! Ahora puedes proceder con el renacer.</p>
+            </div>
+            <div id="mensaje-error" class="mensaje-error">
+                <p>Hubo un error al realizar el ritual. Por favor, intenta de nuevo.</p>
+            </div>
         </section>
-
     </div>
 
 </body>
