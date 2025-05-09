@@ -28,7 +28,7 @@ body {
 header {
     text-align: center;
     margin-bottom: 50px;
-    color: #d4af37;
+    color: #d4af37; /* Dorado */
 }
 
 header h1 {
@@ -45,12 +45,6 @@ header p {
 nav {
     background-color: #222;
     padding: 15px 0;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Para una pequeña sombra */
 }
 
 nav ul {
@@ -68,17 +62,19 @@ nav a {
     color: #d4af37;
     text-decoration: none;
     transition: color 0.3s ease;
+    font-weight: bold;
 }
 
 nav a:hover {
-    color: #8a2be2;
+    color: #8a2be2; /* Violeta */
+    text-shadow: 0 0 10px #8a2be2, 0 0 20px #8a2be2;
 }
 
 /* ==== SECCIÓN PRINCIPAL ==== */
 main {
     padding: 30px;
     max-width: 1200px;
-    margin: 120px auto 30px; /* Aumentado el margen superior para el nav fijo */
+    margin: 0 auto;
 }
 
 /* ==== SECCIÓN RITUALES === */
@@ -86,6 +82,9 @@ main {
     padding: 20px;
     max-width: 800px;
     margin: 0 auto;
+    background-color: #333;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(255, 223, 0, 0.3);
 }
 
 form {
@@ -103,6 +102,7 @@ form input, form select, form button, form textarea {
     font-size: 1rem;
     border-radius: 8px;
     outline: none;
+    transition: all 0.3s ease;
 }
 
 form input, form select {
@@ -114,11 +114,12 @@ form button {
     color: #fff;
     cursor: pointer;
     font-weight: bold;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 form button:hover {
     background-color: #6a1fa2;
+    transform: scale(1.05);
 }
 
 h3 {
@@ -139,6 +140,7 @@ ul#lista-rituales li {
     margin: 10px 0;
     border-radius: 8px;
     border: 1px solid #8a2be2;
+    box-shadow: 0 0 10px rgba(138, 43, 226, 0.5);
 }
 
 ul#lista-rituales li .runa {
@@ -166,6 +168,7 @@ ul#lista-rituales li .runa {
     border-radius: 8px;
     max-width: 500px;
     text-align: center;
+    box-shadow: 0 0 15px rgba(255, 223, 0, 0.5);
 }
 
 .modal-contenido p {
@@ -191,6 +194,16 @@ ul#lista-rituales li .runa {
     padding: 20px;
     max-width: 800px;
     margin: 0 auto;
+    background-color: #333;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(255, 223, 0, 0.3);
+}
+
+#contacto h2 {
+    font-size: 2rem;
+    text-align: center;
+    color: #d4af37;
+    margin-bottom: 30px;
 }
 
 #contacto form {
@@ -212,6 +225,7 @@ ul#lista-rituales li .runa {
     font-size: 1rem;
     border-radius: 8px;
     outline: none;
+    transition: all 0.3s ease;
 }
 
 #contacto button {
@@ -219,11 +233,12 @@ ul#lista-rituales li .runa {
     color: #fff;
     cursor: pointer;
     font-weight: bold;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 #contacto button:hover {
     background-color: #6a1fa2;
+    transform: scale(1.05);
 }
 
 #contacto #runa-contacto {
@@ -261,26 +276,6 @@ ul#lista-rituales li .runa {
 
 .scale-up {
     animation: scaleUp 0.5s ease-in-out;
-}
-
-/* ==== ESTILOS DE FORMULARIOS Y BOTONES EN GENERAL === */
-input[type="text"], input[type="email"], input[type="tel"], select, textarea {
-    background-color: #333;
-    border: 2px solid #8a2be2;
-    color: #fff;
-    font-size: 1rem;
-    padding: 12px;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-}
-
-input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus, select:focus, textarea:focus {
-    border-color: #d4af37;
-    background-color: #222;
-}
-
-input[type="submit"]:hover {
-    background-color: #6a1fa2;
 }
 
 /* ==== IMÁGENES Y MEDIOS === */
@@ -346,6 +341,7 @@ p {
     margin: 20px 0;
     border-radius: 10px;
     border: 1px solid #8a2be2;
+    box-shadow: 0 0 10px rgba(138, 43, 226, 0.5);
 }
 
 .testimonio p {
