@@ -1,75 +1,33 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PhoenixFrame - El Umbral</title>
-  <link rel="stylesheet" href="estilos.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet" />
-  <script src="https://cdn.jsdelivr.net/npm/tsparticles@3.3.0/tsparticles.bundle.min.js"></script>
+  <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
 
-  <!-- Contenedor de partículas -->
-  <div id="tsparticles"></div>
+  <nav>
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="grimorio.html">Grimorio</a></li>
+      <li><a href="ritual.html">Ritual</a></li>
+      <li><a href="visiones.html">Visiones</a></li>
+      <li><a href="profecia.html">Profecía</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
 
-  <header>
-    <nav aria-label="Navegación principal">
-      <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="grimorio.html">Grimorio</a></li>
-        <li><a href="ritual.html">Ritual</a></li>
-        <li><a href="visiones.html">Visiones</a></li>
-        <li><a href="profecia.html">Profecía</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main id="hero" role="banner">
-    <video autoplay muted loop id="video-fondo" aria-hidden="true">
-      <source src="assets/fondo-oscuro.mp4" type="video/mp4" />
-      Tu navegador no soporta video HTML5.
+  <header id="hero">
+    <video autoplay muted loop id="video-fondo">
+      <source src="assets/fondo-oscuro.mp4" type="video/mp4">
     </video>
     <div class="contenido-hero">
       <h1>PhoenixFrame</h1>
       <p>Traspasa el umbral. Tiempo. Vida. Muerte. Poder.</p>
     </div>
-  </main>
-
-  <!-- Script de partículas -->
-  <script>
-    tsParticles.load("tsparticles", {
-      fullScreen: { enable: false },
-      background: { color: { value: "transparent" } },
-      particles: {
-        number: { value: 80 },
-        color: { value: "#e63946" },
-        shape: { type: "circle" },
-        opacity: { value: 0.5 },
-        size: { value: { min: 1, max: 3 } },
-        move: { enable: true, speed: 0.6 },
-        links: {
-          enable: true,
-          color: "#e63946",
-          distance: 100,
-          opacity: 0.2
-        }
-      },
-      interactivity: {
-        events: {
-          onHover: { enable: true, mode: "repulse" },
-          onClick: { enable: true, mode: "push" }
-        },
-        modes: {
-          repulse: { distance: 100 },
-          push: { quantity: 4 }
-        }
-      }
-    });
-  </script>
+  </header>
 
 </body>
 </html>
