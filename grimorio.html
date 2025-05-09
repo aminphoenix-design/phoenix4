@@ -1,161 +1,39 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Grimorio | PhoenixFrame</title>
-  <link rel="stylesheet" href="styles.css" />
-  <style>
-    /* Estilo específico para las torres */
-    .torres-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2rem;
-      padding: 2rem;
-    }
-
-    .torre {
-      background: linear-gradient(180deg, #1a1a1a, #3a005f);
-      border: 2px solid #8a2be2;
-      box-shadow: 0 0 20px rgba(138, 43, 226, 0.6);
-      width: 200px;
-      cursor: pointer;
-      padding: 1rem;
-      border-radius: 10px;
-      text-align: center;
-      position: relative;
-      transition: transform 0.3s ease;
-    }
-
-    .torre:hover {
-      transform: scale(1.05);
-    }
-
-    .torre h2 {
-      font-size: 1.4rem;
-      margin-bottom: 0.5rem;
-      color: #d4af37;
-    }
-
-    .contenido-pilar {
-      display: none;
-      margin-top: 1rem;
-      font-size: 0.95rem;
-      color: #ccc;
-      text-align: left;
-    }
-
-    .torre.activa .contenido-pilar {
-      display: block;
-      animation: fadeIn 0.8s ease;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .ritual-integracion {
-      max-width: 800px;
-      margin: 3rem auto;
-      padding: 2rem;
-      background: rgba(0,0,0,0.5);
-      border-left: 5px solid #8a2be2;
-    }
-
-    .ritual-integracion blockquote {
-      font-style: italic;
-      color: #d4af37;
-      margin-top: 1rem;
-    }
-
-    .footer-grimorio {
-      text-align: center;
-      padding: 2rem;
-      color: #999;
-      font-size: 0.9rem;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grimorio - PhoenixFrame</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div id="particles-js"></div>
-
-  <header class="encabezado-grimorio">
-    <h1>Grimorio de los Pilares</h1>
-    <p>Descubre cómo <strong>PhoenixFrame</strong> invoca los pilares para forjar marcas inmortales.</p>
+  <header>
+    <h1>Grimorio de PhoenixFrame</h1>
+    <p>Los 4 pilares que transforman tu marca</p>
   </header>
 
-  <main>
-    <section class="torres-container">
-      <div class="torre" id="torre-tiempo">
-        <h2>⏳ Tiempo</h2>
-        <div class="contenido-pilar">
-          <p>El pilar del Tiempo enseña que una marca no solo se lanza, sino que nace con propósito eterno. Cuando invocas el Tiempo, transformas tu marca en una leyenda.</p>
-          <ul>
-            <li>Desarrolla un legado narrativo.</li>
-            <li>Diseña con inspiración clásica y futura.</li>
-            <li>Usa ciclos, rituales y símbolos antiguos.</li>
-          </ul>
-        </div>
-      </div>
+  <!-- Contenedor de las partículas -->
+  <div id="particles-js"></div>
 
-      <div class="torre" id="torre-vida">
-        <h2>🌱 Vida</h2>
-        <div class="contenido-pilar">
-          <p>Una marca vital respira con sus audiencias. Conecta con lo humano, lo orgánico y lo emocional.</p>
-          <ul>
-            <li>Humaniza tus mensajes.</li>
-            <li>Usa naturaleza y elementos sensoriales.</li>
-            <li>Crea rituales de comunidad.</li>
-          </ul>
-        </div>
-      </div>
+  <section class="grimorio-contenido">
+    <div id="tiempo" class="pilar">
+      <span>Tiempo</span>
+    </div>
+    <div id="vida" class="pilar">
+      <span>Vida</span>
+    </div>
+    <div id="muerte" class="pilar">
+      <span>Muerte</span>
+    </div>
+    <div id="poder" class="pilar">
+      <span>Poder</span>
+    </div>
+  </section>
 
-      <div class="torre" id="torre-muerte">
-        <h2>💀 Muerte</h2>
-        <div class="contenido-pilar">
-          <p>La muerte es transformación. Este pilar convierte lo oculto en narrativa poderosa. Ideal para marcas oscuras, rebeldes o místicas.</p>
-          <ul>
-            <li>Arquetipo del mago o sombra.</li>
-            <li>Simbolismo ocultista.</li>
-            <li>Diseño que transmita transmutación.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="torre" id="torre-poder">
-        <h2>⚡ Poder</h2>
-        <div class="contenido-pilar">
-          <p>El Poder no se impone, se revela. Una marca poderosa vibra con intención y dominio simbólico.</p>
-          <ul>
-            <li>Iconografía fuerte.</li>
-            <li>Diseño elegante y dominante.</li>
-            <li>Ritualidad en todo lo que haces.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="ritual-integracion">
-      <h2>🜂 Integración de los Cuatro Pilares</h2>
-      <p>Cuando una marca honra los cuatro pilares, se convierte en un ente sagrado: con propósito (Tiempo), con alma (Vida), con poder de transformación (Muerte) y con presencia imponente (Poder). Así es como nace el fuego de <strong>PhoenixFrame</strong>.</p>
-      <blockquote>“Una marca sin pilar es un susurro. Una marca con pilares es un conjuro.”</blockquote>
-    </section>
-  </main>
-
-  <footer class="footer-grimorio">
-    <p>© 2025 PhoenixFrame. Forjado en la alquimia del branding místico.</p>
+  <footer>
+    <p>&copy; 2025 PhoenixFrame</p>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.bundle.min.js"></script>
   <script src="script.js"></script>
-  <script>
-    document.querySelectorAll('.torre').forEach(torre => {
-      torre.addEventListener('click', () => {
-        torre.classList.toggle('activa');
-      });
-    });
-  </script>
 </body>
 </html>
