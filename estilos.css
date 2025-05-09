@@ -1,333 +1,411 @@
-/* PhoenixFrame - Diseño Estético Oscuro y Refinado */
-
-/* === VARIABLES === */
-:root {
-  --color-bg: #0a0a0a;
-  --color-primary: #8a2be2; /* Violeta elegante */
-  --color-secondary: #bfa046; /* Dorado oscuro */
-  --color-accent: #7d0a0a; /* Rojo oscuro */
-  --color-text: #e0e0e0;
-  --font-main: 'Cinzel', serif;
-  --shadow-glow: 0 0 10px rgba(138, 43, 226, 0.5);
-  --transition-fast: 0.3s ease;
-  --transition-slow: 0.6s ease;
-}
-
-/* === RESETEO GENERAL === */
+/* ==== RESET DE ESTILOS === */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  background-color: var(--color-bg);
-  font-family: var(--font-main);
-  color: var(--color-text);
-  overflow-x: hidden;
-  line-height: 1.6;
-  padding-bottom: 50px;
+    font-family: 'Arial', sans-serif;
+    background-color: #111;
+    color: #fff;
+    overflow-x: hidden;
+    position: relative;
 }
 
-/* === PARTICULAS === */
+/* ==== PARTICULAS DE FONDO === */
 #particles-js {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
 }
 
-/* === NAVEGACIÓN === */
+/* ==== HEADER === */
+header {
+    text-align: center;
+    margin-bottom: 50px;
+    color: #d4af37;
+    font-size: 1.2rem;
+}
+
+header h1 {
+    font-size: 3.5rem;
+    text-shadow: 0 0 15px rgba(255, 223, 0, 0.8), 0 0 30px rgba(255, 223, 0, 0.5);
+}
+
+header p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+/* ==== NAVBAR === */
 nav {
-  background: rgba(0, 0, 0, 0.6);
-  padding: 20px 0;
-  position: sticky;
-  top: 0;
-  z-index: 100;
+    background-color: #222;
+    padding: 15px 0;
 }
 
 nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 20px;
+}
+
+nav ul li {
+    font-size: 1.1rem;
 }
 
 nav a {
-  color: var(--color-secondary);
-  font-size: 1.2rem;
-  text-decoration: none;
-  transition: var(--transition-fast);
+    color: #d4af37;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 nav a:hover {
-  color: #fff;
-  text-shadow: var(--shadow-glow);
+    color: #8a2be2;
 }
 
-/* === HERO (INICIO) === */
-#hero {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  background: linear-gradient(to bottom, rgba(10,10,10,0.8), rgba(10,10,10,0.9));
-  padding: 2rem;
+/* ==== SECCIÓN PRINCIPAL ==== */
+main {
+    padding: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-#hero h1 {
-  font-size: 4rem;
-  color: var(--color-primary);
-  text-shadow: var(--shadow-glow);
+/* ==== SECCIÓN RITUALES === */
+#rituales {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-#hero p {
-  margin-top: 1rem;
-  font-size: 1.4rem;
-  color: var(--color-secondary);
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
 }
 
-/* === RITUALES === */
-#ritual {
-  padding: 60px 20px;
-  max-width: 800px;
-  margin: auto;
-  background: rgba(20, 20, 20, 0.8);
-  border: 1px solid var(--color-primary);
-  border-radius: 12px;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+form input, form select, form button, form textarea {
+    padding: 12px;
+    border: 2px solid #8a2be2;
+    background-color: transparent;
+    color: #fff;
+    font-size: 1rem;
+    border-radius: 8px;
+    outline: none;
 }
 
-#ritual h2 {
-  color: var(--color-primary);
-  text-align: center;
-  margin-bottom: 1.5rem;
+form input, form select {
+    font-size: 1rem;
 }
 
-#ritual form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+form button {
+    background-color: #8a2be2;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
 }
 
-#ritual input, #ritual select, #ritual textarea {
-  padding: 12px;
-  background: #1c1c1c;
-  border: 1px solid var(--color-secondary);
-  color: var(--color-text);
-  border-radius: 8px;
-  transition: var(--transition-fast);
+form button:hover {
+    background-color: #6a1fa2;
 }
 
-#ritual button {
-  background-color: var(--color-secondary);
-  color: #000;
-  padding: 12px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: var(--transition-fast);
-  font-weight: bold;
+h3 {
+    margin-top: 30px;
+    font-size: 1.5rem;
+    color: #d4af37;
 }
 
-#ritual button:hover {
-  background-color: var(--color-primary);
-  color: #fff;
+/* Lista de rituales realizados */
+ul#lista-rituales {
+    list-style-type: none;
+    padding: 0;
 }
 
-#runas-generadas {
-  background: #111;
-  padding: 20px;
-  border-radius: 8px;
-  border-left: 4px solid var(--color-primary);
-  margin-top: 30px;
+ul#lista-rituales li {
+    padding: 10px;
+    background-color: #333;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #8a2be2;
 }
 
-/* === RITUALES GUARDADOS === */
-#rituales-guardados {
-  margin-top: 2rem;
-  background: #111;
-  padding: 20px;
-  border-radius: 10px;
-  border: 1px solid var(--color-accent);
+ul#lista-rituales li .runa {
+    color: #d4af37;
+    font-size: 1.5rem;
 }
 
-#rituales-guardados h3 {
-  color: var(--color-accent);
-  margin-bottom: 1rem;
+/* ==== MODAL PARA LOS PILARES === */
+.modal-pilar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
 }
 
-#lista-rituales li {
-  background: #1a1a1a;
-  padding: 10px;
-  border-bottom: 1px solid #333;
-  margin-bottom: 5px;
-  border-radius: 6px;
+.modal-contenido {
+    background-color: #222;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 500px;
+    text-align: center;
 }
 
-/* === GRIMORIO === */
-#grimorio {
-  padding: 60px 20px;
-  max-width: 1000px;
-  margin: auto;
+.modal-contenido p {
+    font-size: 1.1rem;
+    color: #fff;
 }
 
-.pilar {
-  background: rgba(15, 15, 15, 0.8);
-  padding: 20px;
-  border-radius: 10px;
-  margin-bottom: 30px;
-  border-left: 5px solid var(--color-primary);
-  cursor: pointer;
-  transition: background 0.3s;
+.cerrar {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    color: #fff;
+    cursor: pointer;
 }
 
-.pilar:hover {
-  background: rgba(35, 35, 35, 0.8);
+.cerrar:hover {
+    color: #d4af37;
 }
 
-.pilar h3 {
-  color: var(--color-secondary);
-}
-
-.pilar p {
-  display: none;
-  margin-top: 10px;
-}
-
-.pilar.active p {
-  display: block;
-}
-
-/* === VISIONES === */
-#galeria {
-  padding: 60px 20px;
-  text-align: center;
-}
-
-.imagenes-galeria {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-}
-
-.imagenes-galeria img, .imagenes-galeria video {
-  max-width: 300px;
-  border-radius: 12px;
-  box-shadow: var(--shadow-glow);
-  transition: transform 0.3s;
-}
-
-.imagenes-galeria img:hover, .imagenes-galeria video:hover {
-  transform: scale(1.05);
-}
-
-/* === PROFECÍA === */
-#profecia {
-  padding: 60px 20px;
-  max-width: 900px;
-  margin: auto;
-  background: rgba(15, 15, 15, 0.8);
-  border-left: 5px solid var(--color-accent);
-  border-radius: 12px;
-}
-
-.prof-post {
-  margin-bottom: 30px;
-}
-
-.prof-post h3 {
-  color: var(--color-primary);
-  margin-bottom: 10px;
-}
-
-.prof-post p {
-  color: var(--color-text);
-  font-size: 1.1rem;
-}
-
-/* === CONTACTO === */
+/* ==== SECCIÓN CONTACTO === */
 #contacto {
-  padding: 60px 20px;
-  max-width: 600px;
-  margin: auto;
-  background: rgba(30, 30, 30, 0.8);
-  border-radius: 12px;
-  border: 1px solid var(--color-secondary);
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 #contacto form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-#contacto input, #contacto textarea {
-  padding: 12px;
-  background: #1c1c1c;
-  border: 1px solid var(--color-primary);
-  color: var(--color-text);
-  border-radius: 8px;
+#contacto label {
+    font-size: 1rem;
+    color: #fff;
+}
+
+#contacto input, #contacto select, #contacto textarea, #contacto button {
+    padding: 12px;
+    border: 2px solid #8a2be2;
+    background-color: transparent;
+    color: #fff;
+    font-size: 1rem;
+    border-radius: 8px;
+    outline: none;
 }
 
 #contacto button {
-  background-color: var(--color-primary);
-  color: #000;
-  padding: 12px;
-  border: none;
-  border-radius: 8px;
-  font-weight: bold;
-  transition: var(--transition-fast);
-  cursor: pointer;
+    background-color: #8a2be2;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
 }
 
 #contacto button:hover {
-  background-color: var(--color-secondary);
-  color: #fff;
+    background-color: #6a1fa2;
 }
 
-/* === FOOTER === */
-footer {
-  background: #000;
-  text-align: center;
-  padding: 30px 0;
-  color: var(--color-secondary);
-  border-top: 1px solid #333;
-  margin-top: 60px;
+#contacto #runa-contacto {
+    display: none;
+    margin-top: 10px;
 }
 
-/* === ANIMACIONES === */
+#contacto #runa-display {
+    font-size: 2rem;
+    color: #d4af37;
+}
+
+/* ==== ANIMACIONES Y TRANSICIONES === */
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 .fade-in {
-  animation: fadeIn 1.5s ease-out;
+    animation: fadeIn 1s ease-in-out;
 }
 
-/* === RESPONSIVE === */
-@media (max-width: 768px) {
-  nav ul {
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  #hero h1 {
-    font-size: 2.5rem;
-  }
-
-  #hero p {
-    font-size: 1.2rem;
-  }
-
-  .imagenes-galeria {
-    flex-direction: column;
-  }
+@keyframes scaleUp {
+    0% {
+        transform: scale(0.8);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
 
-/* === FINAL === */
+.scale-up {
+    animation: scaleUp 0.5s ease-in-out;
+}
+
+/* ==== ESTILOS DE FORMULARIOS Y BOTONES EN GENERAL === */
+input[type="text"], input[type="email"], input[type="tel"], select, textarea {
+    background-color: #333;
+    border: 2px solid #8a2be2;
+    color: #fff;
+    font-size: 1rem;
+    padding: 12px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus, select:focus, textarea:focus {
+    border-color: #d4af37;
+    background-color: #222;
+}
+
+input[type="submit"]:hover {
+    background-color: #6a1fa2;
+}
+
+/* ==== IMÁGENES Y MEDIOS === */
+img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+img:hover {
+    transform: scale(1.05);
+}
+
+/* ==== TIPOGRAFÍA === */
+h1, h2, h3, h4, h5 {
+    font-family: 'Arial', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+p {
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+/* ==== SECCIÓN DE VISIÓN DEL FUTURO === */
+#visiones {
+    background-color: #333;
+    padding: 40px 20px;
+    color: #fff;
+}
+
+#visiones h2 {
+    font-size: 2rem;
+    text-align: center;
+    color: #d4af37;
+    margin-bottom: 30px;
+}
+
+#visiones p {
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+/* ==== SECCIÓN DE TESTIMONIOS Y OPINIONES === */
+#testimonios {
+    background-color: #222;
+    padding: 50px 20px;
+}
+
+#testimonios h3 {
+    text-align: center;
+    font-size: 1.8rem;
+    color: #d4af37;
+    margin-bottom: 20px;
+}
+
+.testimonio {
+    background-color: #333;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    border: 1px solid #8a2be2;
+}
+
+.testimonio p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #fff;
+}
+
+.testimonio .autor {
+    text-align: right;
+    font-size: 1rem;
+    color: #d4af37;
+}
+
+/* ==== MEDIA QUERIES PARA RESPONSIVE DESIGN === */
+@media screen and (max-width: 768px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    form {
+        gap: 10px;
+    }
+
+    form input, form select, form button, form textarea {
+        font-size: 0.9rem;
+    }
+
+    #contacto form {
+        gap: 15px;
+    }
+
+    .testimonio {
+        padding: 10px;
+        margin: 10px 0;
+    }
+
+    #visiones {
+        padding: 20px;
+    }
+}
+
+/* ==== PÁGINA COMPLETA MOBILE FIRST === */
+@media screen and (max-width: 480px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav ul li {
+        font-size: 1rem;
+    }
+
+    form {
+        gap: 8px;
+    }
+
+    #testimonios {
+        padding: 30px 15px;
+    }
+
+    .testimonio p {
+        font-size: 1rem;
+    }
+}
