@@ -1,34 +1,39 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PhoenixFrame - El Umbral</title>
-  <link rel="stylesheet" href="estilos.css">
+  <link rel="stylesheet" href="estilos.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
 </head>
 <body>
-  
-<nav>
-  <ul>
-    <li><a href="index.html">Inicio</a></li>
-    <li><a href="grimorio.html">Grimorio</a></li>
-    <li><a href="ritual.html">Ritual</a></li>
-    <li><a href="visiones.html">Visiones</a></li>
-    <li><a href="profecia.html">Profecía</a></li>
-    <li><a href="contacto.html">Contacto</a></li>
-  </ul>
-</nav>
 
-  
-<header id="hero">
-  <video autoplay muted loop id="video-fondo">
-    <source src="assets/fondo-oscuro.mp4" type="video/mp4">
-  </video>
-  <div class="contenido-hero">
-    <h1>PhoenixFrame</h1>
-    <p>Traspasa el umbral. Tiempo. Vida. Muerte. Poder.</p>
-  </div>
-</header>
+  <header>
+    <nav aria-label="Navegación principal">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="grimorio.html">Grimorio</a></li>
+        <li><a href="ritual.html">Ritual</a></li>
+        <li><a href="visiones.html">Visiones</a></li>
+        <li><a href="profecia.html">Profecía</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="hero" role="banner">
+    <video autoplay muted loop id="video-fondo" aria-hidden="true">
+      <source src="assets/fondo-oscuro.mp4" type="video/mp4" />
+      Tu navegador no soporta video HTML5.
+    </video>
+    <div class="contenido-hero">
+      <h1>PhoenixFrame</h1>
+      <p>Traspasa el umbral. Tiempo. Vida. Muerte. Poder.</p>
+    </div>
+  </main>
 
 </body>
 </html>
