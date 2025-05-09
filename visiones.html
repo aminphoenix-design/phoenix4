@@ -1,32 +1,79 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Visión del Futuro</title>
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visiones - PhoenixFrame</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="visiones.js" defer></script>
 </head>
 <body>
-  <div id="particles-js"></div>
 
-  <header>
-    <h1>Visiones del Futuro</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="grimorio.html">Grimorio</a></li>
-        <li><a href="ritual.html">Rituales</a></li>
-        <li><a href="visiones.html">Visión del Futuro</a></li>
-      </ul>
-    </nav>
-  </header>
+    <!-- Fondo de partículas -->
+    <div id="particles-js" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></div>
 
-  <main>
-    <h2>El oráculo habla...</h2>
-    <p>Pronto podrás consultar profecías escritas en las estrellas y líneas del destino.</p>
-  </main>
+    <div class="container">
+        <header>
+            <h1>Visiones de Renacimiento - PhoenixFrame</h1>
+        </header>
 
-  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.bundle.min.js"></script>
-  <script src="script.js"></script>
+        <section class="visiones-intro">
+            <h2>Explora las Visiones</h2>
+            <p>El conocimiento de los cuatro pilares te llevará más allá de los límites de la realidad. Aquí, revelamos las visiones que transformarán tu percepción y fortalecerán tu conexión con el eterno renacer.</p>
+        </section>
+
+        <section class="visiones">
+            <h2>Visiones de los Pilares</h2>
+            <div class="pilar" id="tiempo">
+                <div class="pilar-titulo">
+                    <h3>Tiempo</h3>
+                </div>
+                <div class="pilar-contenido">
+                    <p>La visión del Pilar del Tiempo te revela el poder de trascender las estaciones y entender la naturaleza cíclica de la existencia. El control sobre el tiempo es el primer paso hacia el renacimiento.</p>
+                    <button class="ver-vision" onclick="mostrarVision('tiempo')">Ver Visión</button>
+                </div>
+            </div>
+
+            <div class="pilar" id="vida">
+                <div class="pilar-titulo">
+                    <h3>Vida</h3>
+                </div>
+                <div class="pilar-contenido">
+                    <p>La visión del Pilar de la Vida te conecta con la energía primordial de la creación. Siente el flujo de la vida que te rodea y dentro de ti, llevando a la transformación constante.</p>
+                    <button class="ver-vision" onclick="mostrarVision('vida')">Ver Visión</button>
+                </div>
+            </div>
+
+            <div class="pilar" id="muerte">
+                <div class="pilar-titulo">
+                    <h3>Muerte</h3>
+                </div>
+                <div class="pilar-contenido">
+                    <p>La visión del Pilar de la Muerte te enseñará que no hay fin, sino transformación. La muerte es solo un paso hacia el renacimiento, el renacer del fénix desde sus cenizas.</p>
+                    <button class="ver-vision" onclick="mostrarVision('muerte')">Ver Visión</button>
+                </div>
+            </div>
+
+            <div class="pilar" id="poder">
+                <div class="pilar-titulo">
+                    <h3>Poder</h3>
+                </div>
+                <div class="pilar-contenido">
+                    <p>La visión del Pilar del Poder te enseña cómo conectar con tu verdadera fuerza interior. Es el equilibrio entre los otros pilares lo que te permite acceder al poder que reside dentro de ti.</p>
+                    <button class="ver-vision" onclick="mostrarVision('poder')">Ver Visión</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="modal-vision" class="modal-vision">
+            <div class="modal-contenido">
+                <span class="cerrar">&times;</span>
+                <div id="contenido-vision"></div>
+            </div>
+        </section>
+
+    </div>
+
 </body>
 </html>
