@@ -3,110 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Visiones del Fénix</title>
+  <title>Visiones</title>
   <link rel="stylesheet" href="estilos.css">
-  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 </head>
 <body>
+  <!-- Fondo de partículas -->
   <div id="particles-js"></div>
 
-  <nav>
-    <ul>
-      <li><a href="index.html">Inicio</a></li>
-      <li><a href="grimorio.html">Grimorio</a></li>
-      <li><a href="ritual.html">Ritual</a></li>
-      <li><a href="visiones.html">Visiones</a></li>
-      <li><a href="profecia.html">Profecía</a></li>
-      <li><a href="contacto.html">Contacto</a></li>
-    </ul>
-  </nav>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="ritual.html">Ritual</a></li>
+        <li><a href="grimorio.html">Grimorio</a></li>
+        <li><a href="visiones.html">Visiones</a></li>
+        <li><a href="profecia.html">Profecía</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
 
   <section id="galeria">
-    <h2>Galería de Visiones</h2>
+    <h1>Galería de Visiones</h1>
     <div class="imagenes-galeria">
-      <img src="imagen1.jpg" alt="Visión 1">
-      <img src="imagen2.jpg" alt="Visión 2">
-      <img src="imagen3.jpg" alt="Visión 3">
-      <video src="vision_video.mp4" controls></video>
+      <img src="vision1.jpg" alt="Visión 1">
+      <img src="vision2.jpg" alt="Visión 2">
+      <img src="vision3.jpg" alt="Visión 3">
     </div>
   </section>
 
+  <footer>
+    <p>&copy; 2025 Renacimiento | Todos los derechos reservados</p>
+  </footer>
+
   <script src="scripts.js"></script>
-  <script>
-    particlesJS("particles-js", {
-      particles: {
-        number: {
-          value: 80,
-          density: {
-            enable: true,
-            value_area: 800
-          }
-        },
-        color: {
-          value: "#8a2be2"
-        },
-        shape: {
-          type: "circle"
-        },
-        opacity: {
-          value: 0.5,
-          random: true,
-          anim: {
-            enable: true,
-            speed: 1,
-            opacity_min: 0.1,
-            sync: false
-          }
-        },
-        size: {
-          value: 3,
-          random: true,
-          anim: {
-            enable: true,
-            speed: 2,
-            size_min: 0.1,
-            sync: false
-          }
-        },
-        links: {
-          enable: true,
-          distance: 150,
-          color: "#ffcc00",
-          opacity: 0.4,
-          width: 1
-        },
-        move: {
-          enable: true,
-          speed: 2,
-          direction: "none",
-          random: false,
-          straight: false,
-          out_mode: "out"
-        }
-      },
-      interactivity: {
-        events: {
-          onhover: {
-            enable: true,
-            mode: "repulse"
-          },
-          onclick: {
-            enable: true,
-            mode: "push"
-          }
-        },
-        modes: {
-          repulse: {
-            distance: 100,
-            duration: 0.4
-          },
-          push: {
-            particles_nb: 4
-          }
-        }
-      },
-      retina_detect: true
-    });
-  </script>
 </body>
 </html>
