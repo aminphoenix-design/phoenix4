@@ -3,40 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PhoenixFrame - Profecía</title>
+    <title>Profecía - PhoenixFrame</title>
     <link rel="stylesheet" href="estilos.css">
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="scripts.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.0.0/dist/tsParticles.min.js"></script>
 </head>
 <body>
-    <div id="particles-js"></div>
+    <div id="particles-js"></div> <!-- Efecto de partículas -->
 
     <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="rituales.html">Rituales</a></li>
-                <li><a href="grimorio.html">Grimorio</a></li>
-                <li><a href="visiones.html">Visiones</a></li>
-                <li><a href="profecia.html">Profecía</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-            </ul>
-        </nav>
+        <h1>Profecía: El Renacer de tu Marca</h1>
+        <p>Comparte tu visión sobre el futuro de las marcas que renacen con PhoenixFrame.</p>
     </header>
 
-    <main>
-        <section id="profecia">
-            <h1>Profecías del Renacimiento</h1>
-            <p>Aquí encontrarás las profecías que nos guían a través del proceso de renacimiento de las marcas. El futuro está en tus manos.</p>
-            <div class="profecia">
-                <h2>La Marca que Renace</h2>
-                <p>El fénix renace de sus cenizas, igual que las marcas que han dejado atrás las tendencias pasadas para crear su propio futuro.</p>
-            </div>
-            <div class="profecia">
-                <h2>El Renacer del Poder</h2>
-                <p>El poder de una marca está en su capacidad para renacer. Cada ciclo de muerte y renacimiento la fortalece.</p>
-            </div>
-        </section>
-    </main>
+    <section class="formulario">
+        <h2>Crea tu profecía</h2>
+        <form id="formulario-profecia">
+            <label for="nombre-profecia">Tu nombre</label>
+            <input type="text" id="nombre-profecia" name="nombre-profecia" required>
+
+            <label for="texto-profecia">Tu profecía</label>
+            <textarea id="texto-profecia" name="texto-profecia" rows="4" required></textarea>
+
+            <button type="submit">Publicar profecía</button>
+        </form>
+    </section>
+
+    <section class="publicaciones">
+        <h2>Publicaciones recientes</h2>
+        <ul id="lista-profecias">
+            <!-- Aquí aparecerán las profecías -->
+        </ul>
+    </section>
+
+    <script src="scripts.js"></script>
 </body>
 </html>
