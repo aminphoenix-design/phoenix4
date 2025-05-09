@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rituales</title>
+  <title>Ritual</title>
   <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
+
   <!-- Contenedor para las partículas -->
   <div id="particles-js"></div>
 
   <nav>
-    <!-- Navegación -->
     <ul>
       <li><a href="index.html">Inicio</a></li>
       <li><a href="grimorio.html">Grimorio</a></li>
@@ -22,38 +22,34 @@
     </ul>
   </nav>
 
-  <!-- Contenido del Ritual -->
-  <section id="ritual">
-    <h2>Rituales y Runas Generadas</h2>
+  <section id="ritual" class="fade-in">
+    <h2>Ritual del Fénix</h2>
 
-    <div id="lista-rituales">
-      <!-- Aquí se mostrarán las runas generadas -->
+    <!-- Formulario para generar runa -->
+    <form id="form-generar-runa">
+      <label for="nombre">Ingresa tu nombre para generar tu runa:</label>
+      <input type="text" id="nombre" placeholder="Escribe tu nombre..." required>
+      <button type="submit">Generar Runa</button>
+    </form>
+
+    <!-- Contenedor donde se mostrará la runa generada -->
+    <div id="runa-generada" style="display: none;">
+      <p></p>
     </div>
 
-    <button onclick="generarRuna()">Generar Runa</button> <!-- Generar nueva runa -->
+    <!-- Lista de las runas generadas -->
+    <div id="runas-guardadas">
+      <h3>Runas de los rituales anteriores:</h3>
+      <ul id="lista-rituales">
+        <!-- Aquí se mostrarán las runas de los usuarios -->
+      </ul>
+    </div>
   </section>
 
-  <!-- Scripts -->
   <script src="scripts.js"></script>
 
+  <!-- Inicialización de tsParticles -->
   <script>
-    // Función para mostrar las runas guardadas en la página de ritual
-    function mostrarRunasGuardadas() {
-      const runasGuardadas = JSON.parse(localStorage.getItem('runas')) || []; // Obtener las runas guardadas
-      const listaRituales = document.getElementById("lista-rituales");
-
-      runasGuardadas.forEach((runaObj) => {
-        const divRuna = document.createElement("div");
-        divRuna.classList.add("runa-item");
-        divRuna.innerHTML = `<p><strong>${runaObj.nombre}</strong>: ${runaObj.runa}</p>`;
-        listaRituales.appendChild(divRuna);
-      });
-    }
-
-    // Llamar a la función para mostrar las runas guardadas al cargar la página
-    window.onload = mostrarRunasGuardadas;
-
-    // Inicializar las partículas
     tsParticles.load("particles-js", {
       particles: {
         number: {
@@ -64,10 +60,10 @@
           }
         },
         color: {
-          value: ["#8a2be2", "#ffcc00"] // Colores de partículas (violeta y dorado)
+          value: ["#8a2be2", "#ffcc00"] // Colores de las partículas (violeta y dorado)
         },
         shape: {
-          type: "circle", // Forma circular
+          type: "circle", // Forma circular de las partículas
         },
         opacity: {
           value: 0.5,
@@ -92,7 +88,7 @@
         links: {
           enable: true,
           distance: 150,
-          color: "#ffcc00", // Color de los enlaces
+          color: "#ffcc00", // Color de los enlaces entre las partículas
           opacity: 0.4,
           width: 1
         },
@@ -109,7 +105,7 @@
         events: {
           onhover: {
             enable: true,
-            mode: "repulse" // Modo repulsión al pasar el ratón
+            mode: "repulse" // Repulsión al pasar el ratón
           },
           onclick: {
             enable: true,
@@ -129,5 +125,6 @@
       retina_detect: true
     });
   </script>
+
 </body>
 </html>
