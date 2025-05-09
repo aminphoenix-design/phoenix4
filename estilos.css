@@ -1,296 +1,265 @@
 /* Estilos Generales */
 body {
-    background-color: #2a1a3d; /* Fondo morado oscuro */
-    font-family: 'Cinzel', serif;
-    color: #eaeaea;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
+  background-color: #0c0c0c; /* Fondo oscuro */
+  font-family: 'Cinzel', serif; /* Tipografía refinada */
+  color: #eaeaea; /* Texto gris claro */
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  position: relative;
 }
 
 /* Fondo de partículas */
 #particles-js {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 }
 
-/* Navegación */
-nav ul {
-    display: flex;
-    list-style: none;
-    justify-content: center;
-    gap: 2rem;
-    padding: 20px 0;
-    margin: 0;
-    background-color: rgba(0, 0, 0, 0.7);
+/* Header y Navegación */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #2a1a52; /* Violeta oscuro */
+  padding: 15px 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
+  z-index: 10;
 }
 
-nav a {
-    text-decoration: none;
-    color: #facc15; /* Dorado */
-    font-size: 1.1rem;
-    transition: color 0.3s ease;
+header nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-nav a:hover {
-    color: #fff;
+header nav ul li {
+  margin: 0 15px;
 }
 
-/* Sección de Hero */
+header nav ul li a {
+  text-decoration: none;
+  color: #facc15; /* Dorado */
+  font-size: 18px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+  color: #9b6cd3; /* Violeta */
+}
+
+/* Sección de bienvenida */
 #bienvenida {
-    position: relative;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background-color: #3a2a50; /* Fondo oscuro */
+  text-align: center;
+  padding: 100px 20px 50px;
+  background-color: #1c1020; /* Fondo más oscuro para la bienvenida */
 }
 
-.contenido-hero {
-    position: relative;
-    z-index: 2;
-    color: #fff;
-    padding-top: 20%;
+#bienvenida h1 {
+  font-size: 3rem;
+  color: #facc15; /* Dorado */
 }
 
-.contenido-hero h1 {
-    font-size: 4rem;
-    text-shadow: 0 0 10px #facc15, 0 0 20px #facc15;
-}
-
-.contenido-hero p {
-    font-size: 1.5rem;
-    text-shadow: 0 0 10px #facc15, 0 0 20px #facc15;
-}
-
-/* Estilo de las secciones */
-section {
-    padding: 50px;
-    text-align: center;
-    background-color: #3a2a50; /* Fondo oscuro */
-}
-
-#profecia {
-    background-color: #2a1a3d; /* Profecía - Fondo morado oscuro */
-}
-
-#ritual {
-    background-color: #1a1a1a; /* Fondo negro */
-}
-
-#rituales-guardados {
-    background-color: #333;
-    padding: 20px;
-    margin-top: 30px;
-    border-radius: 8px;
-}
-
-#rituales-guardados h3 {
-    color: #facc15; /* Dorado */
-    font-size: 1.5rem;
-}
-
-#lista-rituales {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-#lista-rituales li {
-    color: #eaeaea;
-    font-size: 1.2rem;
-    margin: 5px 0;
-    padding: 5px;
-    background-color: #444;
-    border-radius: 5px;
-}
-
-/* Estilo para los pilares del Grimorio */
-#grimorio .pilar {
-    background-color: #4d2c6d; /* Pilares morados */
-    color: #facc15; /* Texto dorado */
-    padding: 20px;
-    margin: 20px;
-    border-radius: 10px;
-    display: inline-block;
-    width: 22%;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-}
-
-#grimorio .pilar h3 {
-    font-size: 1.8rem;
-}
-
-#grimorio .pilar p {
-    font-size: 1.1rem;
-    color: #f3f3f3;
-}
-
-/* Estilos para las descripciones de los pilares */
-#grimorio .pilar-description {
-    display: none;
-    margin-top: 10px;
-    font-size: 1rem;
-    color: #eaeaea;
-    background-color: #5e3f8c; /* Fondo morado más claro */
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-}
-
-#grimorio .pilar:hover .pilar-description {
-    display: block;
+#bienvenida p {
+  font-size: 1.2rem;
+  color: #eaeaea;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
 }
 
 /* Footer */
 footer {
-    background-color: #111;
-    padding: 20px;
-    text-align: center;
-    color: #facc15; /* Dorado */
+  text-align: center;
+  padding: 20px;
+  background-color: #1c1020; /* Fondo oscuro */
+  color: #eaeaea;
+  margin-top: 50px;
 }
 
 footer p {
-    margin: 0;
+  font-size: 1rem;
 }
 
-footer a {
-    color: #facc15; /* Dorado */
-    text-decoration: none;
+/* Estilos de formularios */
+input, textarea, button {
+  background-color: #2a1a52; /* Violeta oscuro */
+  border: 2px solid #9b6cd3; /* Violeta claro */
+  color: #eaeaea;
+  font-size: 1rem;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px 0;
+  width: 100%;
 }
 
-footer a:hover {
-    text-decoration: underline;
+input:focus, textarea:focus, button:focus {
+  outline: none;
+  border-color: #facc15; /* Dorado */
 }
 
-/* Efectos de transición */
-a {
-    text-decoration: none;
-    color: #facc15;
-    transition: color 0.3s ease, text-shadow 0.3s ease;
-}
-
-a:hover {
-    color: #fff;
-    text-shadow: 0 0 10px #facc15;
-}
-
-/* Transiciones para botones y formularios */
-button, input[type="text"], select {
-    transition: all 0.3s ease;
-}
-
-/* General */
-input, select, textarea, button {
-    font-family: 'Cinzel', serif;
-    font-size: 1rem;
-    padding: 12px 20px;
-    border: 2px solid #facc15;
-    background-color: #2b2b2b;
-    color: #facc15;
-    border-radius: 5px;
-}
-
-input:focus, select:focus, button:focus {
-    outline: none;
-    background-color: #444;
+button {
+  background-color: #9b6cd3; /* Violeta claro */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background-color: #facc15;
-    color: #111;
+  background-color: #facc15; /* Dorado */
 }
 
-/* Estilo de la galería en la página Visiones */
-#galeria {
-    padding: 50px;
-    text-align: center;
+/* Sección de Profecías y Visiones */
+#profecia, #galeria {
+  margin: 50px 20px;
+  text-align: center;
 }
 
-.imagenes-galeria {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
+#profecia h1, #galeria h1 {
+  font-size: 2.5rem;
+  color: #facc15; /* Dorado */
+  margin-bottom: 30px;
 }
 
-.imagenes-galeria img,
-.imagenes-galeria video {
-    width: 100%;
-    max-width: 300px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+#publicaciones, .imagenes-galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
 }
 
-.imagenes-galeria img:hover,
-.imagenes-galeria video:hover {
-    transform: scale(1.05);
-    transition: all 0.3s ease;
+.publicacion, .imagenes-galeria img {
+  background-color: #2a1a52; /* Fondo Violeta oscuro */
+  border: 1px solid #9b6cd3; /* Violeta claro */
+  padding: 20px;
+  border-radius: 10px;
 }
 
-/* Parte de Ritual */
+.publicacion h3 {
+  font-size: 1.5rem;
+  color: #facc15; /* Dorado */
+}
+
+.imagenes-galeria img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.publicacion p {
+  font-size: 1rem;
+  color: #eaeaea;
+}
+
+/* Contacto */
+#contacto form {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #1c1020; /* Fondo oscuro */
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
+}
+
+#contacto input, #contacto textarea {
+  margin-bottom: 20px;
+}
+
+#contacto textarea {
+  min-height: 150px;
+}
+
+/* Estilo de la página Grimorio */
+#grimorio {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.pilar {
+  background-color: #2a1a52;
+  padding: 20px;
+  margin: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+}
+
+.pilar h2 {
+  color: #facc15; /* Dorado */
+  font-size: 2rem;
+}
+
+.pilar p {
+  color: #eaeaea;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.pilar:hover {
+  background-color: #9b6cd3; /* Violeta claro */
+}
+
+/* Estilo de los rituales */
 #ritual {
-    text-align: center;
-    padding: 50px 0;
-    background-color: #1a1a1a;
-}
-
-#ritual form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#ritual input, #ritual select, #ritual button {
-    font-size: 1.2rem;
-    margin: 10px 0;
-    padding: 10px;
-    border: 2px solid #facc15;
-    background-color: #2b2b2b;
-    color: #facc15;
-    transition: background-color 0.3s, transform 0.2s;
-}
-
-#ritual input:focus, #ritual select:focus, #ritual button:focus {
-    background-color: #444;
-    transform: scale(1.05);
-}
-
-#ritual button:hover {
-    background-color: #facc15;
-    color: #000;
-}
-
-/* Estilos de los Ritual Guardados */
-#rituales-guardados {
-    background-color: #333;
-    padding: 20px;
-    margin-top: 30px;
-    border-radius: 8px;
-}
-
-#rituales-guardados h3 {
-    color: #facc15;
-    font-size: 1.5rem;
+  padding: 50px 20px;
+  text-align: center;
 }
 
 #lista-rituales {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  list-style-type: none;
+  padding: 0;
 }
 
 #lista-rituales li {
-    color: #eaeaea;
-    font-size: 1.2rem;
-    margin: 5px 0;
-    padding: 5px;
-    background-color: #444;
-    border-radius: 5px;
+  background-color: #1c1020; /* Fondo oscuro */
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  color: #eaeaea;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
 }
+
+#lista-rituales li h3 {
+  font-size: 1.5rem;
+  color: #facc15; /* Dorado */
+}
+
+#lista-rituales li p {
+  font-size: 1.2rem;
+}
+
+/* Agregar margen en secciones */
+section {
+  margin-bottom: 50px;
+}
+
+/* Estilo de los textos */
+h1, h2, h3 {
+  font-family: 'Cinzel', serif;
+}
+
+h1 {
+  font-size: 3rem;
+  color: #facc15; /* Dorado */
+}
+
+h2 {
+  font-size: 2.5rem;
+  color: #facc15; /* Dorado */
+}
+
+h3 {
+  font-size: 2rem;
+  color: #facc15; /* Dorado */
+}
+
+p {
+  font-size: 1rem;
+  color: #eaeaea;
+  line-height: 1.6;
+  margin: 20px 0;
+}
+
