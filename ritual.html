@@ -1,38 +1,39 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ritual - PhoenixFrame</title>
-  <link rel="stylesheet" href="estilos.css">
+  <link rel="stylesheet" href="estilos.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet" />
 </head>
 <body>
-  
-<nav>
-  <ul>
-    <li><a href="index.html">Inicio</a></li>
-    <li><a href="grimorio.html">Grimorio</a></li>
-    <li><a href="ritual.html">Ritual</a></li>
-    <li><a href="visiones.html">Visiones</a></li>
-    <li><a href="profecia.html">Profecía</a></li>
-    <li><a href="contacto.html">Contacto</a></li>
-  </ul>
-</nav>
 
-  
-<section id="ritual">
-  <h2>Invoca Tu Esencia</h2>
-  <form>
-    <input type="text" placeholder="Nombre ritual" required>
-    <select>
-      <option>⏳ Tiempo</option>
-      <option>🔥 Vida</option>
-      <option>💀 Muerte</option>
-      <option>⚡ Poder</option>
-    </select>
-    <button>Recibir Oráculo</button>
-  </form>
-</section>
+  <nav>
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="grimorio.html">Grimorio</a></li>
+      <li><a href="ritual.html">Ritual</a></li>
+      <li><a href="visiones.html">Visiones</a></li>
+      <li><a href="profecia.html">Profecía</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <section id="ritual">
+    <h2>🔔 Invoca Tu Esencia</h2>
+    <form class="formulario-ritual">
+      <input type="text" placeholder="Nombre ritual" required />
+      <select required>
+        <option disabled selected>Selecciona tu dominio</option>
+        <option>⏳ Tiempo</option>
+        <option>🔥 Vida</option>
+        <option>💀 Muerte</option>
+        <option>⚡ Poder</option>
+      </select>
+      <button type="submit">Recibir Oráculo</button>
+    </form>
+  </section>
 
 </body>
 </html>
