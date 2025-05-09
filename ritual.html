@@ -1,56 +1,35 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Rituales | PhoenixFrame</title>
-  <link rel="stylesheet" href="estilos.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rituales - PhoenixFrame</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div id="particles-js"></div> <!-- Partículas de fondo -->
+    <header>
+        <h1>Rituales del Renacer</h1>
+        <p>Crea tu ritual y conecta con los pilares para descubrir tu runa.</p>
+    </header>
 
-  <div id="particles-js"></div>
+    <section id="rituales">
+        <h2>Genera un Ritual</h2>
+        <form id="formulario-ritual">
+            <input type="text" id="nombre" placeholder="Tu Nombre" required />
+            <select id="pilar">
+                <option value="tiempo">Tiempo</option>
+                <option value="vida">Vida</option>
+                <option value="muerte">Muerte</option>
+                <option value="poder">Poder</option>
+            </select>
+            <button type="submit">Crear Ritual</button>
+        </form>
 
-  <!-- Navegación -->
-  <nav>
-    <ul>
-      <li><a href="index.html">Inicio</a></li>
-      <li><a href="grimorio.html">Grimorio</a></li>
-      <li><a href="ritual.html" class="activo">Ritual</a></li>
-      <li><a href="visiones.html">Visiones</a></li>
-      <li><a href="profecia.html">Profecía</a></li>
-      <li><a href="contacto.html">Contacto</a></li>
-    </ul>
-  </nav>
-
-  <!-- Sección de Generación de Runas -->
-  <section id="ritual" class="fade-in">
-    <h1>Renacer con la Runa</h1>
-    <p class="descripcion-ritual">Introduce tu nombre y observa cómo se genera la runa que te guiará en el renacer de tu marca. </p>
-
-    <form id="formulario-ritual">
-      <input type="text" id="nombre" placeholder="Introduce tu nombre" required />
-      <button type="submit">Generar Runa</button>
-    </form>
-
-    <div id="runa-generada" class="runa-generada oculto">
-      <h2>Tu Runa:</h2>
-      <p id="runa"></p>
-    </div>
-
-    <!-- Ritual Guardados -->
-    <section id="rituales-guardados">
-      <h3>Rituales Anteriores</h3>
-      <ul id="lista-rituales"></ul>
+        <ul id="lista-rituales"></ul>
     </section>
 
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 PhoenixFrame. Renace de tus cenizas.</p>
-  </footer>
-
-  <script src="scripts.js"></script>
+    <script src="scripts.js"></script>
 </body>
 </html>
+
