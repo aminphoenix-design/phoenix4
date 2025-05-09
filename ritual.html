@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ritual - PhoenixFrame</title>
+  <title>Ritual - El Fénix</title>
   <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
+  <div id="particles-js"></div>
 
   <nav>
     <ul>
@@ -19,43 +20,30 @@
     </ul>
   </nav>
 
-  <section id="ritual">
-    <h2>Invoca Tu Esencia</h2>
-    <form id="ritual-form">
-      <input type="text" id="nombre-ritual" placeholder="Nombre ritual" required>
+  <section id="ritual" class="fade-in">
+    <h2>Invoca tu Ritual</h2>
+    <form id="formulario-ritual">
+      <input type="text" id="nombre" placeholder="Tu nombre">
       <select id="elemento">
-        <option value="Tiempo">⏳ Tiempo</option>
-        <option value="Vida">🔥 Vida</option>
-        <option value="Muerte">💀 Muerte</option>
-        <option value="Poder">⚡ Poder</option>
+        <option value="fuego">Fuego</option>
+        <option value="agua">Agua</option>
+        <option value="aire">Aire</option>
+        <option value="tierra">Tierra</option>
       </select>
-      <button type="submit">Recibir Oráculo</button>
+      <button type="submit">Invocar</button>
     </form>
+
     <div id="rituales-guardados">
-      <h3>Rituales Guardados</h3>
-      <ul id="lista-rituales">
-        <!-- Aquí se mostrarán los rituales guardados -->
-      </ul>
+      <h3>Rituales Anteriores</h3>
+      <ul id="lista-rituales"></ul>
     </div>
   </section>
 
-  <script>
-    document.getElementById('ritual-form').addEventListener('submit', function(e) {
-      e.preventDefault();
+  <footer>
+    <p>&copy; 2025 El Fénix</p>
+  </footer>
 
-      // Obtener los valores del formulario
-      const nombreRitual = document.getElementById('nombre-ritual').value;
-      const elemento = document.getElementById('elemento').value;
-
-      // Crear un nuevo elemento de lista
-      const li = document.createElement('li');
-      li.textContent = `${nombreRitual} - Elemento: ${elemento}`;
-      document.getElementById('lista-rituales').appendChild(li);
-
-      // Limpiar el formulario después de enviar
-      document.getElementById('ritual-form').reset();
-    });
-  </script>
-
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+  <script src="scripts.js"></script>
 </body>
 </html>
