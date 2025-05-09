@@ -104,3 +104,23 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+// Cargar rituales guardados al cargar la página
+window.onload = function () {
+  const ritualesGuardados = JSON.parse(localStorage.getItem("rituales")) || [];
+  const listaRituales = document.getElementById("lista-rituales");
+  listaRituales.innerHTML = ""; // Limpiar la lista antes de agregar
+
+  ritualesGuardados.forEach(runa => {
+    const li = document.createElement("li");
+    li.textContent = runa;
+    listaRituales.appendChild(li);
+  });
+};
+
+// Guardar rituales
+function guardarRitual(nombre, pilar, runa) {
+  let ritualesGuardados = JSON.parse(localStorage.getItem("rituales")) || [];
+  ritualesGuardados.push(`${nombre} (${pilar}) - Runa: ${runa}`);
+  localStorage.setItem("rituales", JSON.stringify(ritualesGuardados));
+}
