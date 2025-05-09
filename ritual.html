@@ -8,28 +8,34 @@
 </head>
 <body>
     <div id="particles-js"></div> <!-- Partículas de fondo -->
+    
     <header>
-        <h1>Rituales del Renacer</h1>
-        <p>Crea tu ritual y conecta con los pilares para descubrir tu runa.</p>
+        <h1>Rituales para el Renacer de tu Marca</h1>
+        <p>Transforma tu marca con los pilares que definen su esencia.</p>
     </header>
 
     <section id="rituales">
-        <h2>Genera un Ritual</h2>
+        <h2>Realiza un Ritual</h2>
+
         <form id="formulario-ritual">
-            <input type="text" id="nombre" placeholder="Tu Nombre" required />
-            <select id="pilar">
+            <label for="nombre">Tu Nombre:</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Tu Nombre" required />
+
+            <label for="pilar">Elige tu Pilar:</label>
+            <select id="pilar" name="pilar" required>
                 <option value="tiempo">Tiempo</option>
                 <option value="vida">Vida</option>
                 <option value="muerte">Muerte</option>
                 <option value="poder">Poder</option>
             </select>
-            <button type="submit">Crear Ritual</button>
+
+            <button type="submit">Realizar Ritual</button>
         </form>
 
+        <h3>Rituales Realizados:</h3>
         <ul id="lista-rituales"></ul>
     </section>
 
     <script src="scripts.js"></script>
 </body>
 </html>
-
