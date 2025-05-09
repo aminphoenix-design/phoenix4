@@ -3,15 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PhoenixFrame - El Umbral</title>
+  <title>Inicio - Fénix</title>
   <link rel="stylesheet" href="estilos.css">
-
-  <!-- Particles.js -->
-  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsParticles@2.0.0/tsParticles.min.js"></script>
 </head>
 <body>
-  <!-- Contenedor de Partículas -->
-  <div id="particles-js"></div>
+  <div id="particles-js"></div> <!-- Fondo de partículas -->
 
   <nav>
     <ul>
@@ -24,28 +21,28 @@
     </ul>
   </nav>
 
-  <header id="hero">
-    <video autoplay muted loop id="video-fondo">
-      <source src="assets/fondo-oscuro.mp4" type="video/mp4">
-    </video>
+  <section id="hero">
     <div class="contenido-hero">
-      <h1>PhoenixFrame</h1>
-      <p>Traspasa el umbral. Tiempo. Vida. Muerte. Poder.</p>
+      <h1>Bienvenido al Fénix</h1>
+      <p>Una travesía mística que te lleva a través del tiempo, la vida, la muerte y el poder</p>
     </div>
-  </header>
+    <video id="video-fondo" autoplay muted loop>
+      <source src="video/fenix.mp4" type="video/mp4">
+    </video>
+  </section>
 
   <script>
-    particlesJS('particles-js', {
+    tsParticles.load("particles-js", {
       particles: {
         number: {
-          value: 100,
+          value: 80,
           density: {
             enable: true,
             value_area: 800
           }
         },
         color: {
-          value: "#facc15"
+          value: ["#8a2be2", "#ffcc00"]
         },
         shape: {
           type: "circle"
@@ -55,7 +52,9 @@
           random: true,
           anim: {
             enable: true,
-            speed: 1
+            speed: 1,
+            opacity_min: 0.1,
+            sync: false
           }
         },
         size: {
@@ -63,13 +62,15 @@
           random: true,
           anim: {
             enable: true,
-            speed: 4
+            speed: 2,
+            size_min: 0.1,
+            sync: false
           }
         },
-        line_linked: {
+        links: {
           enable: true,
           distance: 150,
-          color: "#facc15",
+          color: "#ffcc00",
           opacity: 0.4,
           width: 1
         },
@@ -77,21 +78,29 @@
           enable: true,
           speed: 2,
           direction: "none",
-          random: true,
+          random: false,
           straight: false,
           out_mode: "out"
         }
       },
       interactivity: {
-        detect_on: "window",
         events: {
           onhover: {
             enable: true,
-            mode: "grab"
+            mode: "repulse"
           },
           onclick: {
             enable: true,
             mode: "push"
+          }
+        },
+        modes: {
+          repulse: {
+            distance: 100,
+            duration: 0.4
+          },
+          push: {
+            particles_nb: 4
           }
         }
       },
