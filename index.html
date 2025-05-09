@@ -1,37 +1,57 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PhoenixFrame - Renacimiento de Marcas</title>
-    <link rel="stylesheet" href="estilos.css">
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="scripts.js" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PhoenixFrame - Renace tu Marca</title>
+  <link rel="stylesheet" href="estilos.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet"/>
 </head>
 <body>
-    <div id="particles-js"></div>
 
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="rituales.html">Rituales</a></li>
-                <li><a href="grimorio.html">Grimorio</a></li>
-                <li><a href="visiones.html">Visiones</a></li>
-                <li><a href="profecia.html">Profecía</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
+  <div id="particles-js"></div>
 
-    <main>
-        <section id="introduccion">
-            <h1>Renace como el Fénix</h1>
-            <p>En PhoenixFrame, ayudamos a las marcas a dejar de seguir tendencias y a crear nuevas. Es el momento de renacer, de destruir lo viejo y dar paso a lo nuevo.</p>
-            <button onclick="mostrarRenacimiento()">Ver Renacimiento</button>
-        </section>
+  <!-- Navegación -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="ritual.html">Ritual</a></li>
+      <li><a href="grimorio.html">Grimorio</a></li>
+      <li><a href="visiones.html">Visiones</a></li>
+      <li><a href="profecia.html">Profecía</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
 
-        <section id="mensaje-renacimiento"></section>
-    </main>
+  <!-- Hero Principal -->
+  <section id="hero">
+    <div class="contenido-hero fade-in">
+      <h1>PhoenixFrame</h1>
+      <p>Las marcas que siguen mueren. Las que renacen, gobiernan.</p>
+      <a href="grimorio.html" class="boton-dorado">Descubre el Renacer de tu Marca</a>
+    </div>
+  </section>
+
+  <!-- Introducción breve -->
+  <section class="intro fade-in">
+    <div class="contenedor">
+      <h2>¿Quién osó hablar de tendencias?</h2>
+      <p>
+        En un mundo saturado por imitaciones, PhoenixFrame emerge como el ritual que convierte las cenizas en símbolo.
+        Ya no sigas el fuego ajeno — sé el Fénix que lo provoca. Este no es branding. Es alquimia.
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 PhoenixFrame. Toda creación comienza con cenizas.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+  <script src="scripts.js"></script>
+
 </body>
 </html>
