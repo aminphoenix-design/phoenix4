@@ -1,413 +1,126 @@
-/* ==== RESET DE ESTILOS === */
-* {
+/* Estilos Generales */
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #111;
+    background-color: #1d1f21;
     color: #fff;
     overflow-x: hidden;
-    position: relative;
-    line-height: 1.6;
 }
 
-/* ==== PARTICULAS DE FONDO === */
-#particles-js {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-}
-
-/* ==== HEADER === */
-header {
+h1, h2, h3 {
     text-align: center;
-    margin-bottom: 50px;
-    color: #d4af37; /* Dorado */
+    color: #fff;
 }
 
-header h1 {
-    font-size: 4rem;
-    text-shadow: 0 0 15px rgba(255, 223, 0, 0.8), 0 0 30px rgba(255, 223, 0, 0.5);
+a {
+    color: #ff6600;
+    text-decoration: none;
 }
 
-header p {
-    font-size: 1.2rem;
-    margin-top: 10px;
+a:hover {
+    color: #fff;
+    text-decoration: underline;
 }
 
-/* ==== NAVBAR === */
-nav {
-    background-color: #222;
-    padding: 15px 0;
+/* Estilos del Header y Navbar */
+header {
+    background-color: #333;
+    padding: 20px;
+    text-align: center;
 }
 
 nav ul {
     display: flex;
     justify-content: center;
+    background-color: #444;
+    margin: 0;
+    padding: 0;
     list-style: none;
-    gap: 20px;
 }
 
 nav ul li {
-    font-size: 1.1rem;
+    margin: 0 15px;
 }
 
-nav a {
-    color: #d4af37;
-    text-decoration: none;
-    transition: color 0.3s ease;
-    font-weight: bold;
-}
-
-nav a:hover {
-    color: #8a2be2; /* Violeta */
-    text-shadow: 0 0 10px #8a2be2, 0 0 20px #8a2be2;
-}
-
-/* ==== SECCIÓN PRINCIPAL ==== */
-main {
-    padding: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* ==== SECCIÓN RITUALES === */
-#rituales {
-    padding: 20px;
-    max-width: 800px;
-    margin: 0 auto;
-    background-color: #333;
-    border-radius: 8px;
-    box-shadow: 0 0 20px rgba(255, 223, 0, 0.3);
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin-bottom: 30px;
-}
-
-form input, form select, form button, form textarea {
-    padding: 12px;
-    border: 2px solid #8a2be2;
-    background-color: transparent;
+nav ul li a {
     color: #fff;
-    font-size: 1rem;
-    border-radius: 8px;
-    outline: none;
-    transition: all 0.3s ease;
+    padding: 10px 20px;
+    font-size: 18px;
+    display: block;
 }
 
-form input, form select {
-    font-size: 1rem;
+nav ul li a:hover {
+    background-color: #ff6600;
 }
 
-form button {
-    background-color: #8a2be2;
-    color: #fff;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-form button:hover {
-    background-color: #6a1fa2;
-    transform: scale(1.05);
-}
-
-h3 {
-    margin-top: 30px;
-    font-size: 1.5rem;
-    color: #d4af37;
-}
-
-/* Lista de rituales realizados */
-ul#lista-rituales {
-    list-style-type: none;
-    padding: 0;
-}
-
-ul#lista-rituales li {
-    padding: 10px;
-    background-color: #333;
-    margin: 10px 0;
-    border-radius: 8px;
-    border: 1px solid #8a2be2;
-    box-shadow: 0 0 10px rgba(138, 43, 226, 0.5);
-}
-
-ul#lista-rituales li .runa {
-    color: #d4af37;
-    font-size: 1.5rem;
-}
-
-/* ==== MODAL PARA LOS PILARES === */
-.modal-pilar {
-    position: fixed;
+/* Partículas */
+#particles-js {
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 999;
+    z-index: -1;
 }
 
-.modal-contenido {
-    background-color: #222;
-    padding: 20px;
-    border-radius: 8px;
-    max-width: 500px;
+/* Sección Principal */
+#principal {
     text-align: center;
-    box-shadow: 0 0 15px rgba(255, 223, 0, 0.5);
+    margin: 50px 0;
 }
 
-.modal-contenido p {
-    font-size: 1.1rem;
+.btn-principal {
+    background-color: #ff6600;
     color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
 }
 
-.cerrar {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 1.5rem;
-    color: #fff;
-    cursor: pointer;
+.btn-principal:hover {
+    background-color: #cc5200;
 }
 
-.cerrar:hover {
-    color: #d4af37;
-}
-
-/* ==== SECCIÓN CONTACTO === */
-#contacto {
-    padding: 20px;
-    max-width: 800px;
-    margin: 0 auto;
-    background-color: #333;
-    border-radius: 8px;
-    box-shadow: 0 0 20px rgba(255, 223, 0, 0.3);
-}
-
-#contacto h2 {
-    font-size: 2rem;
-    text-align: center;
-    color: #d4af37;
-    margin-bottom: 30px;
-}
-
-#contacto form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-#contacto label {
-    font-size: 1rem;
-    color: #fff;
-}
-
-#contacto input, #contacto select, #contacto textarea, #contacto button {
-    padding: 12px;
-    border: 2px solid #8a2be2;
-    background-color: transparent;
-    color: #fff;
-    font-size: 1rem;
-    border-radius: 8px;
-    outline: none;
-    transition: all 0.3s ease;
-}
-
-#contacto button {
-    background-color: #8a2be2;
-    color: #fff;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-#contacto button:hover {
-    background-color: #6a1fa2;
-    transform: scale(1.05);
-}
-
-#contacto #runa-contacto {
-    display: none;
-    margin-top: 10px;
-}
-
-#contacto #runa-display {
-    font-size: 2rem;
-    color: #d4af37;
-}
-
-/* ==== ANIMACIONES Y TRANSICIONES === */
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-.fade-in {
-    animation: fadeIn 1s ease-in-out;
-}
-
-@keyframes scaleUp {
-    0% {
-        transform: scale(0.8);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
-.scale-up {
-    animation: scaleUp 0.5s ease-in-out;
-}
-
-/* ==== IMÁGENES Y MEDIOS === */
-img {
+/* Formularios */
+input, select, textarea {
     width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 10px;
-    transition: transform 0.3s ease;
-}
-
-img:hover {
-    transform: scale(1.05);
-}
-
-/* ==== TIPOGRAFÍA === */
-h1, h2, h3, h4, h5 {
-    font-family: 'Arial', sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-p {
-    line-height: 1.6;
-    font-size: 1rem;
-}
-
-/* ==== SECCIÓN DE VISIÓN DEL FUTURO === */
-#visiones {
+    padding: 10px;
+    margin: 10px 0;
     background-color: #333;
-    padding: 40px 20px;
     color: #fff;
+    border: 1px solid #555;
+    border-radius: 5px;
 }
 
-#visiones h2 {
-    font-size: 2rem;
-    text-align: center;
-    color: #d4af37;
-    margin-bottom: 30px;
+button {
+    background-color: #ff6600;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-#visiones p {
-    font-size: 1.1rem;
-    text-align: center;
+button:hover {
+    background-color: #cc5200;
 }
 
-/* ==== SECCIÓN DE TESTIMONIOS Y OPINIONES === */
-#testimonios {
-    background-color: #222;
-    padding: 50px 20px;
-}
-
-#testimonios h3 {
-    text-align: center;
-    font-size: 1.8rem;
-    color: #d4af37;
-    margin-bottom: 20px;
-}
-
-.testimonio {
-    background-color: #333;
+/* Estilos de los Pilares */
+.pilar {
+    background-color: #444;
+    margin: 20px;
     padding: 20px;
-    margin: 20px 0;
-    border-radius: 10px;
-    border: 1px solid #8a2be2;
-    box-shadow: 0 0 10px rgba(138, 43, 226, 0.5);
+    border-radius: 5px;
 }
 
-.testimonio p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: #fff;
+.pilar h3 {
+    font-size: 1.5em;
 }
 
-.testimonio .autor {
-    text-align: right;
-    font-size: 1rem;
-    color: #d4af37;
-}
-
-/* ==== MEDIA QUERIES PARA RESPONSIVE DESIGN === */
-@media screen and (max-width: 768px) {
-    header h1 {
-        font-size: 3rem;
-    }
-
-    header p {
-        font-size: 1rem;
-    }
-
-    form {
-        gap: 10px;
-    }
-
-    form input, form select, form button, form textarea {
-        font-size: 1rem;
-    }
-
-    #contacto form {
-        gap: 15px;
-    }
-
-    .testimonio {
-        padding: 10px;
-        margin: 10px 0;
-    }
-
-    #visiones {
-        padding: 20px;
-    }
-}
-
-/* ==== PÁGINA COMPLETA MOBILE FIRST === */
-@media screen and (max-width: 480px) {
-    nav ul {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    nav ul li {
-        font-size: 1rem;
-    }
-
-    form {
-        gap: 8px;
-    }
-
-    #testimonios {
-        padding: 30px 15px;
-    }
-
-    .testimonio p {
-        font-size: 1rem;
-    }
+.pilar .btn-pilar {
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+    background-color: #ff6600;
+    padding: 5px 10px;
 }
