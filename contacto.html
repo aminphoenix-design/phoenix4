@@ -3,14 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contacto del Fénix</title>
+  <title>Contacto</title>
   <link rel="stylesheet" href="estilos.css">
-  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
 </head>
 <body>
+  <!-- Contenedor para las partículas -->
   <div id="particles-js"></div>
 
   <nav>
+    <!-- Navegación -->
     <ul>
       <li><a href="index.html">Inicio</a></li>
       <li><a href="grimorio.html">Grimorio</a></li>
@@ -21,34 +22,49 @@
     </ul>
   </nav>
 
-  <section id="contacto">
-    <h2>Contacto</h2>
-    <p>¿Tienes alguna pregunta o deseas saber más sobre el Grimorio? ¡No dudes en contactarnos!</p>
+  <!-- Contenido del formulario de contacto -->
+  <section id="contacto" class="fade-in">
+    <h2>Contáctanos</h2>
 
-    <form id="contact-form">
-      <input type="text" id="nombre" placeholder="Tu Nombre" required>
-      <input type="email" id="email" placeholder="Tu Correo" required>
-      <textarea id="mensaje" placeholder="Tu Mensaje" required></textarea>
+    <form id="formulario-contacto" action="#" method="post">
+      <div class="campo">
+        <label for="nombre">Nombre Completo:</label>
+        <input type="text" id="nombre" name="nombre" required>
+      </div>
+
+      <div class="campo">
+        <label for="telefono">Número de Teléfono:</label>
+        <input type="tel" id="telefono" name="telefono" required>
+      </div>
+
+      <div class="campo">
+        <label for="razon">Razón para Renacer como el Fénix:</label>
+        <textarea id="razon" name="razon" rows="4" required></textarea>
+      </div>
+
       <button type="submit">Enviar</button>
     </form>
   </section>
 
+  <!-- Scripts -->
   <script src="scripts.js"></script>
+
   <script>
-    particlesJS("particles-js", {
+    // Inicializar las partículas
+    tsParticles.load("particles-js", {
       particles: {
         number: {
-          value: 80,
+          value: 80, // Número de partículas
           density: {
             enable: true,
             value_area: 800
           }
         },
         color: {
-          value: "#8a2be2"
+          value: ["#8a2be2", "#ffcc00"] // Colores de partículas (violeta y dorado)
         },
         shape: {
-          type: "circle"
+          type: "circle", // Forma circular
         },
         opacity: {
           value: 0.5,
@@ -73,7 +89,7 @@
         links: {
           enable: true,
           distance: 150,
-          color: "#ffcc00",
+          color: "#ffcc00", // Color de los enlaces
           opacity: 0.4,
           width: 1
         },
@@ -90,11 +106,11 @@
         events: {
           onhover: {
             enable: true,
-            mode: "repulse"
+            mode: "repulse" // Modo repulsión al pasar el ratón
           },
           onclick: {
             enable: true,
-            mode: "push"
+            mode: "push" // Añadir más partículas al hacer clic
           }
         },
         modes: {
