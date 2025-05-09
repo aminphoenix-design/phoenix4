@@ -1,120 +1,83 @@
-/* Fuente principal */
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
-
+/* Estilos Generales */
 body {
-  background-color: #0a0a0a;
-  color: #eaeaea;
+  background-color: #0d0d0d;
   font-family: 'Cinzel', serif;
+  color: #eaeaea;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  position: relative;
 }
 
-/* Partículas */
 #particles-js {
-  position: fixed;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   z-index: -1;
 }
 
 /* Navegación */
-nav {
-  background: rgba(0, 0, 0, 0.7);
-  padding: 1rem 0;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  backdrop-filter: blur(5px);
-}
-
 nav ul {
-  list-style: none;
   display: flex;
+  list-style: none;
   justify-content: center;
   gap: 2rem;
-  padding: 0;
+  padding: 20px 0;
   margin: 0;
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 nav a {
-  color: #ffcc00;
   text-decoration: none;
+  color: #facc15;
   font-size: 1.1rem;
-  transition: color 0.3s, text-shadow 0.3s;
+  transition: color 0.3s ease;
 }
 
 nav a:hover {
-  color: #fff;
-  text-shadow: 0 0 10px #ffcc00;
+  color: #f3f3f3;
 }
 
-/* Hero / Título principal */
+/* Hero Section */
 #hero {
+  position: relative;
   height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  overflow: hidden;
   text-align: center;
-  padding: 4rem 1rem;
 }
 
-#hero h1 {
+#video-fondo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.contenido-hero {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  padding-top: 20%;
+}
+
+.contenido-hero h1 {
   font-size: 4rem;
-  color: #ffcc00;
-  text-shadow: 0 0 15px #8a2be2;
+  text-shadow: 0 0 10px #facc15, 0 0 20px #facc15;
 }
 
-#hero p {
+.contenido-hero p {
   font-size: 1.5rem;
-  color: #d4d4d4;
-  margin-top: 1rem;
+  text-shadow: 0 0 10px #facc15, 0 0 20px #facc15;
 }
 
-/* Secciones generales */
-section {
-  padding: 80px 20px;
-  max-width: 900px;
-  margin: auto;
-  text-align: center;
-}
-
-section h2 {
-  font-size: 2.5rem;
-  color: #ffcc00;
-  margin-bottom: 2rem;
-  text-shadow: 0 0 10px #8a2be2;
-}
-
-/* Pilar / Grimorio */
-.pilar {
-  background: rgba(30, 30, 30, 0.8);
-  border: 1px solid #8a2be2;
-  border-radius: 12px;
-  margin: 2rem 0;
-  padding: 2rem;
-  box-shadow: 0 0 20px rgba(138, 43, 226, 0.3);
-  transition: transform 0.3s ease;
-}
-
-.pilar:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 25px rgba(255, 204, 0, 0.5);
-}
-
-.pilar h3 {
-  color: #ffcc00;
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-/* Ritual */
+/* Sección de Ritual */
 #ritual {
+  text-align: center;
+  padding: 50px 0;
   background-color: #1a1a1a;
-  border-top: 1px solid #444;
-  border-bottom: 1px solid #444;
 }
 
 #ritual form {
@@ -124,40 +87,50 @@ section h2 {
 }
 
 #ritual input, #ritual select, #ritual button {
+  font-size: 1.2rem;
   margin: 10px 0;
-  padding: 12px 18px;
-  font-size: 1rem;
-  border-radius: 8px;
-  border: 2px solid #ffcc00;
+  padding: 10px;
+  border: 2px solid #facc15;
   background-color: #2b2b2b;
-  color: #ffcc00;
-  transition: 0.3s ease;
+  color: #facc15;
+  transition: background-color 0.3s, transform 0.2s;
 }
 
-#ritual input:focus,
-#ritual select:focus {
-  background-color: #3a3a3a;
-  outline: none;
+#ritual input:focus, #ritual select:focus, #ritual button:focus {
+  background-color: #444;
+  transform: scale(1.05);
 }
 
 #ritual button:hover {
-  background-color: #ffcc00;
-  color: #0a0a0a;
+  background-color: #facc15;
+  color: #000;
 }
 
-/* Rituales guardados */
+/* Animaciones de Transición */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 2s ease-out forwards;
+}
+
+/* Sección de Ritual - Rituales Guardados */
 #rituales-guardados {
-  background-color: #111;
-  padding: 30px;
-  border-radius: 12px;
-  margin-top: 40px;
-  border: 1px solid #333;
+  background-color: #333;
+  padding: 20px;
+  margin-top: 30px;
+  border-radius: 8px;
 }
 
 #rituales-guardados h3 {
-  color: #ffcc00;
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
+  color: #facc15;
+  font-size: 1.5rem;
 }
 
 #lista-rituales {
@@ -167,57 +140,28 @@ section h2 {
 }
 
 #lista-rituales li {
-  background-color: #222;
-  border: 1px solid #444;
-  border-left: 4px solid #8a2be2;
-  margin: 10px 0;
-  padding: 15px;
-  text-align: left;
-  border-radius: 8px;
-  transition: background-color 0.3s;
-}
-
-#lista-rituales li:hover {
-  background-color: #2d2d2d;
-}
-
-.runa {
-  font-family: 'Cinzel', serif;
-  font-size: 1.4rem;
-  color: #8a2be2;
-}
-
-/* Visiones - galería */
-#galeria {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-}
-
-#galeria img, #galeria video {
-  width: 100%;
-  max-width: 300px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px #000;
-  transition: transform 0.3s ease;
-}
-
-#galeria img:hover, #galeria video:hover {
-  transform: scale(1.05);
+  color: #eaeaea;
+  font-size: 1.2rem;
+  margin: 5px 0;
+  padding: 5px;
+  background-color: #444;
+  border-radius: 5px;
 }
 
 /* Footer */
 footer {
-  background-color: #0d0d0d;
+  background-color: #111;
   padding: 20px;
   text-align: center;
-  color: #ffcc00;
-  font-size: 0.9rem;
+  color: #facc15;
+}
+
+footer p {
+  margin: 0;
 }
 
 footer a {
-  color: #ffcc00;
+  color: #facc15;
   text-decoration: none;
 }
 
@@ -225,17 +169,170 @@ footer a:hover {
   text-decoration: underline;
 }
 
-/* Transiciones */
-.fade-in {
-  animation: fadeIn 1.5s ease-in;
+/* Efectos para el hover en los enlaces */
+a {
+  text-decoration: none;
+  color: #facc15;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
-@keyframes fadeIn {
-  0% { opacity: 0; transform: translateY(10px); }
-  100% { opacity: 1; transform: translateY(0); }
+a:hover {
+  color: #fff;
+  text-shadow: 0 0 10px #facc15;
 }
 
-/* General inputs */
-input, select, button, textarea {
+/* Transiciones para los botones y formularios */
+button, input[type="text"], select {
+  transition: all 0.3s ease;
+}
+
+/* General */
+input, select, textarea, button {
   font-family: 'Cinzel', serif;
+  font-size: 1rem;
+  padding: 12px 20px;
+  border: 2px solid #facc15;
+  background-color: #2b2b2b;
+  color: #facc15;
+  border-radius: 5px;
 }
+
+input:focus, select:focus, button:focus {
+  outline: none;
+  background-color: #444;
+}
+
+button:hover {
+  background-color: #facc15;
+  color: #111;
+}
+
+/* Estilo de la galería en la página Visiones */
+#galeria {
+  padding: 50px;
+  text-align: center;
+}
+
+.imagenes-galeria {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.imagenes-galeria img,
+.imagenes-galeria video {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.imagenes-galeria img:hover,
+.imagenes-galeria video:hover {
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}
+
+/* Fondo de Partículas */
+#particles-js {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/* Estilo para la página Grimorio */
+#grimorio {
+  padding: 50px;
+  text-align: center;
+  color: #fff;
+}
+
+#grimorio h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.pilar {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.pilar h3 {
+  font-size: 2rem;
+  color: #facc15;
+}
+
+.pilar p {
+  font-size: 1.1rem;
+}
+
+.pilar:hover {
+  transform: scale(1.05);
+}
+
+/* Estilo para Profecía */
+#profecia {
+  text-align: center;
+  padding: 50px;
+  background-color: #1a1a1a;
+}
+
+#profecia h2 {
+  font-size: 2.5rem;
+  color: #facc15;
+}
+
+#profecia p {
+  font-size: 1.2rem;
+  color: #eaeaea;
+}
+
+/* Estilo para Contacto */
+#contacto {
+  padding: 50px;
+  background-color: #1a1a1a;
+  text-align: center;
+}
+
+#contacto h2 {
+  font-size: 2.5rem;
+  color: #facc15;
+}
+
+#contacto form {
+  margin-top: 20px;
+}
+
+#contacto input,
+#contacto textarea {
+  margin: 10px 0;
+  padding: 12px 20px;
+  border: 2px solid #facc15;
+  background-color: #2b2b2b;
+  color: #facc15;
+  font-size: 1.1rem;
+  border-radius: 5px;
+}
+
+#contacto button {
+  background-color: #facc15;
+  color: #000;
+  font-size: 1.1rem;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#contacto button:hover {
+  background-color: #ffcc00;
+}
+
