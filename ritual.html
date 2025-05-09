@@ -1,50 +1,44 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Realiza tu Ritual - PhoenixFrame</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rituales</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <!-- PARTICULAS DE FONDO -->
-    <div id="particles-js"></div>
+  <div id="particles-js"></div>
 
-    <!-- HEADER -->
-    <header>
-        <h1>PhoenixFrame</h1>
-        <p>Realiza tu Ritual de Renacimiento</p>
-    </header>
-
-    <!-- NAVBAR -->
+  <header>
+    <h1>Rituales de los Cuatro Pilares</h1>
     <nav>
-        <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="grimorio.html">Grimorio</a></li>
-            <li><a href="visiones.html">Visión del Futuro</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
-        </ul>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="grimorio.html">Grimorio</a></li>
+        <li><a href="ritual.html">Rituales</a></li>
+        <li><a href="visiones.html">Visión del Futuro</a></li>
+      </ul>
     </nav>
+  </header>
 
-    <!-- SECCIÓN RITUAL -->
-    <section id="ritual">
-        <h2>Comienza tu Ritual</h2>
-        <form id="formulario-ritual">
-            <input type="text" id="nombre" placeholder="Tu nombre" required>
-            <select id="pilar" required>
-                <option value="tiempo">Tiempo</option>
-                <option value="vida">Vida</option>
-                <option value="muerte">Muerte</option>
-                <option value="poder">Poder</option>
-            </select>
-            <button type="submit">Realizar Ritual</button>
-        </form>
+  <main>
+    <h2>Realiza tu ritual</h2>
+    <form id="formulario-ritual">
+      <input type="text" id="nombre" placeholder="Tu nombre mágico" required />
+      <select id="pilar" required>
+        <option value="">Elige un Pilar</option>
+        <option value="Tiempo">Tiempo</option>
+        <option value="Vida">Vida</option>
+        <option value="Muerte">Muerte</option>
+        <option value="Poder">Poder</option>
+      </select>
+      <button type="submit">Invocar Runa</button>
+    </form>
 
-        <h3>Rituales Realizados</h3>
-        <ul id="lista-rituales"></ul>
-    </section>
+    <ul id="lista-rituales"></ul>
+  </main>
 
-    <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.bundle.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
