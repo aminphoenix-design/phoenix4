@@ -1,4 +1,4 @@
-// Configuración de partículas (Partículas moradas y doradas)
+// Configuración de partículas (Violetas y doradas)
 particlesJS("particles-js", {
   particles: {
     number: {
