@@ -3,32 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Visiones - PhoenixFrame</title>
+  <title>Visiones - El Fénix</title>
   <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
+  <div id="particles-js"></div>
 
-<nav>
-  <ul>
-    <li><a href="index.html">Inicio</a></li>
-    <li><a href="grimorio.html">Grimorio</a></li>
-    <li><a href="ritual.html">Ritual</a></li>
-    <li><a href="visiones.html">Visiones</a></li>
-    <li><a href="profecia.html">Profecía</a></li>
-    <li><a href="contacto.html">Contacto</a></li>
-  </ul>
-</nav>
+  <nav>
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="grimorio.html">Grimorio</a></li>
+      <li><a href="ritual.html">Ritual</a></li>
+      <li><a href="visiones.html">Visiones</a></li>
+      <li><a href="profecia.html">Profecía</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
 
-<section id="galeria">
-  <h2>Visiones del Abismo</h2>
-  <div class="imagenes-galeria">
-    <img src="assets/vision1.jpg" alt="Fénix oscuro">
-    <img src="assets/vision2.jpg" alt="Reloj cósmico">
-    <video autoplay loop muted>
-      <source src="assets/vision3.mp4" type="video/mp4">
-    </video>
-  </div>
-</section>
+  <section id="galeria" class="fade-in">
+    <h2>Visiones del Más Allá</h2>
+    <div class="imagenes-galeria">
+      <img src="vision1.jpg" alt="Visión 1">
+      <img src="vision2.jpg" alt="Visión 2">
+      <video src="vision3.mp4" controls></video>
+    </div>
+  </section>
 
+  <footer>
+    <p>&copy; 2025 El Fénix</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+  <script src="scripts.js"></script>
 </body>
 </html>
