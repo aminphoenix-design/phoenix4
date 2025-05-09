@@ -101,6 +101,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
       lista.appendChild(ritual);
       form.reset();
+
+      // Guardar ritual
+      guardarRitual(nombre, pilar, runa);
     });
   }
 });
