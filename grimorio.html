@@ -1,57 +1,62 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Grimorio | PhoenixFrame</title>
-  <link rel="stylesheet" href="estilos.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Los 4 Pilares - PhoenixFrame</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
 </head>
 <body>
+    <!-- PARTICULAS DE FONDO -->
+    <div id="particles-js"></div>
 
-  <div id="particles-js"></div>
+    <!-- HEADER -->
+    <header>
+        <h1>PhoenixFrame</h1>
+        <p>Los 4 pilares para renacer tu marca</p>
+    </header>
 
-  <!-- Navegación -->
-  <nav>
-    <ul>
-      <li><a href="index.html">Inicio</a></li>
-      <li><a href="ritual.html">Ritual</a></li>
-      <li><a href="grimorio.html" class="activo">Grimorio</a></li>
-      <li><a href="visiones.html">Visiones</a></li>
-      <li><a href="profecia.html">Profecía</a></li>
-      <li><a href="contacto.html">Contacto</a></li>
-    </ul>
-  </nav>
+    <!-- NAVBAR -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="ritual.html">Rituales</a></li>
+            <li><a href="visiones.html">Visión del Futuro</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
 
-  <section class="grimorio fade-in">
-    <h1>El Grimorio</h1>
-    <p class="intro-grimorio">Los Pilares del Renacer no son simples ideas. Son las fuerzas que forjan una marca que desafía eras.</p>
+    <!-- SECCIÓN PILARES -->
+    <section id="grimorio">
+        <h2>Descubre los 4 pilares</h2>
+        <p>Para renacer tu marca, primero debes comprender los pilares que te permiten renacer y transformar cada aspecto de tu identidad corporativa.</p>
 
-    <div class="pilares">
-      <div class="pilar" onclick="mostrarHistoria('tiempo')">
-        <h2>Tiempo</h2>
-      </div>
-      <div class="pilar" onclick="mostrarHistoria('vida')">
-        <h2>Vida</h2>
-      </div>
-      <div class="pilar" onclick="mostrarHistoria('muerte')">
-        <h2>Muerte</h2>
-      </div>
-      <div class="pilar" onclick="mostrarHistoria('poder')">
-        <h2>Poder</h2>
-      </div>
-    </div>
+        <div class="pilar" id="pilar-tiempo">
+            <h3>Pilar del Tiempo</h3>
+            <p>Renovar tu marca no es solo sobre tendencias, sino sobre comprender tu historia y proyectarla de manera efectiva hacia el futuro.</p>
+            <a href="#" class="btn-pilar">Ver más</a>
+        </div>
 
-    <div id="historia-pilar" class="historia-pilar oculto"></div>
-  </section>
+        <div class="pilar" id="pilar-vida">
+            <h3>Pilar de la Vida</h3>
+            <p>Tu marca debe conectar emocionalmente con tu audiencia. A través de este pilar, revitalizamos la esencia que la hace única.</p>
+            <a href="#" class="btn-pilar">Ver más</a>
+        </div>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 PhoenixFrame. Toda creación comienza con cenizas.</p>
-  </footer>
+        <div class="pilar" id="pilar-muerte">
+            <h3>Pilar de la Muerte</h3>
+            <p>A veces, para renacer, es necesario dejar morir lo que no funciona. Este pilar ayuda a evaluar lo que debe transformarse o desaparecer.</p>
+            <a href="#" class="btn-pilar">Ver más</a>
+        </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
-  <script src="scripts.js"></script>
+        <div class="pilar" id="pilar-poder">
+            <h3>Pilar del Poder</h3>
+            <p>El renacer también está en tu capacidad de influir. Este pilar te guía en cómo posicionar tu marca con autoridad en el mercado.</p>
+            <a href="#" class="btn-pilar">Ver más</a>
+        </div>
+    </section>
 
+    <script src="script.js"></script>
 </body>
 </html>
