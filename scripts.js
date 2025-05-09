@@ -129,3 +129,29 @@ window.onload = function () {
   });
 };
 
+// ==== CONTACTO ====
+// Lógica para pre-rellenar el campo de nombre con la runa guardada
+document.addEventListener("DOMContentLoaded", function() {
+  // Recuperar la runa del localStorage
+  let nombreRuna = localStorage.getItem("nombreRuna");
+  
+  // Si existe una runa almacenada, llenamos el campo de nombre con esa runa
+  if (nombreRuna) {
+    document.getElementById("nombre-contacto").value = nombreRuna;
+  }
+});
+
+// Lógica del formulario de contacto
+document.querySelector("#formulario-contacto")?.addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  // Obtener los valores del formulario
+  let telefono = document.getElementById("telefono").value;
+  let runaContacto = document.getElementById("nombre-contacto").value;
+  let razon = document.getElementById("razon").value;
+
+  // Procesar el formulario (puedes enviar estos datos a un servidor o almacenarlos en localStorage)
+  console.log("Contacto:", { telefono, runaContacto, razon });
+
+  // Aquí podrías enviar la información a un servidor o realizar otra acción
+});
