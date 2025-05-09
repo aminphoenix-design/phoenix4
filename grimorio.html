@@ -5,167 +5,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Grimorio</title>
   <link rel="stylesheet" href="estilos.css">
+  <script src="scripts.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 </head>
 <body>
-
-  <!-- Contenedor para las partículas -->
+  <!-- Fondo de partículas -->
   <div id="particles-js"></div>
 
-  <nav>
-    <ul>
-      <li><a href="index.html">Inicio</a></li>
-      <li><a href="grimorio.html">Grimorio</a></li>
-      <li><a href="ritual.html">Ritual</a></li>
-      <li><a href="visiones.html">Visiones</a></li>
-      <li><a href="profecia.html">Profecía</a></li>
-      <li><a href="contacto.html">Contacto</a></li>
-    </ul>
-  </nav>
+  <section id="grimorio">
+    <h1>Los Pilares del Conocimiento</h1>
 
-  <section id="grimorio" class="fade-in">
-    <h2>El Grimorio del Fénix</h2>
-
-    <!-- Pilares con la explicación cuando se hace clic en cada uno -->
-    <div class="pilar" id="tiempo" onclick="mostrarExplicacion('tiempo')">
+    <div class="pilar" onclick="mostrarDescripcion('tiempo')">
       <h3>Tiempo</h3>
-      <p>El tiempo no fluye. Se pliega.</p>
+      <div class="pilar-description" id="tiempo">
+        <p>La sabiduría del tiempo es eterna. Aquellos que controlan el flujo temporal, pueden conocer el futuro y el pasado a su antojo. Esta es la fuerza que nos guía y marca nuestro destino.</p>
+      </div>
     </div>
 
-    <div class="pilar" id="vida" onclick="mostrarExplicacion('vida')">
+    <div class="pilar" onclick="mostrarDescripcion('vida')">
       <h3>Vida</h3>
-      <p>Una danza entre el caos y el soplo divino.</p>
+      <div class="pilar-description" id="vida">
+        <p>La vida es la fuerza primigenia. Es el principio de todo, la energía que fluye en todos los seres. Dominarla es tener el control sobre la existencia misma.</p>
+      </div>
     </div>
 
-    <div class="pilar" id="muerte" onclick="mostrarExplicacion('muerte')">
+    <div class="pilar" onclick="mostrarDescripcion('muerte')">
       <h3>Muerte</h3>
-      <p>La muerte te transforma.</p>
+      <div class="pilar-description" id="muerte">
+        <p>La muerte no es el fin, sino un paso hacia el otro lado. Aquellos que dominan la muerte, entienden los misterios más profundos de la existencia y el ciclo interminable de la vida.</p>
+      </div>
     </div>
 
-    <div class="pilar" id="poder" onclick="mostrarExplicacion('poder')">
+    <div class="pilar" onclick="mostrarDescripcion('poder')">
       <h3>Poder</h3>
-      <p>El poder se invoca, no se impone.</p>
+      <div class="pilar-description" id="poder">
+        <p>El poder es la fuerza que transforma todo. Solo aquellos con un control absoluto sobre sí mismos pueden manipular las energías del universo para su beneficio.</p>
+      </div>
     </div>
-
-    <!-- Sección de la explicación de los pilares -->
-    <div id="explicacion-pilar" style="display: none;">
-      <h3 id="titulo-explicacion"></h3>
-      <p id="descripcion-explicacion"></p>
-    </div>
-
   </section>
-
-  <script src="scripts.js"></script>
-
-  <!-- Inicialización de tsParticles -->
-  <script>
-    tsParticles.load("particles-js", {
-      particles: {
-        number: {
-          value: 80, // Número de partículas
-          density: {
-            enable: true,
-            value_area: 800
-          }
-        },
-        color: {
-          value: ["#8a2be2", "#ffcc00"] // Colores de las partículas (violeta y dorado)
-        },
-        shape: {
-          type: "circle", // Forma circular de las partículas
-        },
-        opacity: {
-          value: 0.5,
-          random: true,
-          anim: {
-            enable: true,
-            speed: 1,
-            opacity_min: 0.1,
-            sync: false
-          }
-        },
-        size: {
-          value: 3,
-          random: true,
-          anim: {
-            enable: true,
-            speed: 2,
-            size_min: 0.1,
-            sync: false
-          }
-        },
-        links: {
-          enable: true,
-          distance: 150,
-          color: "#ffcc00", // Color de los enlaces entre las partículas
-          opacity: 0.4,
-          width: 1
-        },
-        move: {
-          enable: true,
-          speed: 2,
-          direction: "none",
-          random: false,
-          straight: false,
-          out_mode: "out"
-        }
-      },
-      interactivity: {
-        events: {
-          onhover: {
-            enable: true,
-            mode: "repulse" // Repulsión al pasar el ratón
-          },
-          onclick: {
-            enable: true,
-            mode: "push" // Añadir más partículas al hacer clic
-          }
-        },
-        modes: {
-          repulse: {
-            distance: 100,
-            duration: 0.4
-          },
-          push: {
-            particles_nb: 4
-          }
-        }
-      },
-      retina_detect: true
-    });
-  </script>
-
-  <script>
-    // Función que muestra la explicación de cada pilar cuando se hace clic
-    function mostrarExplicacion(pilar) {
-      let titulo = '';
-      let descripcion = '';
-
-      switch(pilar) {
-        case 'tiempo':
-          titulo = 'Tiempo';
-          descripcion = 'El tiempo no es lineal. Se pliega y se curva, permitiendo a los magos del Fénix manipularlo para ver el futuro y reescribir el pasado.';
-          break;
-        case 'vida':
-          titulo = 'Vida';
-          descripcion = 'La vida es una danza entre el caos y el soplo divino. La habilidad de controlar esta danza permite al mago traer nuevos comienzos o cerrar viejos ciclos.';
-          break;
-        case 'muerte':
-          titulo = 'Muerte';
-          descripcion = 'La muerte es un proceso de transformación, no de finalización. A través de la muerte, todo lo que es corrupto se destruye, lo que permite el renacimiento.';
-          break;
-        case 'poder':
-          titulo = 'Poder';
-          descripcion = 'El poder no es algo que se impone. El poder verdadero se invoca, se conquista, y solo aquellos dignos pueden controlar su magnificencia.';
-          break;
-        default:
-          break;
-      }
-
-      document.getElementById('titulo-explicacion').innerText = titulo;
-      document.getElementById('descripcion-explicacion').innerText = descripcion;
-      document.getElementById('explicacion-pilar').style.display = 'block';
-    }
-  </script>
-
 </body>
 </html>
