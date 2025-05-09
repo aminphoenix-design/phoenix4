@@ -1,30 +1,20 @@
-/* Estilos generales para las páginas */
-body {
-  font-family: 'Arial', sans-serif;
+/* Reset de márgenes y paddings por defecto */
+* {
   margin: 0;
   padding: 0;
-  background: #111;
+  box-sizing: border-box;
+}
+
+/* Establece el color de fondo general */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #121212;
   color: #fff;
   overflow-x: hidden;
 }
 
-header {
-  text-align: center;
-  padding: 40px 0;
-  background-color: #222;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
-}
-
-header h1 {
-  font-size: 3rem;
-  color: #d4af37;
-}
-
-header p {
-  font-size: 1.2rem;
-}
-
-#particles-js {
+/* Fondo con partículas */
+.particles-background {
   position: fixed;
   top: 0;
   left: 0;
@@ -33,104 +23,221 @@ header p {
   z-index: -1;
 }
 
-section {
-  padding: 60px 20px;
+/* Estilos del encabezado */
+header {
+  text-align: center;
+  padding: 100px 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  position: relative;
+  z-index: 10;
+}
+
+header h1 {
+  font-size: 3em;
+  color: #d4af37;
+  text-shadow: 0 0 20px rgba(138, 43, 226, 1), 0 0 10px rgba(138, 43, 226, 1);
+}
+
+header .slogan {
+  font-size: 1.2em;
+  color: #aaa;
+  margin-top: 20px;
+}
+
+/* Estilos de navegación */
+nav {
+  background-color: #222;
+  padding: 20px 0;
   text-align: center;
 }
 
+nav ul {
+  list-style-type: none;
+}
+
+nav ul li {
+  display: inline-block;
+  margin: 0 20px;
+}
+
+nav a {
+  color: #d4af37;
+  text-decoration: none;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+nav a:hover {
+  color: #8a2be2;
+}
+
+/* Sección de los Pilares */
 .pilares {
   display: flex;
-  justify-content: center;
-  gap: 30px;
-  margin-top: 50px;
+  justify-content: space-around;
+  margin: 60px 0;
+  flex-wrap: wrap;
 }
 
 .pilar {
-  width: 150px;
-  height: 150px;
-  background: #333;
+  background-color: #2c2c2c;
+  width: 200px;
+  height: 300px;
   border-radius: 15px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #fff;
-  font-size: 1.5rem;
-  cursor: pointer;
-  transition: transform 0.3s;
+  box-shadow: 0 0 20px rgba(138, 43, 226, 0.5);
+  text-align: center;
+  padding: 20px;
+  margin: 10px;
+  position: relative;
+  transition: transform 0.3s ease;
 }
 
 .pilar:hover {
-  transform: scale(1.1);
-  background: #8a2be2;
+  transform: scale(1.05);
+  cursor: pointer;
 }
 
+.torre {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.pilar h2 {
+  font-size: 1.5em;
+  color: #d4af37;
+  text-shadow: 0 0 20px rgba(138, 43, 226, 1);
+}
+
+.pilar p {
+  font-size: 1em;
+  color: #ccc;
+  margin-top: 10px;
+}
+
+/* Estilo para los modales de los pilares */
 .modal-pilar {
-  display: none;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.8);
-  z-index: 999;
-  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: none;
   justify-content: center;
+  align-items: center;
+  z-index: 999;
 }
 
 .modal-contenido {
-  background: #222;
-  padding: 30px;
+  background-color: #333;
+  padding: 40px;
   border-radius: 10px;
+  width: 60%;
+  max-width: 600px;
+  color: #fff;
   text-align: center;
+}
+
+.modal-contenido p {
+  font-size: 1.2em;
+  color: #ccc;
 }
 
 .cerrar {
+  font-size: 2em;
   position: absolute;
   top: 10px;
-  right: 20px;
-  font-size: 2rem;
+  right: 10px;
+  color: #d4af37;
   cursor: pointer;
 }
 
-footer {
+/* Estilo de la sección de contenido */
+.contenido {
   text-align: center;
+  margin: 60px auto;
   padding: 20px;
-  background-color: #222;
-  margin-top: 50px;
+  max-width: 900px;
 }
 
-/* Estilos para la página Visiones */
-#vision-modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8);
-  z-index: 999;
-  align-items: center;
-  justify-content: center;
+.contenido h2 {
+  font-size: 2.5em;
+  color: #d4af37;
+  text-shadow: 0 0 20px rgba(138, 43, 226, 1);
 }
 
-.modal-content {
-  background: #222;
-  padding: 30px;
-  border-radius: 10px;
-  text-align: center;
+.contenido p {
+  font-size: 1.2em;
+  color: #ccc;
+  line-height: 1.6;
+  margin-top: 20px;
 }
 
-.cerrar-modal {
-  position: absolute;
-  top: 10px;
-  right: 20px;
-  font-size: 2rem;
-  cursor: pointer;
-}
-
+/* Estilos del pie de página */
 footer {
-  text-align: center;
-  padding: 20px;
   background-color: #222;
-  margin-top: 50px;
+  padding: 40px 0;
+  text-align: center;
+  color: #bbb;
+  position: relative;
+}
+
+footer p {
+  font-size: 1em;
+  color: #aaa;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .pilares {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .pilar {
+    width: 80%;
+    margin: 20px 0;
+  }
+
+  .contenido h2 {
+    font-size: 2em;
+  }
+
+  .modal-contenido {
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 2.5em;
+  }
+
+  header .slogan {
+    font-size: 1em;
+  }
+
+  nav ul li {
+    margin: 0 10px;
+  }
+
+  nav a {
+    font-size: 1em;
+  }
+
+  .contenido h2 {
+    font-size: 1.8em;
+  }
+
+  .pilar h2 {
+    font-size: 1.2em;
+  }
+
+  .pilar p {
+    font-size: 0.9em;
+  }
 }
