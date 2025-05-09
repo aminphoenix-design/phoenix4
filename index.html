@@ -3,43 +3,84 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Página Principal - PhoenixFrame</title>
+  <meta name="description" content="PhoenixFrame - Una marca mística basada en los 4 pilares que elevan la esencia de la marca.">
+  <title>PhoenixFrame - El Renacer de tu Marca</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@1.38.0/tsparticles.bundle.min.js"></script>
 </head>
 <body>
-  <header>
-    <h1>PhoenixFrame</h1>
-    <p>Eleva tu marca, renace con poder</p>
-  </header>
-  
-  <!-- Contenedor de las partículas -->
-  <div id="particles-js"></div>
+  <!-- Parte de partículas -->
+  <div id="particles-js" class="particles-background"></div>
 
-  <section id="intro">
-    <h2>Bienvenido al renacimiento de tu marca</h2>
-    <p>Usa los pilares para elevar tu esencia y encontrar tu propósito.</p>
+  <!-- Contenedor principal -->
+  <header>
+    <div class="container">
+      <h1>PhoenixFrame</h1>
+      <p class="slogan">El Renacer de tu Marca a través de los Cuatro Pilares</p>
+    </div>
+  </header>
+
+  <!-- Menú de navegación -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="grimorio.html">El Grimorio</a></li>
+      <li><a href="rituales.html">Rituales</a></li>
+      <li><a href="visiones.html">Visiones</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <!-- Sección de los Cuatro Pilares -->
+  <section id="pilares" class="pilares">
+    <div class="pilar" id="tiempo">
+      <div class="torre">
+        <h2>Tiempo</h2>
+        <p>Domina el tiempo y trasciende los límites de lo efímero.</p>
+      </div>
+    </div>
+    <div class="pilar" id="vida">
+      <div class="torre">
+        <h2>Vida</h2>
+        <p>Conoce la energía primordial y el pulso de la creación.</p>
+      </div>
+    </div>
+    <div class="pilar" id="muerte">
+      <div class="torre">
+        <h2>Muerte</h2>
+        <p>La muerte no es un final, sino una transformación hacia la sabiduría.</p>
+      </div>
+    </div>
+    <div class="pilar" id="poder">
+      <div class="torre">
+        <h2>Poder</h2>
+        <p>Conquista el equilibrio y desata el poder de tu marca.</p>
+      </div>
+    </div>
   </section>
 
-  <!-- Pilares interactivos -->
-  <div class="pilares">
-    <div id="tiempo" class="pilar">
-      <span>Tiempo</span>
+  <!-- Sección de contenido adicional (como la misión de la empresa) -->
+  <section class="contenido">
+    <h2>Renace con PhoenixFrame</h2>
+    <p>En PhoenixFrame, entendemos que la clave para el renacer de tu marca radica en los principios ancestrales que guían a las almas hacia su propósito. A través de los Cuatro Pilares: Tiempo, Vida, Muerte y Poder, te ayudamos a alcanzar una nueva dimensión para tu marca, un renacimiento que resplandece con la luz del misterio y la sabiduría.</p>
+  </section>
+
+  <!-- Sección de Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 PhoenixFrame. Todos los derechos reservados.</p>
     </div>
-    <div id="vida" class="pilar">
-      <span>Vida</span>
-    </div>
-    <div id="muerte" class="pilar">
-      <span>Muerte</span>
-    </div>
-    <div id="poder" class="pilar">
-      <span>Poder</span>
+  </footer>
+
+  <!-- Modal de los Pilares (donde se muestra más información al hacer click) -->
+  <div class="modal-pilar" id="modal-pilar" style="display:none;">
+    <div class="modal-contenido">
+      <span class="cerrar" onclick="document.getElementById('modal-pilar').style.display='none'">&times;</span>
+      <p id="modal-texto"></p>
     </div>
   </div>
 
-  <footer>
-    <p>&copy; 2025 PhoenixFrame</p>
-  </footer>
-
+  <!-- Carga de scripts -->
   <script src="script.js"></script>
 </body>
 </html>
