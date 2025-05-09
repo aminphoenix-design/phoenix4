@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Grimorio - El Fénix</title>
-  <link rel="stylesheet" href="estilos.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grimorio</title>
+  <link rel="stylesheet" href="estilos.css" />
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
 </head>
 <body>
   <div id="particles-js"></div>
-
   <nav>
     <ul>
       <li><a href="index.html">Inicio</a></li>
@@ -22,18 +22,22 @@
 
   <section id="grimorio" class="fade-in">
     <h2>El Grimorio del Fénix</h2>
+
     <div class="pilar" id="tiempo">
       <h3>Tiempo</h3>
       <p>El tiempo no fluye. Se pliega.</p>
     </div>
+
     <div class="pilar" id="vida">
       <h3>Vida</h3>
       <p>Una danza entre el caos y el soplo divino.</p>
     </div>
+
     <div class="pilar" id="muerte">
       <h3>Muerte</h3>
       <p>La muerte te transforma.</p>
     </div>
+
     <div class="pilar" id="poder">
       <h3>Poder</h3>
       <p>El poder se invoca, no se impone.</p>
@@ -41,10 +45,11 @@
   </section>
 
   <footer>
-    <p>&copy; 2025 El Fénix</p>
+    <p>&copy; 2025 Grimorio del Fénix. Todos los derechos reservados.</p>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
-  <script src="scripts.js"></script>
+  <script>
+    tsParticles.load("particles-js", { /* mismo config que index */ });
+  </script>
 </body>
 </html>
