@@ -1,6 +1,6 @@
 /* Estilos Generales */
 body {
-  background-color: #0d0d0d;
+  background-color: #0a0a0a; /* Fondo más oscuro */
   font-family: 'Cinzel', serif;
   color: #eaeaea;
   margin: 0;
@@ -25,36 +25,39 @@ nav ul {
   gap: 2rem;
   padding: 20px 0;
   margin: 0;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.8); /* Más oscuro */
 }
 
 nav a {
   text-decoration: none;
   color: #facc15;
   font-size: 1.1rem;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
 nav a:hover {
   color: #f3f3f3;
+  text-shadow: 0 0 10px #facc15, 0 0 20px #facc15;
 }
 
 /* Sección de Grimorio */
 #grimorio {
   text-align: center;
   padding: 50px 20px;
+  background-color: #1b1b1b; /* Fondo más oscuro */
+  position: relative;
 }
 
 #grimorio h2 {
   font-size: 3rem;
   color: #facc15;
   text-shadow: 0 0 10px #facc15, 0 0 20px #facc15;
+  margin-bottom: 30px;
   animation: fadeIn 2s ease-out forwards;
 }
 
-/* Pilar */
 .pilar {
-  background-color: #333;
+  background-color: #333; /* Fondo oscuro para los pilares */
   margin: 20px auto;
   padding: 20px;
   border-radius: 10px;
@@ -64,7 +67,7 @@ nav a:hover {
 }
 
 .pilar:hover {
-  background-color: #444;
+  background-color: #444; /* Fondo más claro al hacer hover */
   transform: scale(1.05);
 }
 
@@ -346,4 +349,3 @@ button:hover {
   background-color: #facc15;
   color: #111;
 }
-
