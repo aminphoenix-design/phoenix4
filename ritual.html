@@ -3,39 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rituales - PhoenixFrame</title>
-    <link rel="stylesheet" href="estilos.css">
+    <title>Realiza tu Ritual - PhoenixFrame</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
 </head>
 <body>
-    <div id="particles-js"></div> <!-- Partículas de fondo -->
-    
+    <!-- PARTICULAS DE FONDO -->
+    <div id="particles-js"></div>
+
+    <!-- HEADER -->
     <header>
-        <h1>Rituales para el Renacer de tu Marca</h1>
-        <p>Transforma tu marca con los pilares que definen su esencia.</p>
+        <h1>PhoenixFrame</h1>
+        <p>Realiza tu Ritual de Renacimiento</p>
     </header>
 
-    <section id="rituales">
-        <h2>Realiza un Ritual</h2>
+    <!-- NAVBAR -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="grimorio.html">Grimorio</a></li>
+            <li><a href="visiones.html">Visión del Futuro</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
 
+    <!-- SECCIÓN RITUAL -->
+    <section id="ritual">
+        <h2>Comienza tu Ritual</h2>
         <form id="formulario-ritual">
-            <label for="nombre">Tu Nombre:</label>
-            <input type="text" id="nombre" name="nombre" placeholder="Tu Nombre" required />
-
-            <label for="pilar">Elige tu Pilar:</label>
-            <select id="pilar" name="pilar" required>
+            <input type="text" id="nombre" placeholder="Tu nombre" required>
+            <select id="pilar" required>
                 <option value="tiempo">Tiempo</option>
                 <option value="vida">Vida</option>
                 <option value="muerte">Muerte</option>
                 <option value="poder">Poder</option>
             </select>
-
             <button type="submit">Realizar Ritual</button>
         </form>
 
-        <h3>Rituales Realizados:</h3>
+        <h3>Rituales Realizados</h3>
         <ul id="lista-rituales"></ul>
     </section>
 
-    <script src="scripts.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
