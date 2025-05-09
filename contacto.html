@@ -4,50 +4,92 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto - PhoenixFrame</title>
-    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
 </head>
 <body>
-    <div id="particles-js"></div> <!-- Efecto de partículas -->
-    
-    <!-- Navegación -->
+
+    <!-- PARTICULAS DE FONDO -->
+    <div id="particles-js"></div>
+
+    <!-- HEADER -->
+    <header>
+        <h1>PhoenixFrame</h1>
+        <p>Contáctanos para empezar tu renacimiento</p>
+    </header>
+
+    <!-- NAVBAR -->
     <nav>
         <ul>
             <li><a href="index.html">Inicio</a></li>
-            <li><a href="ritual.html">Ritual</a></li>
             <li><a href="grimorio.html">Grimorio</a></li>
-            <li><a href="visiones.html">Visiones</a></li>
-            <li><a href="profecia.html">Profecía</a></li>
-            <li><a href="contacto.html" class="activo">Contacto</a></li>
+            <li><a href="ritual.html">Rituales</a></li>
+            <li><a href="visiones.html">Visión del Futuro</a></li>
         </ul>
     </nav>
 
-    <!-- Sección de contacto -->
+    <!-- SECCIÓN CONTACTO -->
     <section id="contacto">
-        <h1>Contacta con Nosotros</h1>
-        <p>¿Listo para tu renacer? Rellena el formulario y te ayudaremos a transformar tu marca.</p>
-        
-        <form id="formulario-contacto" method="post">
-            <!-- Nombre o Runa generada automáticamente -->
-            <label for="nombre-contacto">Tu Nombre o Runa:</label>
-            <input type="text" id="nombre-contacto" name="nombre-contacto" placeholder="Tu Nombre o Runa" required readonly />
+        <h2>¡Queremos saber de ti!</h2>
 
-            <!-- Número de Teléfono -->
-            <label for="telefono-contacto">Número de Teléfono:</label>
-            <input type="tel" id="telefono-contacto" name="telefono-contacto" placeholder="Tu Número de Teléfono" required />
+        <!-- Formulario de contacto con verificación de ritual -->
+        <form id="formulario-contacto">
+            <div id="informacion-contacto">
+                <label for="nombre-contacto">Tu Nombre:</label>
+                <input type="text" id="nombre-contacto" required>
 
-            <!-- Razón para Renacer -->
-            <label for="razon-contacto">Razón para Renacer:</label>
-            <textarea id="razon-contacto" name="razon-contacto" placeholder="¿Por qué deseas renacer?" required></textarea>
+                <label for="telefono-contacto">Tu Teléfono:</label>
+                <input type="tel" id="telefono-contacto" required>
 
-            <button type="submit" class="boton-dorado">Enviar</button>
+                <label for="razon-contacto">Razón para permitirte renacer:</label>
+                <textarea id="razon-contacto" required></textarea>
+            </div>
+
+            <!-- Mostrar la runa si el usuario ha completado el ritual -->
+            <div id="runa-contacto" style="display: none;">
+                <p><strong>Runa generada:</strong> <span id="runa-display"></span></p>
+            </div>
+
+            <button type="submit">Enviar</button>
         </form>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 PhoenixFrame. Toda creación comienza con cenizas.</p>
-    </footer>
+    <script>
+        // Comprobar si el usuario ha completado el ritual
+        document.addEventListener("DOMContentLoaded", function () {
+            const ritualCompleto = localStorage.getItem("ritualCompleto");
 
-    <script src="scripts.js"></script>
+            // Mostrar la runa si se ha completado el ritual
+            if (ritualCompleto === "true") {
+                // Generar una runa aleatoria (puedes personalizar cómo se genera)
+                const runas = ["ᛗ", "ᚨ", "ᛟ", "ᛁ", "ᚱ"];
+                const runaGenerada = runas[Math.floor(Math.random() * runas.length)];
+                document.getElementById("runa-display").textContent = runaGenerada;
+                document.getElementById("runa-contacto").style.display = "block";
+                // Ocultar los campos del formulario estándar si la runa fue generada
+                document.getElementById("informacion-contacto").style.display = "none";
+            }
+        });
+
+        // Función para enviar el formulario
+        document.getElementById("formulario-contacto").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const nombre = document.getElementById("nombre-contacto").value;
+            const telefono = document.getElementById("telefono-contacto").value;
+            const razon = document.getElementById("razon-contacto").value;
+
+            if (!nombre || !telefono || !razon) {
+                alert("Por favor completa todos los campos.");
+                return;
+            }
+
+            // Aquí puedes agregar el código para enviar el formulario o mostrar un mensaje de éxito
+            alert("Tu mensaje ha sido enviado. Nos pondremos en contacto contigo pronto.");
+
+            // Resetear el formulario
+            document.getElementById("formulario-contacto").reset();
+        });
+    </script>
 </body>
 </html>
