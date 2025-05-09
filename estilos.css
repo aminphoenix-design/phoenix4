@@ -39,38 +39,59 @@ nav a:hover {
   color: #f3f3f3;
 }
 
-/* Hero Section */
-#hero {
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
+/* Sección de Grimorio */
+#grimorio {
   text-align: center;
+  padding: 50px 20px;
 }
 
-#video-fondo {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.contenido-hero {
-  position: relative;
-  z-index: 2;
-  color: #fff;
-  padding-top: 20%;
-}
-
-.contenido-hero h1 {
-  font-size: 4rem;
+#grimorio h2 {
+  font-size: 3rem;
+  color: #facc15;
   text-shadow: 0 0 10px #facc15, 0 0 20px #facc15;
+  animation: fadeIn 2s ease-out forwards;
 }
 
-.contenido-hero p {
-  font-size: 1.5rem;
-  text-shadow: 0 0 10px #facc15, 0 0 20px #facc15;
+/* Pilar */
+.pilar {
+  background-color: #333;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 500px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.pilar:hover {
+  background-color: #444;
+  transform: scale(1.05);
+}
+
+.pilar h3 {
+  font-size: 2rem;
+  color: #facc15;
+  margin-bottom: 10px;
+}
+
+.pilar p {
+  font-size: 1.2rem;
+  color: #eaeaea;
+  line-height: 1.5;
+}
+
+/* Animaciones de Transición */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 2s ease-out forwards;
 }
 
 /* Sección de Ritual */
@@ -106,20 +127,6 @@ nav a:hover {
   color: #000;
 }
 
-/* Animaciones de Transición */
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-.fade-in {
-  animation: fadeIn 2s ease-out forwards;
-}
-
 /* Sección de Ritual - Rituales Guardados */
 #rituales-guardados {
   background-color: #333;
@@ -146,6 +153,129 @@ nav a:hover {
   padding: 5px;
   background-color: #444;
   border-radius: 5px;
+}
+
+/* Sección de Visiones */
+#galeria {
+  padding: 50px;
+  text-align: center;
+}
+
+.imagenes-galeria {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.imagenes-galeria img,
+.imagenes-galeria video {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.imagenes-galeria img:hover,
+.imagenes-galeria video:hover {
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}
+
+/* Sección de Profecía */
+#profecia {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #2a2a2a;
+}
+
+#profecia h2 {
+  font-size: 3rem;
+  color: #facc15;
+  text-shadow: 0 0 10px #facc15, 0 0 20px #facc15;
+  margin-bottom: 30px;
+}
+
+#profecia p {
+  font-size: 1.2rem;
+  color: #eaeaea;
+  line-height: 1.8;
+}
+
+#profecia .vision {
+  background-color: #333;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 500px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+#profecia .vision:hover {
+  background-color: #444;
+  transform: scale(1.05);
+}
+
+#profecia .vision h3 {
+  color: #facc15;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+#profecia .vision p {
+  font-size: 1.2rem;
+  color: #eaeaea;
+  line-height: 1.5;
+}
+
+/* Sección de Contacto */
+#contacto {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #1a1a1a;
+}
+
+#contacto h2 {
+  font-size: 3rem;
+  color: #facc15;
+  text-shadow: 0 0 10px #facc15, 0 0 20px #facc15;
+  margin-bottom: 30px;
+}
+
+#contacto form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#contacto input, #contacto textarea {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  padding: 10px;
+  border: 2px solid #facc15;
+  background-color: #2b2b2b;
+  color: #facc15;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+#contacto input:focus, #contacto textarea:focus {
+  background-color: #444;
+  transform: scale(1.05);
+}
+
+#contacto button {
+  font-size: 1.2rem;
+  padding: 12px 20px;
+  border: 2px solid #facc15;
+  background-color: #2b2b2b;
+  color: #facc15;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+#contacto button:hover {
+  background-color: #facc15;
+  color: #000;
 }
 
 /* Footer */
@@ -181,6 +311,16 @@ a:hover {
   text-shadow: 0 0 10px #facc15;
 }
 
+/* Fondo de Partículas */
+#particles-js {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
 /* Transiciones para los botones y formularios */
 button, input[type="text"], select {
   transition: all 0.3s ease;
@@ -207,39 +347,3 @@ button:hover {
   color: #111;
 }
 
-/* Estilo de la galería en la página Visiones */
-#galeria {
-  padding: 50px;
-  text-align: center;
-}
-
-.imagenes-galeria {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.imagenes-galeria img,
-.imagenes-galeria video {
-  width: 100%;
-  max-width: 300px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-}
-
-.imagenes-galeria img:hover,
-.imagenes-galeria video:hover {
-  transform: scale(1.05);
-  transition: all 0.3s ease;
-}
-
-/* Fondo de Partículas */
-#particles-js {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-}
