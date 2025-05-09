@@ -3,42 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PhoenixFrame - Contacto</title>
-    <link rel="stylesheet" href="estilos.css">
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="scripts.js" defer></script>
+    <title>Contacto - PhoenixFrame</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="particles-js"></div>
-
+    <div id="particles-js"></div> <!-- Partículas de fondo -->
+    
     <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="rituales.html">Rituales</a></li>
-                <li><a href="grimorio.html">Grimorio</a></li>
-                <li><a href="visiones.html">Visiones</a></li>
-                <li><a href="profecia.html">Profecía</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-            </ul>
-        </nav>
+        <h1>Contacto con PhoenixFrame</h1>
+        <p>Conectemos para hacer renacer tu marca.</p>
     </header>
 
-    <main>
-        <section id="contacto">
-            <h1>Contáctanos</h1>
-            <p>Si deseas renacer como el fénix o tienes alguna pregunta sobre cómo PhoenixFrame puede transformar tu marca, contáctanos.</p>
+    <section id="contacto">
+        <h2>Formulario de Contacto</h2>
 
-            <form>
-                <label for="telefono">Número de teléfono:</label>
-                <input type="tel" id="telefono" name="telefono" required>
+        <form id="formulario-contacto">
+            <!-- Nombre Pre-rellenado si viene de la página de Ritual -->
+            <label for="nombre-contacto">Tu Nombre:</label>
+            <input type="text" id="nombre-contacto" name="nombre" placeholder="Tu Nombre" required />
+            
+            <!-- Mostrar la runa generada para ese nombre -->
+            <div id="runa-contacto" style="display: none;">
+                <label>Tu Runa:</label>
+                <span id="runa-display"></span>
+            </div>
+            
+            <label for="telefono">Número de Teléfono:</label>
+            <input type="tel" id="telefono" name="telefono" placeholder="Tu Teléfono" required />
+            
+            <label for="razon">Razón para Renacer:</label>
+            <textarea id="razon" name="razon" placeholder="¿Por qué quieres renacer?" required></textarea>
 
-                <label for="razon">Razón para ayudar a tu marca a renacer:</label>
-                <textarea id="razon" name="razon" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
 
-                <button type="submit">Enviar</button>
-            </form>
-        </section>
-    </main>
+    <script src="scripts.js"></script>
 </body>
 </html>
