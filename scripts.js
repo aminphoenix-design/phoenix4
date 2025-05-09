@@ -1,114 +1,106 @@
-// Función para generar runas basadas en el nombre (en este caso, las marcas)
+// ==== PARTICULAS ====
+tsParticles.load("particles-js", {
+  particles: {
+    number: { value: 70, density: { enable: true, value_area: 800 } },
+    color: { value: ["#8a2be2", "#d4af37"] },
+    shape: { type: "circle" },
+    opacity: {
+      value: 0.5,
+      random: true,
+      anim: { enable: true, speed: 1, opacity_min: 0.1, sync: false }
+    },
+    size: {
+      value: 3,
+      random: true,
+      anim: { enable: true, speed: 2, size_min: 0.1, sync: false }
+    },
+    links: {
+      enable: true,
+      distance: 120,
+      color: "#d4af37",
+      opacity: 0.3,
+      width: 1
+    },
+    move: {
+      enable: true,
+      speed: 1.5,
+      out_mode: "out"
+    }
+  },
+  interactivity: {
+    events: {
+      onhover: { enable: true, mode: "repulse" },
+      onclick: { enable: true, mode: "push" }
+    },
+    modes: {
+      repulse: { distance: 100, duration: 0.4 },
+      push: { particles_nb: 4 }
+    }
+  },
+  retina_detect: true
+});
+
+// ==== TEXTO DETALLADO EN PILARES ====
+document.querySelectorAll(".pilar").forEach(pilar => {
+  pilar.addEventListener("click", () => {
+    const contenido = {
+      tiempo: "El pilar del Tiempo refleja el dominio sobre lo eterno y lo efímero. Comprender el tiempo es dominar la percepción, trascender las estaciones y renacer con cada ciclo.",
+      vida: "La Vida representa la energía primaria. Es el pulso de la creación, donde todo comienza. Entenderla es nutrir la chispa divina dentro de uno mismo.",
+      muerte: "Muerte no es final, sino transformación. Es la llama que purifica, el umbral hacia la sabiduría ancestral. Solo a través de la muerte renace el Fénix.",
+      poder: "El Poder no se impone, se convoca. Surge del equilibrio entre los otros pilares, manifestándose cuando el propósito es claro y el espíritu está alineado."
+    };
+
+    const id = pilar.id;
+    mostrarModal(contenido[id] || "Este pilar aún guarda secretos.");
+  });
+});
+
+function mostrarModal(texto) {
+  let modal = document.createElement("div");
+  modal.className = "modal-pilar";
+  modal.innerHTML = `
+    <div class="modal-contenido">
+      <span class="cerrar">&times;</span>
+      <p>${texto}</p>
+    </div>
+  `;
+  document.body.appendChild(modal);
+  document.querySelector(".cerrar").onclick = () => modal.remove();
+  modal.onclick = (e) => { if (e.target === modal) modal.remove(); };
+}
+
+// ==== GENERACIÓN DE RUNAS ====
 function generarRuna(nombre) {
-    const runas = ['ᛞ', 'ᚱ', 'ᚹ', 'ᛇ', 'ᛉ', 'ᛋ', 'ᛒ', 'ᛗ'];
-    let runaGenerada = '';
-    for (let i = 0; i < nombre.length; i++) {
-        const indice = nombre.charCodeAt(i) % runas.length;
-        runaGenerada += runas[indice];
-    }
-    return runaGenerada;
+  const runas = [
+    "ᚠ", "ᚢ", "ᚦ", "ᚨ", "ᚱ", "ᚲ", "ᚷ", "ᚹ", "ᚺ", "ᚾ",
+    "ᛁ", "ᛃ", "ᛇ", "ᛈ", "ᛉ", "ᛋ", "ᛏ", "ᛒ", "ᛖ", "ᛗ", "ᛚ", "ᛜ", "ᛞ", "ᛟ"
+  ];
+  nombre = nombre.toLowerCase().replace(/[^a-z]/g, "");
+  let codigo = 0;
+  for (let i = 0; i < nombre.length; i++) {
+    codigo += nombre.charCodeAt(i);
+  }
+  return runas[codigo % runas.length];
 }
 
-// Función para guardar y mostrar runas generadas (ejemplo de renacimiento de marcas)
-function guardarRuna() {
-    const nombreMarca = document.getElementById('nombre').value.trim();
-    if (nombreMarca !== '') {
-        const runa = generarRuna(nombreMarca);
-        const listaRituales = document.getElementById('lista-rituales');
-        const itemRitual = document.createElement('li');
-        itemRitual.innerHTML = `<h3>Runa para ${nombreMarca}</h3><p>${runa}</p><p><strong>Renace de sus cenizas.</strong></p>`;
-        listaRituales.appendChild(itemRitual);
-    }
-}
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.querySelector("#formulario-ritual");
+  const lista = document.querySelector("#lista-rituales");
 
-// Función para mostrar el renacimiento de las marcas
-function mostrarRenacimiento() {
-    const mensaje = document.getElementById('mensaje-renacimiento');
-    mensaje.innerHTML = '<p><strong>PhoenixFrame es la herramienta para que las marcas dejen de seguir las tendencias y comiencen a CREARLAS.</strong></p><p>Como el fénix renace de sus cenizas, las marcas que adoptan PhoenixFrame transforman su esencia y definen su propio futuro.</p>';
-}
+  if (form) {
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const nombre = document.querySelector("#nombre").value;
+      const pilar = document.querySelector("#pilar").value;
 
-// Inicializar partículas (con colores dorados y violetas, como un renacer dorado)
-particlesJS("particles-js", {
-    "particles": {
-        "number": {
-            "value": 80,
-            "density": {
-                "enable": true,
-                "value_area": 700
-            }
-        },
-        "color": {
-            "value": "#9b6cd3" // Violeta, representando el renacimiento
-        },
-        "shape": {
-            "type": "circle"
-        },
-        "opacity": {
-            "value": 0.5,
-            "random": true,
-            "anim": {
-                "enable": true,
-                "speed": 0.5,
-                "opacity_min": 0.1
-            }
-        },
-        "size": {
-            "value": 3,
-            "random": true,
-            "anim": {
-                "enable": true,
-                "speed": 2,
-                "size_min": 0.1
-            }
-        },
-        "line_linked": {
-            "enable": true,
-            "distance": 150,
-            "color": "#9b6cd3", // Violeta
-            "opacity": 0.4,
-            "width": 1
-        },
-        "move": {
-            "enable": true,
-            "speed": 3,
-            "direction": "random",
-            "random": true,
-            "straight": false,
-            "out_mode": "out",
-            "attract": {
-                "enable": true,
-                "rotateX": 600,
-                "rotateY": 1200
-            }
-        }
-    },
-    "interactivity": {
-        "detect_on": "window",
-        "events": {
-            "onhover": {
-                "enable": true,
-                "mode": "repulse"
-            },
-            "onclick": {
-                "enable": true,
-                "mode": "push"
-            }
-        },
-        "modes": {
-            "repulse": {
-                "distance": 200,
-                "duration": 0.4
-            },
-            "push": {
-                "particles": {
-                    "number": 4,
-                    "density": {
-                        "enable": true,
-                        "value_area": 800
-                    }
-                }
-            }
-        }
-    },
-    "retina_detect": true
+      const runa = generarRuna(nombre);
+      const ritual = document.createElement("li");
+      ritual.innerHTML = `
+        <strong>${nombre}</strong> (${pilar}) - Runa: <span class="runa">${runa}</span>
+      `;
+
+      lista.appendChild(ritual);
+      form.reset();
+    });
+  }
 });
