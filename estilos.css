@@ -1,6 +1,6 @@
 /* Estilos Generales */
 body {
-  background-color: #0a0a0a; /* Fondo más oscuro */
+  background-color: #0d0d0d;
   font-family: 'Cinzel', serif;
   color: #eaeaea;
   margin: 0;
@@ -25,76 +25,55 @@ nav ul {
   gap: 2rem;
   padding: 20px 0;
   margin: 0;
-  background-color: rgba(0, 0, 0, 0.8); /* Más oscuro */
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 nav a {
   text-decoration: none;
   color: #facc15;
   font-size: 1.1rem;
-  transition: color 0.3s ease, text-shadow 0.3s ease;
+  transition: color 0.3s ease;
 }
 
 nav a:hover {
   color: #f3f3f3;
-  text-shadow: 0 0 10px #facc15, 0 0 20px #facc15;
 }
 
 /* Sección de Grimorio */
 #grimorio {
   text-align: center;
   padding: 50px 20px;
-  background-color: #1b1b1b; /* Fondo más oscuro */
-  position: relative;
+  background-color: #111;
+  color: #eaeaea;
 }
 
 #grimorio h2 {
-  font-size: 3rem;
-  color: #facc15;
+  font-size: 2.5rem;
   text-shadow: 0 0 10px #facc15, 0 0 20px #facc15;
-  margin-bottom: 30px;
-  animation: fadeIn 2s ease-out forwards;
+  margin-bottom: 40px;
 }
 
 .pilar {
-  background-color: #333; /* Fondo oscuro para los pilares */
-  margin: 20px auto;
+  background-color: #222;
+  margin: 20px 0;
   padding: 20px;
   border-radius: 10px;
-  width: 80%;
-  max-width: 500px;
-  transition: transform 0.3s ease, background-color 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
 }
 
 .pilar:hover {
-  background-color: #444; /* Fondo más claro al hacer hover */
   transform: scale(1.05);
 }
 
 .pilar h3 {
-  font-size: 2rem;
   color: #facc15;
+  font-size: 1.5rem;
   margin-bottom: 10px;
 }
 
 .pilar p {
   font-size: 1.2rem;
-  color: #eaeaea;
-  line-height: 1.5;
-}
-
-/* Animaciones de Transición */
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-.fade-in {
-  animation: fadeIn 2s ease-out forwards;
 }
 
 /* Sección de Ritual */
@@ -130,6 +109,20 @@ nav a:hover {
   color: #000;
 }
 
+/* Animaciones de Transición */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 2s ease-out forwards;
+}
+
 /* Sección de Ritual - Rituales Guardados */
 #rituales-guardados {
   background-color: #333;
@@ -156,129 +149,6 @@ nav a:hover {
   padding: 5px;
   background-color: #444;
   border-radius: 5px;
-}
-
-/* Sección de Visiones */
-#galeria {
-  padding: 50px;
-  text-align: center;
-}
-
-.imagenes-galeria {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.imagenes-galeria img,
-.imagenes-galeria video {
-  width: 100%;
-  max-width: 300px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-}
-
-.imagenes-galeria img:hover,
-.imagenes-galeria video:hover {
-  transform: scale(1.05);
-  transition: all 0.3s ease;
-}
-
-/* Sección de Profecía */
-#profecia {
-  text-align: center;
-  padding: 50px 20px;
-  background-color: #2a2a2a;
-}
-
-#profecia h2 {
-  font-size: 3rem;
-  color: #facc15;
-  text-shadow: 0 0 10px #facc15, 0 0 20px #facc15;
-  margin-bottom: 30px;
-}
-
-#profecia p {
-  font-size: 1.2rem;
-  color: #eaeaea;
-  line-height: 1.8;
-}
-
-#profecia .vision {
-  background-color: #333;
-  margin: 20px auto;
-  padding: 20px;
-  border-radius: 10px;
-  max-width: 500px;
-  transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-#profecia .vision:hover {
-  background-color: #444;
-  transform: scale(1.05);
-}
-
-#profecia .vision h3 {
-  color: #facc15;
-  font-size: 2rem;
-  margin-bottom: 10px;
-}
-
-#profecia .vision p {
-  font-size: 1.2rem;
-  color: #eaeaea;
-  line-height: 1.5;
-}
-
-/* Sección de Contacto */
-#contacto {
-  text-align: center;
-  padding: 50px 20px;
-  background-color: #1a1a1a;
-}
-
-#contacto h2 {
-  font-size: 3rem;
-  color: #facc15;
-  text-shadow: 0 0 10px #facc15, 0 0 20px #facc15;
-  margin-bottom: 30px;
-}
-
-#contacto form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-#contacto input, #contacto textarea {
-  font-size: 1.2rem;
-  margin: 10px 0;
-  padding: 10px;
-  border: 2px solid #facc15;
-  background-color: #2b2b2b;
-  color: #facc15;
-  transition: background-color 0.3s, transform 0.2s;
-}
-
-#contacto input:focus, #contacto textarea:focus {
-  background-color: #444;
-  transform: scale(1.05);
-}
-
-#contacto button {
-  font-size: 1.2rem;
-  padding: 12px 20px;
-  border: 2px solid #facc15;
-  background-color: #2b2b2b;
-  color: #facc15;
-  border-radius: 5px;
-  transition: background-color 0.3s, transform 0.2s;
-}
-
-#contacto button:hover {
-  background-color: #facc15;
-  color: #000;
 }
 
 /* Footer */
@@ -314,16 +184,6 @@ a:hover {
   text-shadow: 0 0 10px #facc15;
 }
 
-/* Fondo de Partículas */
-#particles-js {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-}
-
 /* Transiciones para los botones y formularios */
 button, input[type="text"], select {
   transition: all 0.3s ease;
@@ -350,3 +210,86 @@ button:hover {
   color: #111;
 }
 
+/* Estilo de la galería en la página Visiones */
+#galeria {
+  padding: 50px;
+  text-align: center;
+}
+
+.imagenes-galeria {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.imagenes-galeria img,
+.imagenes-galeria video {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.imagenes-galeria img:hover,
+.imagenes-galeria video:hover {
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}
+
+/* Fondo de Partículas */
+#particles-js {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/* Sección de Profecía */
+#profecia {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #111;
+  color: #eaeaea;
+}
+
+#profecia h2 {
+  font-size: 2.5rem;
+  text-shadow: 0 0 10px #facc15, 0 0 20px #facc15;
+  margin-bottom: 40px;
+}
+
+/* Estilo del ritual */
+#ritual {
+  text-align: center;
+  padding: 50px 0;
+  background-color: #1a1a1a;
+}
+
+#ritual form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#ritual input, #ritual select, #ritual button {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  padding: 10px;
+  border: 2px solid #facc15;
+  background-color: #2b2b2b;
+  color: #facc15;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+#ritual input:focus, #ritual select:focus, #ritual button:focus {
+  background-color: #444;
+  transform: scale(1.05);
+}
+
+#ritual button:hover {
+  background-color: #facc15;
+  color: #000;
+}
