@@ -1,43 +1,63 @@
-// Función para generar la runa a partir del nombre
+// Función que se ejecuta al hacer clic en los pilares
+function mostrarTexto(pilar) {
+  const descripcion = document.getElementById('descripcion-texto');
+
+  // Mostrar la descripción de cada pilar
+  switch (pilar) {
+    case 'tiempo':
+      descripcion.innerHTML = `<strong>Tiempo:</strong> El tiempo no fluye. Se pliega. Solo aquellos que entienden su flujo pueden manipularlo, alterando el pasado y el futuro a su antojo. La adquisición del Pilar del Tiempo requiere paciencia y conocimiento profundo del universo.`;
+      break;
+    case 'vida':
+      descripcion.innerHTML = `<strong>Vida:</strong> Una danza entre el caos y el soplo divino. La vida es un ciclo interminable de creación y destrucción. Para adquirir el Pilar de la Vida, es necesario tener un corazón puro y la capacidad de nutrir la esencia vital del mundo.`;
+      break;
+    case 'muerte':
+      descripcion.innerHTML = `<strong>Muerte:</strong> La muerte te transforma. Es la puerta al más allá, donde se forjan las almas. El Pilar de la Muerte es un misterio, solo aquellos que aceptan su inevitable final pueden comprender su poder.`;
+      break;
+    case 'poder':
+      descripcion.innerHTML = `<strong>Poder:</strong> El poder se invoca, no se impone. Solo quienes tienen el control de sí mismos pueden dominar este pilar. El Pilar del Poder es otorgado a aquellos que buscan la fuerza sin dejarse consumir por ella.`;
+      break;
+    default:
+      descripcion.innerHTML = '';
+  }
+
+  // Desplegar la descripción con una animación
+  const descripcionPilar = document.getElementById('descripcion-pilar');
+  descripcionPilar.style.display = 'block';
+  descripcionPilar.classList.add('fade-in');
+}
+
+// Función para generar una runa personalizada a partir del nombre
 function generarRuna(nombre) {
-  const runas = ["ᚠ", "ᚱ", "ᛏ", "ᛒ", "ᚷ", "ᚹ", "ᛇ", "ᛖ", "ᛗ", "ᛚ", "ᛟ", "ᛞ", "ᛃ", "ᛣ"]; // Lista de runas
+  // Definimos un conjunto de caracteres para formar una runa única
+  const runaBase = ["ᛗ", "ᛖ", "ᚱ", "ᛚ", "ᛟ", "ᚾ", "ᛁ", "ᚴ", "ᛋ", "ᚻ", "ᛇ", "ᚻ", "ᛒ"];
+  
+  // Transformamos el nombre en una runa combinando caracteres
   let runaGenerada = "";
   for (let i = 0; i < nombre.length; i++) {
-    const index = nombre.charCodeAt(i) % runas.length;  // Usar el código del caracter para obtener un índice
-    runaGenerada += runas[index];  // Generar runa por cada letra del nombre
+    const indice = nombre.charCodeAt(i) % runaBase.length; // Usamos el código ASCII de la letra
+    runaGenerada += runaBase[indice];
   }
-  return runaGenerada;
+
+  // Mostrar la runa generada
+  const contenedorRuna = document.getElementById("runa-generada");
+  contenedorRuna.textContent = `Runa Generada: ${runaGenerada}`;
+  contenedorRuna.style.display = "block";
+
+  // Guardar la runa en el almacenamiento local para que sea visible en otras sesiones
+  localStorage.setItem("runaGenerada", runaGenerada);
 }
 
-// Función para mostrar la runa generada
-function mostrarRuna() {
-  const nombreUsuario = prompt("Ingresa tu nombre para generar una runa:");
-  const runa = generarRuna(nombreUsuario);
-  document.getElementById("runa").innerText = runa;  // Asignar la runa al elemento con id "runa"
-
-  // Guardar la runa en el localStorage
-  let runasGuardadas = JSON.parse(localStorage.getItem('runas')) || []; // Obtener las runas guardadas
-  runasGuardadas.push({ nombre: nombreUsuario, runa: runa }); // Guardar nueva runa
-  localStorage.setItem('runas', JSON.stringify(runasGuardadas)); // Actualizar el localStorage
+// Función para cargar la runa previamente generada
+function cargarRuna() {
+  const runa = localStorage.getItem("runaGenerada");
+  if (runa) {
+    const contenedorRuna = document.getElementById("runa-generada");
+    contenedorRuna.textContent = `Runa Generada: ${runa}`;
+    contenedorRuna.style.display = "block";
+  }
 }
 
-// Llamar a la función para mostrar la runa al cargar la página
-window.onload = mostrarRuna;
-
-// Mostrar las runas guardadas en la página de ritual
-function mostrarRunasGuardadas() {
-  const runasGuardadas = JSON.parse(localStorage.getItem('runas')) || []; // Obtener las runas guardadas
-  const listaRituales = document.getElementById("lista-rituales");
-
-  runasGuardadas.forEach((runaObj) => {
-    const divRuna = document.createElement("div");
-    divRuna.classList.add("runa-item");
-    divRuna.innerHTML = `<p><strong>${runaObj.nombre}</strong>: ${runaObj.runa}</p>`;
-    listaRituales.appendChild(divRuna);
-  });
-}
-
-// Inicializar las partículas
+// Inicialización de tsParticles para las partículas de fondo
 tsParticles.load("particles-js", {
   particles: {
     number: {
@@ -48,10 +68,10 @@ tsParticles.load("particles-js", {
       }
     },
     color: {
-      value: ["#8a2be2", "#ffcc00"] // Colores de partículas (violeta y dorado)
+      value: ["#8a2be2", "#ffcc00"] // Colores de las partículas (violeta y dorado)
     },
     shape: {
-      type: "circle", // Forma circular
+      type: "circle", // Forma circular de las partículas
     },
     opacity: {
       value: 0.5,
@@ -76,7 +96,7 @@ tsParticles.load("particles-js", {
     links: {
       enable: true,
       distance: 150,
-      color: "#ffcc00", // Color de los enlaces
+      color: "#ffcc00", // Color de los enlaces entre las partículas
       opacity: 0.4,
       width: 1
     },
@@ -93,7 +113,7 @@ tsParticles.load("particles-js", {
     events: {
       onhover: {
         enable: true,
-        mode: "repulse" // Modo repulsión al pasar el ratón
+        mode: "repulse" // Repulsión al pasar el ratón
       },
       onclick: {
         enable: true,
@@ -112,3 +132,8 @@ tsParticles.load("particles-js", {
   },
   retina_detect: true
 });
+
+// Llamar a la función para cargar la runa cuando la página se cargue
+window.onload = function() {
+  cargarRuna();
+};
