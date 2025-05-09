@@ -1,47 +1,49 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rituales - PhoenixFrame</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="rituales.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rituales - PhoenixFrame</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <header>
+    <h1>Rituales de PhoenixFrame</h1>
+    <p>Renace y eleva tu marca</p>
+  </header>
 
-    <!-- Fondo de partículas -->
-    <div id="particles-js" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></div>
+  <!-- Contenedor de las partículas -->
+  <div id="particles-js"></div>
 
-    <div class="container">
-        <header>
-            <h1>Rituales de Renacimiento</h1>
-            <p>Conecta con tu esencia y permite que la runa del renacer se revele a través de tu nombre.</p>
-        </header>
+  <section class="rituales-formulario">
+    <form id="formulario-ritual">
+      <label for="nombre">Nombre o Runa:</label>
+      <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre o deja que se genere la runa" required>
 
-        <section class="formulario-ritual">
-            <!-- Formulario para realizar el ritual -->
-            <form id="formulario-ritual">
-                <label for="nombre">Nombre (o runa generada):</label>
-                <input type="text" id="nombre" name="nombre" readonly>
+      <label for="telefono">Teléfono:</label>
+      <input type="tel" id="telefono" name="telefono" placeholder="Tu número de teléfono" required>
 
-                <label for="telefono">Teléfono:</label>
-                <input type="tel" id="telefono" name="telefono" required>
+      <label for="razon">Razón para permitir el renacer:</label>
+      <textarea id="razon" name="razon" placeholder="Escribe tu razón..." required></textarea>
 
-                <label for="razon">Razón para el Renacer:</label>
-                <textarea id="razon" name="razon" rows="4" required></textarea>
+      <label for="pilar">Elige tu Pilar:</label>
+      <select id="pilar" name="pilar" required>
+        <option value="tiempo">Tiempo</option>
+        <option value="vida">Vida</option>
+        <option value="muerte">Muerte</option>
+        <option value="poder">Poder</option>
+      </select>
 
-                <button type="submit" class="btn-enviar">Realizar Ritual</button>
-            </form>
+      <button type="submit">Enviar Ritual</button>
+    </form>
 
-            <!-- Mensaje de éxito o error -->
-            <div id="mensaje-exito" class="mensaje-exito">
-                <p>¡Ritual realizado exitosamente! Ahora puedes proceder con el renacer.</p>
-            </div>
-            <div id="mensaje-error" class="mensaje-error">
-                <p>Hubo un error al realizar el ritual. Por favor, intenta de nuevo.</p>
-            </div>
-        </section>
-    </div>
+    <ul id="lista-rituales"></ul>
+  </section>
 
+  <footer>
+    <p>&copy; 2025 PhoenixFrame</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
