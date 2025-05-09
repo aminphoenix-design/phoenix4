@@ -1,48 +1,45 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Renacer Místico</title>
-  <link rel="stylesheet" href="styles.css" />
-  <script src="https://cdn.jsdelivr.net/npm/tsparticles@3/tsparticles.bundle.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página Principal - PhoenixFrame</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Partículas de fondo -->
+  <header>
+    <h1>PhoenixFrame</h1>
+    <p>Eleva tu marca, renace con poder</p>
+  </header>
+  
+  <!-- Contenedor de las partículas -->
   <div id="particles-js"></div>
 
-  <!-- Encabezado -->
-  <header>
-    <h1>🌌 Ritual de Renacer Místico</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="ritual.html">Ritual</a></li>
-        <li><a href="pilares.html">Pilares</a></li>
-        <li><a href="visiones.html">Visiones</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-      </ul>
-    </nav>
-  </header>
+  <section id="intro">
+    <h2>Bienvenido al renacimiento de tu marca</h2>
+    <p>Usa los pilares para elevar tu esencia y encontrar tu propósito.</p>
+  </section>
 
-  <!-- Contenido principal -->
-  <main>
-    <h2>Bienvenido, buscador del Renacer</h2>
-    <p>
-      En esta tierra envuelta en sombras y sabiduría, hallarás los pilares del alma,
-      el ritual perdido y las visiones que dan forma a tu destino. Camina con
-      intención, pues cada clic despierta una fuerza ancestral.
-    </p>
+  <!-- Pilares interactivos -->
+  <div class="pilares">
+    <div id="tiempo" class="pilar">
+      <span>Tiempo</span>
+    </div>
+    <div id="vida" class="pilar">
+      <span>Vida</span>
+    </div>
+    <div id="muerte" class="pilar">
+      <span>Muerte</span>
+    </div>
+    <div id="poder" class="pilar">
+      <span>Poder</span>
+    </div>
+  </div>
 
-    <section class="pilares">
-      <div class="pilar" id="tiempo">⏳ Tiempo</div>
-      <div class="pilar" id="vida">🌿 Vida</div>
-      <div class="pilar" id="muerte">💀 Muerte</div>
-      <div class="pilar" id="poder">🔥 Poder</div>
-    </section>
-  </main>
+  <footer>
+    <p>&copy; 2025 PhoenixFrame</p>
+  </footer>
 
-  <!-- Script JS -->
   <script src="script.js"></script>
 </body>
 </html>
