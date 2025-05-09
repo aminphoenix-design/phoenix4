@@ -11,6 +11,7 @@ body {
     color: #fff;
     overflow-x: hidden;
     position: relative;
+    line-height: 1.6;
 }
 
 /* ==== PARTICULAS DE FONDO === */
@@ -28,11 +29,10 @@ header {
     text-align: center;
     margin-bottom: 50px;
     color: #d4af37;
-    font-size: 1.2rem;
 }
 
 header h1 {
-    font-size: 3.5rem;
+    font-size: 4rem;
     text-shadow: 0 0 15px rgba(255, 223, 0, 0.8), 0 0 30px rgba(255, 223, 0, 0.5);
 }
 
@@ -357,7 +357,7 @@ p {
 /* ==== MEDIA QUERIES PARA RESPONSIVE DESIGN === */
 @media screen and (max-width: 768px) {
     header h1 {
-        font-size: 2.5rem;
+        font-size: 3rem;
     }
 
     header p {
@@ -369,7 +369,7 @@ p {
     }
 
     form input, form select, form button, form textarea {
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
 
     #contacto form {
