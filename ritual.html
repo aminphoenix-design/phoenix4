@@ -5,126 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ritual</title>
   <link rel="stylesheet" href="estilos.css">
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 </head>
 <body>
-
-  <!-- Contenedor para las partículas -->
+  <!-- Fondo de partículas -->
   <div id="particles-js"></div>
 
-  <nav>
-    <ul>
-      <li><a href="index.html">Inicio</a></li>
-      <li><a href="grimorio.html">Grimorio</a></li>
-      <li><a href="ritual.html">Ritual</a></li>
-      <li><a href="visiones.html">Visiones</a></li>
-      <li><a href="profecia.html">Profecía</a></li>
-      <li><a href="contacto.html">Contacto</a></li>
-    </ul>
-  </nav>
-
-  <section id="ritual" class="fade-in">
-    <h2>Ritual del Fénix</h2>
-
-    <!-- Formulario para generar runa -->
-    <form id="form-generar-runa">
-      <label for="nombre">Ingresa tu nombre para generar tu runa:</label>
-      <input type="text" id="nombre" placeholder="Escribe tu nombre..." required>
-      <button type="submit">Generar Runa</button>
-    </form>
-
-    <!-- Contenedor donde se mostrará la runa generada -->
-    <div id="runa-generada" style="display: none;">
-      <p></p>
-    </div>
-
-    <!-- Lista de las runas generadas -->
-    <div id="runas-guardadas">
-      <h3>Runas de los rituales anteriores:</h3>
-      <ul id="lista-rituales">
-        <!-- Aquí se mostrarán las runas de los usuarios -->
-      </ul>
+  <section id="ritual">
+    <div class="contenido">
+      <h1>Realiza tu Ritual</h1>
+      <form id="ritual-form">
+        <input type="text" id="nombre" placeholder="Ingresa tu nombre" required>
+        <button type="button" onclick="guardarRitual()">Generar Runa</button>
+      </form>
+      <div id="rituales-guardados">
+        <h3>Rituales Guardados:</h3>
+        <ul id="lista-rituales"></ul>
+      </div>
     </div>
   </section>
 
   <script src="scripts.js"></script>
-
-  <!-- Inicialización de tsParticles -->
-  <script>
-    tsParticles.load("particles-js", {
-      particles: {
-        number: {
-          value: 80, // Número de partículas
-          density: {
-            enable: true,
-            value_area: 800
-          }
-        },
-        color: {
-          value: ["#8a2be2", "#ffcc00"] // Colores de las partículas (violeta y dorado)
-        },
-        shape: {
-          type: "circle", // Forma circular de las partículas
-        },
-        opacity: {
-          value: 0.5,
-          random: true,
-          anim: {
-            enable: true,
-            speed: 1,
-            opacity_min: 0.1,
-            sync: false
-          }
-        },
-        size: {
-          value: 3,
-          random: true,
-          anim: {
-            enable: true,
-            speed: 2,
-            size_min: 0.1,
-            sync: false
-          }
-        },
-        links: {
-          enable: true,
-          distance: 150,
-          color: "#ffcc00", // Color de los enlaces entre las partículas
-          opacity: 0.4,
-          width: 1
-        },
-        move: {
-          enable: true,
-          speed: 2,
-          direction: "none",
-          random: false,
-          straight: false,
-          out_mode: "out"
-        }
-      },
-      interactivity: {
-        events: {
-          onhover: {
-            enable: true,
-            mode: "repulse" // Repulsión al pasar el ratón
-          },
-          onclick: {
-            enable: true,
-            mode: "push" // Añadir más partículas al hacer clic
-          }
-        },
-        modes: {
-          repulse: {
-            distance: 100,
-            duration: 0.4
-          },
-          push: {
-            particles_nb: 4
-          }
-        }
-      },
-      retina_detect: true
-    });
-  </script>
-
 </body>
 </html>
