@@ -1,117 +1,297 @@
-/* Body básico */
-body {
-  background-color: #121212;
-  color: #eaeaea;
-  font-family: 'Cinzel', serif;
-  padding-top: 80px; /* Ajustar por la barra de navegación */
-  margin: 0;
+/* ===========================================================
+   FUENTES Y VARIABLES GLOBALES
+=========================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
+
+:root {
+  --negro: #0d0d0d;
+  --púrpura: #2d0031;
+  --púrpura-claro: #5e2a5e;
+  --dorado: #e6c27a;
+  --gris: #bbb;
+  --blanco-sutil: #f5f5f5;
+  --sombra: 0 0 15px rgba(0, 0, 0, 0.8);
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--negro);
+  color: var(--blanco-sutil);
+  font-family: 'Cinzel', serif;
+  line-height: 1.6;
+}
+
+/* ===========================================================
+   NAVEGACIÓN (Común a todas las páginas)
+=========================================================== */
 nav {
   position: fixed;
   top: 0;
-  left: 0;
   width: 100%;
-  background-color: #222;
+  background: rgba(13, 13, 13, 0.95);
+  padding: 1rem 0;
   z-index: 1000;
-  padding: 1rem;
+  box-shadow: var(--sombra);
 }
 
 nav ul {
   display: flex;
   justify-content: center;
   list-style: none;
-  gap: 1rem;
+  gap: 2rem;
 }
 
 nav a {
-  color: #f1c40f; /* Dorado */
+  color: var(--dorado);
   text-decoration: none;
-  font-size: 1.2rem;
-  transition: color 0.3s ease;
+  font-weight: bold;
+  transition: color 0.3s;
 }
 
 nav a:hover {
-  color: #e74c3c; /* Rojo */
+  color: var(--púrpura-claro);
 }
 
-/* Fondo y contenido del héroe */
+/* ===========================================================
+   1. INDEX.HTML
+=========================================================== */
+#hero {
+  height: 100vh;
+  overflow: hidden;
+  padding-top: 100px;
+  position: relative;
+}
+
+#video-fondo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  filter: brightness(0.4);
+}
+
+.contenido-hero {
+  z-index: 2;
+  position: relative;
+  text-align: center;
+  padding-top: 20vh;
+  color: var(--dorado);
+  text-shadow: 1px 1px 10px black;
+  animation: aparecer 2s ease-out;
+}
+
+.contenido-hero h1 {
+  font-size: 3.5rem;
+  letter-spacing: 2px;
+}
+
+.contenido-hero p {
+  font-size: 1.5rem;
+  max-width: 600px;
+  margin: auto;
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===========================================================
+   2. GRIMORIO.HTML
+=========================================================== */
+#grimorio {
+  padding: 120px 2rem 2rem;
+  background-color: #1a0d1a;
+  color: #f0e6f6;
+  text-align: center;
+}
+
+#grimorio h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: var(--dorado);
+}
+
+.pilar {
+  background: #2e0d2e;
+  border: 1px solid #3f103f;
+  padding: 1.5rem;
+  margin: 1rem auto;
+  max-width: 600px;
+  border-radius: 12px;
+  box-shadow: var(--sombra);
+  transition: transform 0.3s ease;
+}
+
+.pilar:hover {
+  transform: translateY(-5px);
+}
+
+.pilar h3 {
+  color: #d4a3ff;
+  margin-bottom: 0.5rem;
+}
+
+/* ===========================================================
+   3. PROFECIA.HTML
+=========================================================== */
+#profecia {
+  padding: 120px 2rem 2rem;
+  background-color: #100c18;
+  color: #ece5f3;
+  text-align: center;
+}
+
+#profecia h2 {
+  font-size: 2.5rem;
+  color: var(--dorado);
+  margin-bottom: 2rem;
+}
+
+#profecia article {
+  background: #1d1528;
+  padding: 1.5rem;
+  margin: 1rem auto;
+  border-radius: 10px;
+  max-width: 600px;
+  box-shadow: var(--sombra);
+}
+
+#profecia h3 {
+  color: #dab3ff;
+  margin-bottom: 1rem;
+}
+
+#profecia a {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #c197ff;
+  text-decoration: underline;
+  transition: color 0.3s;
+}
+
+#profecia a:hover {
+  color: var(--dorado);
+}
+
+/* ===========================================================
+   4. RITUAL.HTML
+=========================================================== */
 #ritual {
-  padding: 40px;
+  padding: 120px 2rem 3rem;
+  background-color: #1a0d0d;
+  color: #f6f0e6;
   text-align: center;
 }
 
 #ritual h2 {
   font-size: 2.5rem;
-  color: #f39c12;
+  color: var(--dorado);
+  margin-bottom: 2rem;
 }
 
 form {
-  background-color: #333;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  background-color: #2d1a1a;
+  padding: 2rem;
+  max-width: 600px;
+  margin: auto;
+  border-radius: 12px;
+  box-shadow: var(--sombra);
 }
 
-input, select, button {
-  padding: 10px;
-  font-size: 1rem;
+input, select, textarea {
+  width: 100%;
+  padding: 0.8rem;
+  margin: 1rem 0;
   border: none;
-  border-radius: 5px;
-}
-
-input[type="text"], select {
-  background-color: #444;
+  border-radius: 8px;
+  background: #3a1a3a;
   color: #fff;
-  margin: 10px 0;
 }
 
 button {
-  background-color: #f39c12;
-  color: #fff;
+  background: var(--dorado);
+  color: var(--negro);
+  font-weight: bold;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background 0.3s;
 }
 
 button:hover {
-  background-color: #e74c3c;
+  background: #caa86b;
 }
 
-#rituales-guardados {
-  margin-top: 40px;
-}
-
-#rituales-guardados h3 {
-  color: #f39c12;
-  font-size: 2rem;
-}
-
+/* Lista de rituales guardados */
 #lista-rituales {
-  list-style-type: none;
-  padding: 0;
+  margin-top: 2rem;
+  max-width: 700px;
+  margin-inline: auto;
+  background-color: #221010;
+  padding: 1.5rem;
+  border-radius: 12px;
 }
 
-#lista-rituales li {
-  background-color: #333;
-  padding: 15px;
-  margin-bottom: 10px;
-  border-radius: 5px;
-  color: #fff;
+.ritual-guardado {
+  background-color: #3d1a3d;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  box-shadow: var(--sombra);
+  color: var(--blanco-sutil);
 }
 
-#lista-rituales li strong {
-  font-size: 1.3rem;
-  color: #f39c12;
-}
-
-#lista-rituales li span {
-  color: #ccc;
-}
-
-footer {
-  background-color: #222;
-  color: #f1c40f;
-  padding: 20px;
+/* ===========================================================
+   5. VISIONES.HTML
+=========================================================== */
+#galeria {
+  padding: 120px 2rem 2rem;
+  background-color: #0e0a1a;
+  color: #f6f0f9;
   text-align: center;
+}
+
+#galeria h2 {
+  font-size: 2.5rem;
+  color: var(--dorado);
+  margin-bottom: 2rem;
+}
+
+.imagenes-galeria {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.imagenes-galeria img,
+.imagenes-galeria video {
+  max-width: 300px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: var(--sombra);
+  transition: transform 0.3s ease;
+}
+
+.imagenes-galeria img:hover,
+.imagenes-galeria video:hover {
+  transform: scale(1.05);
 }
 
