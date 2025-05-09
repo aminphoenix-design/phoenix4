@@ -1,42 +1,56 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PhoenixFrame - Rituales</title>
-    <link rel="stylesheet" href="estilos.css">
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="scripts.js" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rituales | PhoenixFrame</title>
+  <link rel="stylesheet" href="estilos.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet"/>
 </head>
 <body>
-    <div id="particles-js"></div>
 
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="rituales.html">Rituales</a></li>
-                <li><a href="grimorio.html">Grimorio</a></li>
-                <li><a href="visiones.html">Visiones</a></li>
-                <li><a href="profecia.html">Profecía</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
+  <div id="particles-js"></div>
 
-    <main>
-        <section id="rituales">
-            <h1>Rituales de Renacimiento</h1>
-            <div class="ritual">
-                <h2>Ritual del Renacimiento</h2>
-                <p>En este ritual, las marcas son renacidas a través de su propia esencia. Genera tu propia runa introduciendo el nombre de tu marca:</p>
-                <input type="text" id="nombre" placeholder="Introduce el nombre de tu marca">
-                <button onclick="guardarRuna()">Generar Runa</button>
-                <ul id="lista-rituales"></ul>
-            </div>
+  <!-- Navegación -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="grimorio.html">Grimorio</a></li>
+      <li><a href="ritual.html" class="activo">Ritual</a></li>
+      <li><a href="visiones.html">Visiones</a></li>
+      <li><a href="profecia.html">Profecía</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
 
-            <div id="mensaje-renacimiento"></div>
-        </section>
-    </main>
+  <!-- Sección de Generación de Runas -->
+  <section id="ritual" class="fade-in">
+    <h1>Renacer con la Runa</h1>
+    <p class="descripcion-ritual">Introduce tu nombre y observa cómo se genera la runa que te guiará en el renacer de tu marca. </p>
+
+    <form id="formulario-ritual">
+      <input type="text" id="nombre" placeholder="Introduce tu nombre" required />
+      <button type="submit">Generar Runa</button>
+    </form>
+
+    <div id="runa-generada" class="runa-generada oculto">
+      <h2>Tu Runa:</h2>
+      <p id="runa"></p>
+    </div>
+
+    <!-- Ritual Guardados -->
+    <section id="rituales-guardados">
+      <h3>Rituales Anteriores</h3>
+      <ul id="lista-rituales"></ul>
+    </section>
+
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 PhoenixFrame. Renace de tus cenizas.</p>
+  </footer>
+
+  <script src="scripts.js"></script>
 </body>
 </html>
