@@ -1,12 +1,17 @@
 /* Estilos Generales */
 body {
-  background-color: #0c0c0c; /* Fondo oscuro */
+  background-color: #121212; /* Fondo negro oscuro */
   font-family: 'Cinzel', serif; /* Tipografía refinada */
   color: #eaeaea; /* Texto gris claro */
   margin: 0;
   padding: 0;
   overflow-x: hidden;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-shadow: 0 0 5px rgba(250, 204, 21, 0.6); /* Efecto sutil de resplandor dorado */
 }
 
 /* Fondo de partículas */
@@ -24,9 +29,9 @@ header {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: #2a1a52; /* Violeta oscuro */
-  padding: 15px 0;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
+  background-color: #1a0e35; /* Violeta muy oscuro */
+  padding: 10px 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
   z-index: 10;
 }
 
@@ -39,7 +44,7 @@ header nav ul {
 }
 
 header nav ul li {
-  margin: 0 15px;
+  margin: 0 20px;
 }
 
 header nav ul li a {
@@ -58,7 +63,9 @@ header nav ul li a:hover {
 #bienvenida {
   text-align: center;
   padding: 100px 20px 50px;
-  background-color: #1c1020; /* Fondo más oscuro para la bienvenida */
+  background-color: #1a0e35; /* Violeta oscuro */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
 }
 
 #bienvenida h1 {
@@ -78,7 +85,7 @@ header nav ul li a:hover {
 footer {
   text-align: center;
   padding: 20px;
-  background-color: #1c1020; /* Fondo oscuro */
+  background-color: #1a0e35; /* Violeta oscuro */
   color: #eaeaea;
   margin-top: 50px;
 }
@@ -93,15 +100,18 @@ input, textarea, button {
   border: 2px solid #9b6cd3; /* Violeta claro */
   color: #eaeaea;
   font-size: 1rem;
-  padding: 10px;
+  padding: 12px;
   border-radius: 5px;
   margin: 10px 0;
   width: 100%;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 input:focus, textarea:focus, button:focus {
   outline: none;
-  border-color: #facc15; /* Dorado */
+  background-color: #9b6cd3; /* Violeta claro */
+  transform: scale(1.05);
 }
 
 button {
@@ -133,10 +143,11 @@ button:hover {
 }
 
 .publicacion, .imagenes-galeria img {
-  background-color: #2a1a52; /* Fondo Violeta oscuro */
+  background-color: #2a1a52; /* Fondo violeta oscuro */
   border: 1px solid #9b6cd3; /* Violeta claro */
   padding: 20px;
   border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
 .publicacion h3 {
@@ -148,6 +159,11 @@ button:hover {
   width: 100%;
   height: auto;
   border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.imagenes-galeria img:hover {
+  transform: scale(1.05);
 }
 
 .publicacion p {
@@ -159,10 +175,10 @@ button:hover {
 #contacto form {
   max-width: 600px;
   margin: 0 auto;
-  background-color: #1c1020; /* Fondo oscuro */
+  background-color: #1a0e35; /* Fondo oscuro */
   padding: 30px;
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
 }
 
 #contacto input, #contacto textarea {
@@ -185,6 +201,8 @@ button:hover {
   margin: 15px;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+  max-width: 300px;
+  margin: 15px auto;
 }
 
 .pilar h2 {
@@ -214,12 +232,14 @@ button:hover {
 }
 
 #lista-rituales li {
-  background-color: #1c1020; /* Fondo oscuro */
+  background-color: #1a0e35; /* Fondo oscuro */
   padding: 15px;
   margin-bottom: 10px;
   border-radius: 10px;
   color: #eaeaea;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+  max-width: 400px;
+  margin: 15px auto;
 }
 
 #lista-rituales li h3 {
@@ -263,3 +283,12 @@ p {
   margin: 20px 0;
 }
 
+/* Agregar bordes y sombras sutiles para los cuadros */
+.box {
+  background-color: #2a1a52; /* Violeta oscuro */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  margin: 20px auto;
+  max-width: 600px;
+}
