@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Visiones - El Fénix</title>
+  <title>Visiones del Fénix</title>
   <link rel="stylesheet" href="estilos.css">
+  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
 </head>
 <body>
   <div id="particles-js"></div>
@@ -20,20 +21,92 @@
     </ul>
   </nav>
 
-  <section id="galeria" class="fade-in">
-    <h2>Visiones del Más Allá</h2>
+  <section id="galeria">
+    <h2>Galería de Visiones</h2>
     <div class="imagenes-galeria">
-      <img src="vision1.jpg" alt="Visión 1">
-      <img src="vision2.jpg" alt="Visión 2">
-      <video src="vision3.mp4" controls></video>
+      <img src="imagen1.jpg" alt="Visión 1">
+      <img src="imagen2.jpg" alt="Visión 2">
+      <img src="imagen3.jpg" alt="Visión 3">
+      <video src="vision_video.mp4" controls></video>
     </div>
   </section>
 
-  <footer>
-    <p>&copy; 2025 El Fénix</p>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
   <script src="scripts.js"></script>
+  <script>
+    particlesJS("particles-js", {
+      particles: {
+        number: {
+          value: 80,
+          density: {
+            enable: true,
+            value_area: 800
+          }
+        },
+        color: {
+          value: "#8a2be2"
+        },
+        shape: {
+          type: "circle"
+        },
+        opacity: {
+          value: 0.5,
+          random: true,
+          anim: {
+            enable: true,
+            speed: 1,
+            opacity_min: 0.1,
+            sync: false
+          }
+        },
+        size: {
+          value: 3,
+          random: true,
+          anim: {
+            enable: true,
+            speed: 2,
+            size_min: 0.1,
+            sync: false
+          }
+        },
+        links: {
+          enable: true,
+          distance: 150,
+          color: "#ffcc00",
+          opacity: 0.4,
+          width: 1
+        },
+        move: {
+          enable: true,
+          speed: 2,
+          direction: "none",
+          random: false,
+          straight: false,
+          out_mode: "out"
+        }
+      },
+      interactivity: {
+        events: {
+          onhover: {
+            enable: true,
+            mode: "repulse"
+          },
+          onclick: {
+            enable: true,
+            mode: "push"
+          }
+        },
+        modes: {
+          repulse: {
+            distance: 100,
+            duration: 0.4
+          },
+          push: {
+            particles_nb: 4
+          }
+        }
+      },
+      retina_detect: true
+    });
+  </script>
 </body>
 </html>
