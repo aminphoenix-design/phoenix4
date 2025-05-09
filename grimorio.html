@@ -1,62 +1,56 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PhoenixFrame - Grimorio</title>
-    <link rel="stylesheet" href="estilos.css">
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="scripts.js" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Grimorio | PhoenixFrame</title>
+  <link rel="stylesheet" href="estilos.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet"/>
 </head>
 <body>
-    <div id="particles-js"></div>
 
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="rituales.html">Rituales</a></li>
-                <li><a href="grimorio.html">Grimorio</a></li>
-                <li><a href="visiones.html">Visiones</a></li>
-                <li><a href="profecia.html">Profecía</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
+  <div id="particles-js"></div>
 
-    <section id="grimorio">
-        <h1>Grimorio - Los 4 Pilares del Renacimiento</h1>
+  <!-- Navegación -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="ritual.html">Ritual</a></li>
+      <li><a href="grimorio.html" class="activo">Grimorio</a></li>
+      <li><a href="visiones.html">Visiones</a></li>
+      <li><a href="profecia.html">Profecía</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
 
-        <div class="pilar" id="tiempo">
-            <h2>Tiempo</h2>
-            <p>El Pilar del Tiempo es la habilidad de controlar el flujo de los momentos. Los maestros del tiempo pueden prever el futuro y modificar el pasado, guiando las marcas a través de una evolución única...</p>
-        </div>
+  <section class="grimorio fade-in">
+    <h1>El Grimorio</h1>
+    <p class="intro-grimorio">Los Pilares del Renacer no son simples ideas. Son las fuerzas que forjan una marca que desafía eras.</p>
 
-        <div class="pilar" id="vida">
-            <h2>Vida</h2>
-            <p>La Vida es el pilar que conecta a las marcas con las fuerzas creativas. Quienes dominan este pilar tienen el poder de dar vida a nuevas ideas, inspirando a su comunidad y creando algo verdaderamente original...</p>
-        </div>
+    <div class="pilares">
+      <div class="pilar" onclick="mostrarHistoria('tiempo')">
+        <h2>Tiempo</h2>
+      </div>
+      <div class="pilar" onclick="mostrarHistoria('vida')">
+        <h2>Vida</h2>
+      </div>
+      <div class="pilar" onclick="mostrarHistoria('muerte')">
+        <h2>Muerte</h2>
+      </div>
+      <div class="pilar" onclick="mostrarHistoria('poder')">
+        <h2>Poder</h2>
+      </div>
+    </div>
 
-        <div class="pilar" id="muerte">
-            <h2>Muerte</h2>
-            <p>La Muerte, en su sentido simbólico, es el final de lo obsoleto. Las marcas que entienden el Pilar de la Muerte tienen la habilidad de destruir lo que ya no sirve para abrir paso a la renovación y el progreso...</p>
-        </div>
+    <div id="historia-pilar" class="historia-pilar oculto"></div>
+  </section>
 
-        <div class="pilar" id="poder">
-            <h2>Poder</h2>
-            <p>El Pilar del Poder es el dominio total. Las marcas que se empoderan con este pilar pueden desafiar las normas, redefinir el mercado y convertirse en los líderes indiscutibles en su industria...</p>
-        </div>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 PhoenixFrame. Toda creación comienza con cenizas.</p>
+  </footer>
 
-        <div id="mensaje-renacimiento"></div>
-
-        <div>
-            <h3>Generar tu Runa:</h3>
-            <input type="text" id="nombre" placeholder="Introduce el nombre de tu marca" />
-            <button onclick="guardarRuna()">Generar Runa</button>
-            <ul id="lista-rituales"></ul>
-        </div>
-
-        <button onclick="mostrarRenacimiento()">Ver Renacimiento</button>
-    </section>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+  <script src="scripts.js"></script>
 </body>
 </html>
