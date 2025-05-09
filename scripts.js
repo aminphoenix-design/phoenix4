@@ -100,13 +100,21 @@ document.addEventListener("DOMContentLoaded", () => {
       `;
 
       lista.appendChild(ritual);
-      form.reset();
 
-      // Guardar ritual
+      // Guardar ritual en localStorage
       guardarRitual(nombre, pilar, runa);
+
+      form.reset();
     });
   }
 });
+
+// Guardar rituales en localStorage
+function guardarRitual(nombre, pilar, runa) {
+  let ritualesGuardados = JSON.parse(localStorage.getItem("rituales")) || [];
+  ritualesGuardados.push(`${nombre} (${pilar}) - Runa: ${runa}`);
+  localStorage.setItem("rituales", JSON.stringify(ritualesGuardados));
+}
 
 // Cargar rituales guardados al cargar la página
 window.onload = function () {
@@ -121,9 +129,3 @@ window.onload = function () {
   });
 };
 
-// Guardar rituales
-function guardarRitual(nombre, pilar, runa) {
-  let ritualesGuardados = JSON.parse(localStorage.getItem("rituales")) || [];
-  ritualesGuardados.push(`${nombre} (${pilar}) - Runa: ${runa}`);
-  localStorage.setItem("rituales", JSON.stringify(ritualesGuardados));
-}
