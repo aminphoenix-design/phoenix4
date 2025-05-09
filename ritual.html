@@ -3,14 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rituales del Fénix</title>
+  <title>Rituales</title>
   <link rel="stylesheet" href="estilos.css">
-  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
 </head>
 <body>
+  <!-- Contenedor para las partículas -->
   <div id="particles-js"></div>
 
   <nav>
+    <!-- Navegación -->
     <ul>
       <li><a href="index.html">Inicio</a></li>
       <li><a href="grimorio.html">Grimorio</a></li>
@@ -21,37 +22,52 @@
     </ul>
   </nav>
 
+  <!-- Contenido del Ritual -->
   <section id="ritual">
-    <h2>Rituales del Fénix</h2>
-    <form id="ritual-form">
-      <input type="text" id="nombre" placeholder="Escribe tu nombre" required>
-      <button type="submit">Generar Runa</button>
-    </form>
+    <h2>Rituales y Runas Generadas</h2>
 
-    <section id="rituales-guardados">
-      <h3>Rituales Guardados</h3>
-      <ul id="lista-rituales">
-        <!-- Los rituales se irán añadiendo aquí -->
-      </ul>
-    </section>
+    <div id="lista-rituales">
+      <!-- Aquí se mostrarán las runas generadas -->
+    </div>
+
+    <button onclick="generarRuna()">Generar Runa</button> <!-- Generar nueva runa -->
   </section>
 
+  <!-- Scripts -->
   <script src="scripts.js"></script>
+
   <script>
-    particlesJS("particles-js", {
+    // Función para mostrar las runas guardadas en la página de ritual
+    function mostrarRunasGuardadas() {
+      const runasGuardadas = JSON.parse(localStorage.getItem('runas')) || []; // Obtener las runas guardadas
+      const listaRituales = document.getElementById("lista-rituales");
+
+      runasGuardadas.forEach((runaObj) => {
+        const divRuna = document.createElement("div");
+        divRuna.classList.add("runa-item");
+        divRuna.innerHTML = `<p><strong>${runaObj.nombre}</strong>: ${runaObj.runa}</p>`;
+        listaRituales.appendChild(divRuna);
+      });
+    }
+
+    // Llamar a la función para mostrar las runas guardadas al cargar la página
+    window.onload = mostrarRunasGuardadas;
+
+    // Inicializar las partículas
+    tsParticles.load("particles-js", {
       particles: {
         number: {
-          value: 80,
+          value: 80, // Número de partículas
           density: {
             enable: true,
             value_area: 800
           }
         },
         color: {
-          value: "#8a2be2"
+          value: ["#8a2be2", "#ffcc00"] // Colores de partículas (violeta y dorado)
         },
         shape: {
-          type: "circle"
+          type: "circle", // Forma circular
         },
         opacity: {
           value: 0.5,
@@ -76,7 +92,7 @@
         links: {
           enable: true,
           distance: 150,
-          color: "#ffcc00",
+          color: "#ffcc00", // Color de los enlaces
           opacity: 0.4,
           width: 1
         },
@@ -93,11 +109,11 @@
         events: {
           onhover: {
             enable: true,
-            mode: "repulse"
+            mode: "repulse" // Modo repulsión al pasar el ratón
           },
           onclick: {
             enable: true,
-            mode: "push"
+            mode: "push" // Añadir más partículas al hacer clic
           }
         },
         modes: {
