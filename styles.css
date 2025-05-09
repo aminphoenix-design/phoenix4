@@ -1,4 +1,22 @@
-/* ==== GENERAL ==== */
+/* ==== VARIABLES DE COLOR ==== */
+:root {
+  --color-fondo: #0d0d0d;
+  --color-primario: #8a2be2;
+  --color-secundario: #d4af37;
+  --color-texto: #f5f5f5;
+  --color-acento: #bb86fc;
+  --color-borde: #444;
+  --color-hover: #1a1a1a;
+  --color-modal-fondo: rgba(13, 13, 13, 0.85);
+  --color-modal-borde: #8a2be2;
+  --color-modal-texto: #fff;
+  --color-pilar-fondo: rgba(255, 255, 255, 0.05);
+  --color-pilar-hover: rgba(212, 175, 55, 0.1);
+  --color-lista-fondo: rgba(255, 255, 255, 0.04);
+  --color-lista-borde: #d4af37;
+}
+
+/* ==== RESETEO Y TIPOGRAFÍA ==== */
 * {
   margin: 0;
   padding: 0;
@@ -7,21 +25,22 @@
 
 body {
   font-family: 'Garamond', serif;
-  background-color: #0d0d0d;
-  color: #f5f5f5;
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
   line-height: 1.6;
-  padding: 0;
-  margin: 0;
-  position: relative;
   min-height: 100vh;
   overflow-x: hidden;
+  position: relative;
 }
 
 a {
-  color: #d4af37;
+  color: var(--color-secundario);
   text-decoration: none;
+  transition: color 0.3s;
 }
+
 a:hover {
+  color: var(--color-primario);
   text-decoration: underline;
 }
 
@@ -33,17 +52,17 @@ a:hover {
   z-index: -1;
 }
 
-/* ==== HEADER & NAV ==== */
+/* ==== ENCABEZADO Y NAVEGACIÓN ==== */
 header {
   background: rgba(0, 0, 0, 0.7);
   padding: 1rem;
   text-align: center;
-  border-bottom: 2px solid #8a2be2;
+  border-bottom: 2px solid var(--color-primario);
 }
 
 header h1 {
   font-size: 2rem;
-  color: #d4af37;
+  color: var(--color-secundario);
   margin-bottom: 0.5rem;
 }
 
@@ -55,10 +74,6 @@ nav ul {
   gap: 1rem;
 }
 
-nav ul li {
-  margin: 0;
-}
-
 nav ul li a {
   font-weight: bold;
   padding: 0.3rem 0.6rem;
@@ -66,12 +81,13 @@ nav ul li a {
   border-radius: 5px;
   transition: 0.3s;
 }
+
 nav ul li a:hover {
-  border-color: #8a2be2;
-  background: #1a1a1a;
+  border-color: var(--color-primario);
+  background: var(--color-hover);
 }
 
-/* ==== MAIN ==== */
+/* ==== CONTENIDO PRINCIPAL ==== */
 main {
   max-width: 800px;
   margin: 3rem auto;
@@ -88,7 +104,10 @@ form {
   gap: 1rem;
 }
 
-input, textarea, select, button {
+input,
+textarea,
+select,
+button {
   padding: 0.8rem;
   font-size: 1rem;
   border-radius: 6px;
@@ -96,15 +115,16 @@ input, textarea, select, button {
   outline: none;
   background: #1e1e1e;
   color: #fff;
-  border: 1px solid #444;
+  border: 1px solid var(--color-borde);
 }
 
-input:focus, textarea:focus {
-  border-color: #8a2be2;
+input:focus,
+textarea:focus {
+  border-color: var(--color-primario);
 }
 
 button {
-  background: #8a2be2;
+  background: var(--color-primario);
   color: white;
   cursor: pointer;
   transition: background 0.3s;
@@ -114,7 +134,7 @@ button:hover {
   background: #a34ee3;
 }
 
-/* ==== LISTA RITUALES ==== */
+/* ==== LISTA DE RITUALES ==== */
 #lista-rituales {
   margin-top: 2rem;
   list-style: none;
@@ -123,9 +143,9 @@ button:hover {
 
 #lista-rituales li {
   margin-bottom: 0.5rem;
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--color-lista-fondo);
   padding: 0.5rem;
-  border-left: 4px solid #8a2be2;
+  border-left: 4px solid var(--color-lista-borde);
 }
 
 /* ==== PILARES ==== */
@@ -139,17 +159,17 @@ button:hover {
 
 .pilar {
   flex: 1 1 150px;
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--color-pilar-fondo);
   padding: 1rem;
   text-align: center;
-  border: 2px solid #8a2be2;
+  border: 2px solid var(--color-primario);
   border-radius: 8px;
   cursor: pointer;
   transition: transform 0.3s, background 0.3s;
 }
 
 .pilar:hover {
-  background: rgba(212, 175, 55, 0.1);
+  background: var(--color-pilar-hover);
   transform: scale(1.05);
 }
 
@@ -160,7 +180,7 @@ button:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(13, 13, 13, 0.85);
+  background-color: var(--color-modal-fondo);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -170,10 +190,10 @@ button:hover {
 .modal-contenido {
   background-color: #1e1e1e;
   padding: 2rem;
-  border: 2px solid #8a2be2;
+  border: 2px solid var(--color-modal-borde);
   border-radius: 10px;
   max-width: 500px;
-  color: #fff;
+  color: var(--color-modal-texto);
   position: relative;
   text-align: center;
 }
@@ -184,10 +204,10 @@ button:hover {
   right: 15px;
   font-size: 1.5rem;
   cursor: pointer;
-  color: #d4af37;
+  color: var(--color-secundario);
 }
 
-/* ==== VISIONES FUTURO ==== */
+/* ==== VISIONES DEL FUTURO ==== */
 .visiones {
   display: grid;
   gap: 1.5rem;
@@ -195,13 +215,13 @@ button:hover {
 }
 
 .vision {
-  background: rgba(255, 255, 255, 0.04);
+  background: var(--color-lista-fondo);
   padding: 1rem;
-  border-left: 4px solid #d4af37;
+  border-left: 4px solid var(--color-lista-borde);
   border-radius: 5px;
 }
 
-/* ==== RESPONSIVE ==== */
+/* ==== RESPONSIVO ==== */
 @media (max-width: 600px) {
   nav ul {
     flex-direction: column;
@@ -216,3 +236,9 @@ button:hover {
     padding: 1rem;
   }
 }
+
+/* ==== ANIMACIONES Y EFECTOS ==== */
+/* Puedes agregar aquí animaciones personalizadas para elementos específicos */
+
+/* ==== PARTICULAS PERSONALIZADAS ==== */
+/* Si deseas personalizar aún más las partículas, puedes agregar estilos específicos aquí */
