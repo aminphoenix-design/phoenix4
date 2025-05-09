@@ -1,35 +1,39 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PhoenixFrame - Renace y Renueva tu Marca</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Inicio - El Grimorio</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <div id="particles-js"></div>
 
-    <!-- Header Principal -->
-    <header>
-        <h1>PhoenixFrame</h1>
-        <p>Renace y renueva tu marca con los 4 pilares fundamentales.</p>
-    </header>
-
-    <!-- Navegación -->
+  <header>
+    <h1>El Grimorio de los Cuatro Pilares</h1>
     <nav>
-        <ul>
-            <li><a href="grimorio.html">El Grimorio</a></li>
-            <li><a href="rituales.html">Rituales</a></li>
-            <li><a href="visiones.html">Visiones</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
-        </ul>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="grimorio.html">Grimorio</a></li>
+        <li><a href="ritual.html">Rituales</a></li>
+        <li><a href="visiones.html">Visión del Futuro</a></li>
+      </ul>
     </nav>
+  </header>
 
-    <div id="particles-js"></div> <!-- Fondo de partículas -->
-    
-    <footer>
-        <p>&copy; 2025 PhoenixFrame. Todos los derechos reservados.</p>
-    </footer>
+  <main id="principal">
+    <h2>Bienvenido, viajero de los planos</h2>
+    <p>Descubre los secretos de los Cuatro Pilares: Tiempo, Vida, Muerte y Poder.</p>
 
-    <script src="scripts.js"></script> <!-- Conexión al JS -->
+    <section class="pilares">
+      <div class="pilar" id="tiempo"><h3>⏳ Tiempo</h3></div>
+      <div class="pilar" id="vida"><h3>🌱 Vida</h3></div>
+      <div class="pilar" id="muerte"><h3>💀 Muerte</h3></div>
+      <div class="pilar" id="poder"><h3>⚡ Poder</h3></div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.bundle.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
