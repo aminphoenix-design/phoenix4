@@ -1,86 +1,120 @@
-/* Estilos Generales */
+/* Fuente principal */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
+
 body {
-  background-color: #0d0d0d;
-  font-family: 'Cinzel', serif;
+  background-color: #0a0a0a;
   color: #eaeaea;
+  font-family: 'Cinzel', serif;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  position: relative;
 }
 
+/* Partículas */
 #particles-js {
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: fixed;
   width: 100%;
   height: 100%;
   z-index: -1;
 }
 
 /* Navegación */
+nav {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(5px);
+}
+
 nav ul {
-  display: flex;
   list-style: none;
+  display: flex;
   justify-content: center;
   gap: 2rem;
-  padding: 20px 0;
+  padding: 0;
   margin: 0;
-  background-color: rgba(0, 0, 0, 0.7);
 }
 
 nav a {
+  color: #ffcc00;
   text-decoration: none;
-  color: #facc15;
   font-size: 1.1rem;
-  transition: color 0.3s ease;
+  transition: color 0.3s, text-shadow 0.3s;
 }
 
 nav a:hover {
-  color: #f3f3f3;
+  color: #fff;
+  text-shadow: 0 0 10px #ffcc00;
 }
 
-/* Sección de Grimorio */
-#grimorio {
+/* Hero / Título principal */
+#hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   text-align: center;
-  padding: 50px 20px;
-  background-color: #111;
-  color: #eaeaea;
+  padding: 4rem 1rem;
 }
 
-#grimorio h2 {
+#hero h1 {
+  font-size: 4rem;
+  color: #ffcc00;
+  text-shadow: 0 0 15px #8a2be2;
+}
+
+#hero p {
+  font-size: 1.5rem;
+  color: #d4d4d4;
+  margin-top: 1rem;
+}
+
+/* Secciones generales */
+section {
+  padding: 80px 20px;
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+}
+
+section h2 {
   font-size: 2.5rem;
-  text-shadow: 0 0 10px #facc15, 0 0 20px #facc15;
-  margin-bottom: 40px;
+  color: #ffcc00;
+  margin-bottom: 2rem;
+  text-shadow: 0 0 10px #8a2be2;
 }
 
+/* Pilar / Grimorio */
 .pilar {
-  background-color: #222;
-  margin: 20px 0;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  background: rgba(30, 30, 30, 0.8);
+  border: 1px solid #8a2be2;
+  border-radius: 12px;
+  margin: 2rem 0;
+  padding: 2rem;
+  box-shadow: 0 0 20px rgba(138, 43, 226, 0.3);
   transition: transform 0.3s ease;
 }
 
 .pilar:hover {
-  transform: scale(1.05);
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(255, 204, 0, 0.5);
 }
 
 .pilar h3 {
-  color: #facc15;
+  color: #ffcc00;
   font-size: 1.5rem;
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
 }
 
-.pilar p {
-  font-size: 1.2rem;
-}
-
-/* Sección de Ritual */
+/* Ritual */
 #ritual {
-  text-align: center;
-  padding: 50px 0;
   background-color: #1a1a1a;
+  border-top: 1px solid #444;
+  border-bottom: 1px solid #444;
 }
 
 #ritual form {
@@ -90,50 +124,40 @@ nav a:hover {
 }
 
 #ritual input, #ritual select, #ritual button {
-  font-size: 1.2rem;
   margin: 10px 0;
-  padding: 10px;
-  border: 2px solid #facc15;
+  padding: 12px 18px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 2px solid #ffcc00;
   background-color: #2b2b2b;
-  color: #facc15;
-  transition: background-color 0.3s, transform 0.2s;
+  color: #ffcc00;
+  transition: 0.3s ease;
 }
 
-#ritual input:focus, #ritual select:focus, #ritual button:focus {
-  background-color: #444;
-  transform: scale(1.05);
+#ritual input:focus,
+#ritual select:focus {
+  background-color: #3a3a3a;
+  outline: none;
 }
 
 #ritual button:hover {
-  background-color: #facc15;
-  color: #000;
+  background-color: #ffcc00;
+  color: #0a0a0a;
 }
 
-/* Animaciones de Transición */
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-.fade-in {
-  animation: fadeIn 2s ease-out forwards;
-}
-
-/* Sección de Ritual - Rituales Guardados */
+/* Rituales guardados */
 #rituales-guardados {
-  background-color: #333;
-  padding: 20px;
-  margin-top: 30px;
-  border-radius: 8px;
+  background-color: #111;
+  padding: 30px;
+  border-radius: 12px;
+  margin-top: 40px;
+  border: 1px solid #333;
 }
 
 #rituales-guardados h3 {
-  color: #facc15;
-  font-size: 1.5rem;
+  color: #ffcc00;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
 }
 
 #lista-rituales {
@@ -143,28 +167,57 @@ nav a:hover {
 }
 
 #lista-rituales li {
-  color: #eaeaea;
-  font-size: 1.2rem;
-  margin: 5px 0;
-  padding: 5px;
-  background-color: #444;
-  border-radius: 5px;
+  background-color: #222;
+  border: 1px solid #444;
+  border-left: 4px solid #8a2be2;
+  margin: 10px 0;
+  padding: 15px;
+  text-align: left;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+#lista-rituales li:hover {
+  background-color: #2d2d2d;
+}
+
+.runa {
+  font-family: 'Cinzel', serif;
+  font-size: 1.4rem;
+  color: #8a2be2;
+}
+
+/* Visiones - galería */
+#galeria {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+#galeria img, #galeria video {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #000;
+  transition: transform 0.3s ease;
+}
+
+#galeria img:hover, #galeria video:hover {
+  transform: scale(1.05);
 }
 
 /* Footer */
 footer {
-  background-color: #111;
+  background-color: #0d0d0d;
   padding: 20px;
   text-align: center;
-  color: #facc15;
-}
-
-footer p {
-  margin: 0;
+  color: #ffcc00;
+  font-size: 0.9rem;
 }
 
 footer a {
-  color: #facc15;
+  color: #ffcc00;
   text-decoration: none;
 }
 
@@ -172,124 +225,17 @@ footer a:hover {
   text-decoration: underline;
 }
 
-/* Efectos para el hover en los enlaces */
-a {
-  text-decoration: none;
-  color: #facc15;
-  transition: color 0.3s ease, text-shadow 0.3s ease;
+/* Transiciones */
+.fade-in {
+  animation: fadeIn 1.5s ease-in;
 }
 
-a:hover {
-  color: #fff;
-  text-shadow: 0 0 10px #facc15;
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
-/* Transiciones para los botones y formularios */
-button, input[type="text"], select {
-  transition: all 0.3s ease;
-}
-
-/* General */
-input, select, textarea, button {
+/* General inputs */
+input, select, button, textarea {
   font-family: 'Cinzel', serif;
-  font-size: 1rem;
-  padding: 12px 20px;
-  border: 2px solid #facc15;
-  background-color: #2b2b2b;
-  color: #facc15;
-  border-radius: 5px;
-}
-
-input:focus, select:focus, button:focus {
-  outline: none;
-  background-color: #444;
-}
-
-button:hover {
-  background-color: #facc15;
-  color: #111;
-}
-
-/* Estilo de la galería en la página Visiones */
-#galeria {
-  padding: 50px;
-  text-align: center;
-}
-
-.imagenes-galeria {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.imagenes-galeria img,
-.imagenes-galeria video {
-  width: 100%;
-  max-width: 300px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-}
-
-.imagenes-galeria img:hover,
-.imagenes-galeria video:hover {
-  transform: scale(1.05);
-  transition: all 0.3s ease;
-}
-
-/* Fondo de Partículas */
-#particles-js {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-}
-
-/* Sección de Profecía */
-#profecia {
-  text-align: center;
-  padding: 50px 20px;
-  background-color: #111;
-  color: #eaeaea;
-}
-
-#profecia h2 {
-  font-size: 2.5rem;
-  text-shadow: 0 0 10px #facc15, 0 0 20px #facc15;
-  margin-bottom: 40px;
-}
-
-/* Estilo del ritual */
-#ritual {
-  text-align: center;
-  padding: 50px 0;
-  background-color: #1a1a1a;
-}
-
-#ritual form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-#ritual input, #ritual select, #ritual button {
-  font-size: 1.2rem;
-  margin: 10px 0;
-  padding: 10px;
-  border: 2px solid #facc15;
-  background-color: #2b2b2b;
-  color: #facc15;
-  transition: background-color 0.3s, transform 0.2s;
-}
-
-#ritual input:focus, #ritual select:focus, #ritual button:focus {
-  background-color: #444;
-  transform: scale(1.05);
-}
-
-#ritual button:hover {
-  background-color: #facc15;
-  color: #000;
 }
