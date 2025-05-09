@@ -1,95 +1,65 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto - PhoenixFrame</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contacto</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <div id="particles-js"></div>
 
-    <!-- PARTICULAS DE FONDO -->
-    <div id="particles-js"></div>
-
-    <!-- HEADER -->
-    <header>
-        <h1>PhoenixFrame</h1>
-        <p>Contáctanos para empezar tu renacimiento</p>
-    </header>
-
-    <!-- NAVBAR -->
+  <header>
+    <h1>Contacto con los Guardianes</h1>
     <nav>
-        <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="grimorio.html">Grimorio</a></li>
-            <li><a href="ritual.html">Rituales</a></li>
-            <li><a href="visiones.html">Visión del Futuro</a></li>
-        </ul>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="grimorio.html">Grimorio</a></li>
+        <li><a href="ritual.html">Rituales</a></li>
+        <li><a href="visiones.html">Visión del Futuro</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
     </nav>
+  </header>
 
-    <!-- SECCIÓN CONTACTO -->
-    <section id="contacto">
-        <h2>¡Queremos saber de ti!</h2>
+  <main>
+    <h2>Solicitud de Renacimiento</h2>
+    <form id="formulario-contacto">
+      <input type="text" id="nombre" name="nombre" placeholder="Tu nombre arcano o runa" required />
+      <input type="tel" id="telefono" name="telefono" placeholder="Número de comunicación etérea" required />
+      <textarea name="razon" id="razon" placeholder="Expón tu razón para renacer..." required></textarea>
+      <button type="submit">Enviar al Éter</button>
+    </form>
+  </main>
 
-        <!-- Formulario de contacto con verificación de ritual -->
-        <form id="formulario-contacto">
-            <div id="informacion-contacto">
-                <label for="nombre-contacto">Tu Nombre:</label>
-                <input type="text" id="nombre-contacto" required>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.bundle.min.js"></script>
+  <script src="script.js"></script>
 
-                <label for="telefono-contacto">Tu Teléfono:</label>
-                <input type="tel" id="telefono-contacto" required>
+  <script>
+    // Cargar runa si ya hizo un ritual
+    window.addEventListener("DOMContentLoaded", () => {
+      const nombreInput = document.getElementById("nombre");
+      const ritualesGuardados = JSON.parse(localStorage.getItem("rituales")) || [];
+      if (ritualesGuardados.length > 0) {
+        // Tomar la última runa del ritual guardado
+        const ultimaRuna = ritualesGuardados[ritualesGuardados.length - 1];
+        const runaExtraida = ultimaRuna.match(/Runa: (\S+)/);
+        if (runaExtraida) {
+          nombreInput.value = runaExtraida[1];
+        }
+      }
 
-                <label for="razon-contacto">Razón para permitirte renacer:</label>
-                <textarea id="razon-contacto" required></textarea>
-            </div>
+      // Manejo de envío
+      document.getElementById("formulario-contacto").addEventListener("submit", (e) => {
+        e.preventDefault();
+        const nombre = nombreInput.value;
+        const telefono = document.getElementById("telefono").value;
+        const razon = document.getElementById("razon").value;
 
-            <!-- Mostrar la runa si el usuario ha completado el ritual -->
-            <div id="runa-contacto" style="display: none;">
-                <p><strong>Runa generada:</strong> <span id="runa-display"></span></p>
-            </div>
-
-            <button type="submit">Enviar</button>
-        </form>
-    </section>
-
-    <script>
-        // Comprobar si el usuario ha completado el ritual
-        document.addEventListener("DOMContentLoaded", function () {
-            const ritualCompleto = localStorage.getItem("ritualCompleto");
-
-            // Mostrar la runa si se ha completado el ritual
-            if (ritualCompleto === "true") {
-                // Generar una runa aleatoria (puedes personalizar cómo se genera)
-                const runas = ["ᛗ", "ᚨ", "ᛟ", "ᛁ", "ᚱ"];
-                const runaGenerada = runas[Math.floor(Math.random() * runas.length)];
-                document.getElementById("runa-display").textContent = runaGenerada;
-                document.getElementById("runa-contacto").style.display = "block";
-                // Ocultar los campos del formulario estándar si la runa fue generada
-                document.getElementById("informacion-contacto").style.display = "none";
-            }
-        });
-
-        // Función para enviar el formulario
-        document.getElementById("formulario-contacto").addEventListener("submit", function (e) {
-            e.preventDefault();
-
-            const nombre = document.getElementById("nombre-contacto").value;
-            const telefono = document.getElementById("telefono-contacto").value;
-            const razon = document.getElementById("razon-contacto").value;
-
-            if (!nombre || !telefono || !razon) {
-                alert("Por favor completa todos los campos.");
-                return;
-            }
-
-            // Aquí puedes agregar el código para enviar el formulario o mostrar un mensaje de éxito
-            alert("Tu mensaje ha sido enviado. Nos pondremos en contacto contigo pronto.");
-
-            // Resetear el formulario
-            document.getElementById("formulario-contacto").reset();
-        });
-    </script>
+        alert(`Solicitud enviada:\n\nNombre/Runa: ${nombre}\nTeléfono: ${telefono}\nRazón: ${razon}`);
+        e.target.reset();
+      });
+    });
+  </script>
 </body>
 </html>
