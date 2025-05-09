@@ -1,6 +1,14 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grimorio - El Fénix</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
 <body>
-  <div id="particles-js"></div> <!-- Contenedor para partículas -->
-  
+  <div id="particles-js"></div>
+
   <nav>
     <ul>
       <li><a href="index.html">Inicio</a></li>
@@ -14,105 +22,29 @@
 
   <section id="grimorio" class="fade-in">
     <h2>El Grimorio del Fénix</h2>
-
     <div class="pilar" id="tiempo">
       <h3>Tiempo</h3>
       <p>El tiempo no fluye. Se pliega.</p>
     </div>
-
     <div class="pilar" id="vida">
       <h3>Vida</h3>
       <p>Una danza entre el caos y el soplo divino.</p>
     </div>
-
     <div class="pilar" id="muerte">
       <h3>Muerte</h3>
       <p>La muerte te transforma.</p>
     </div>
-
     <div class="pilar" id="poder">
       <h3>Poder</h3>
       <p>El poder se invoca, no se impone.</p>
     </div>
   </section>
 
-  <script src="scripts.js"></script>
+  <footer>
+    <p>&copy; 2025 El Fénix</p>
+  </footer>
 
-  <!-- Inicialización de tsParticles -->
-  <script>
-    tsParticles.load("particles-js", {
-      particles: {
-        number: {
-          value: 80, // Número de partículas
-          density: {
-            enable: true,
-            value_area: 800
-          }
-        },
-        color: {
-          value: ["#8a2be2", "#ffcc00"] // Colores de partículas (violeta y dorado)
-        },
-        shape: {
-          type: "circle", // Forma circular
-        },
-        opacity: {
-          value: 0.5,
-          random: true,
-          anim: {
-            enable: true,
-            speed: 1,
-            opacity_min: 0.1,
-            sync: false
-          }
-        },
-        size: {
-          value: 3,
-          random: true,
-          anim: {
-            enable: true,
-            speed: 2,
-            size_min: 0.1,
-            sync: false
-          }
-        },
-        links: {
-          enable: true,
-          distance: 150,
-          color: "#ffcc00", // Color de los enlaces
-          opacity: 0.4,
-          width: 1
-        },
-        move: {
-          enable: true,
-          speed: 2,
-          direction: "none",
-          random: false,
-          straight: false,
-          out_mode: "out"
-        }
-      },
-      interactivity: {
-        events: {
-          onhover: {
-            enable: true,
-            mode: "repulse" // Modo repulsión al pasar el ratón
-          },
-          onclick: {
-            enable: true,
-            mode: "push" // Añadir más partículas al hacer clic
-          }
-        },
-        modes: {
-          repulse: {
-            distance: 100,
-            duration: 0.4
-          },
-          push: {
-            particles_nb: 4
-          }
-        }
-      },
-      retina_detect: true
-    });
-  </script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+  <script src="scripts.js"></script>
 </body>
+</html>
