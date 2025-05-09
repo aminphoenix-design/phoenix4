@@ -46,10 +46,10 @@ tsParticles.load("particles-js", {
 document.querySelectorAll(".pilar").forEach(pilar => {
   pilar.addEventListener("click", () => {
     const contenido = {
-      tiempo: "La visión del Tiempo muestra la capacidad de adaptarse, de comprender las fases y los ciclos. En tu marca, el tiempo se convierte en un aliado para el crecimiento sostenible.",
-      vida: "La visión de la Vida es la creatividad, el impulso renovador. Para tu marca, esto se traduce en la energía vital que da origen a nuevas oportunidades y perspectivas.",
-      muerte: "La visión de la Muerte es la transformación. La capacidad de desprenderse de lo viejo para dar paso a lo nuevo. Para tu marca, es la capacidad de renacer más fuerte y más enfocado.",
-      poder: "La visión del Poder representa el dominio y el liderazgo. En tu marca, esto significa la autoridad, la influencia y la capacidad de crear un impacto duradero en el mundo."
+      tiempo: "El pilar del Tiempo refleja el dominio sobre lo eterno y lo efímero. Comprender el tiempo es dominar la percepción, trascender las estaciones y renacer con cada ciclo.",
+      vida: "La Vida representa la energía primaria. Es el pulso de la creación, donde todo comienza. Entenderla es nutrir la chispa divina dentro de uno mismo.",
+      muerte: "Muerte no es final, sino transformación. Es la llama que purifica, el umbral hacia la sabiduría ancestral. Solo a través de la muerte renace el Fénix.",
+      poder: "El Poder no se impone, se convoca. Surge del equilibrio entre los otros pilares, manifestándose cuando el propósito es claro y el espíritu está alineado."
     };
 
     const id = pilar.id;
@@ -96,18 +96,20 @@ document.addEventListener("DOMContentLoaded", () => {
     form.addEventListener("submit", (e) => {
       e.preventDefault();
       const nombre = document.querySelector("#nombre").value;
+      const telefono = document.querySelector("#telefono").value;
+      const razon = document.querySelector("#razon").value;
       const pilar = document.querySelector("#pilar").value;
 
       const runa = generarRuna(nombre);
       const ritual = document.createElement("li");
       ritual.innerHTML = `
-        <strong>${nombre}</strong> (${pilar}) - Runa: <span class="runa">${runa}</span>
+        <strong>${nombre}</strong> (Teléfono: ${telefono}) - Razon: <em>${razon}</em> - Runa: <span class="runa">${runa}</span>
       `;
 
       lista.appendChild(ritual);
 
       // Guardar ritual en localStorage
-      guardarRitual(nombre, pilar, runa);
+      guardarRitual(nombre, telefono, razon, pilar, runa);
 
       form.reset();
     });
@@ -115,9 +117,15 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // Guardar rituales en localStorage
-function guardarRitual(nombre, pilar, runa) {
+function guardarRitual(nombre, telefono, razon, pilar, runa) {
   let ritualesGuardados = JSON.parse(localStorage.getItem("rituales")) || [];
-  ritualesGuardados.push(`${nombre} (${pilar}) - Runa: ${runa}`);
+  ritualesGuardados.push({
+    nombre,
+    telefono,
+    razon,
+    pilar,
+    runa
+  });
   localStorage.setItem("rituales", JSON.stringify(ritualesGuardados));
 }
 
@@ -127,40 +135,24 @@ window.onload = function () {
   const listaRituales = document.getElementById("lista-rituales");
   listaRituales.innerHTML = ""; // Limpiar la lista antes de agregar
 
-  ritualesGuardados.forEach(runa => {
+  ritualesGuardados.forEach(ritual => {
     const li = document.createElement("li");
-    li.textContent = runa;
+    li.innerHTML = `
+      <strong>${ritual.nombre}</strong> (Teléfono: ${ritual.telefono}) - Razón: <em>${ritual.razon}</em> - Runa: <span class="runa">${ritual.runa}</span>
+    `;
     listaRituales.appendChild(li);
   });
 };
 
-// === Función para mostrar visión en los pilares de la página Visiones ===
+// ==== FORMULARIO EN CONTACTO: RUNA EN NOMBRE ====
 document.addEventListener("DOMContentLoaded", () => {
-  const contenidoVisiones = {
-    tiempo: "La visión del Tiempo muestra la capacidad de adaptarse, de comprender las fases y los ciclos. En tu marca, el tiempo se convierte en un aliado para el crecimiento sostenible.",
-    vida: "La visión de la Vida es la creatividad, el impulso renovador. Para tu marca, esto se traduce en la energía vital que da origen a nuevas oportunidades y perspectivas.",
-    muerte: "La visión de la Muerte es la transformación. La capacidad de desprenderse de lo viejo para dar paso a lo nuevo. Para tu marca, es la capacidad de renacer más fuerte y más enfocado.",
-    poder: "La visión del Poder representa el dominio y el liderazgo. En tu marca, esto significa la autoridad, la influencia y la capacidad de crear un impacto duradero en el mundo."
-  };
+  // Agregar automáticamente la runa generada al campo del nombre si el ritual está registrado.
+  const ritualesGuardados = JSON.parse(localStorage.getItem("rituales")) || [];
+  const nombreInput = document.querySelector("#nombre");
 
-  document.querySelectorAll(".pilar").forEach(pilar => {
-    pilar.addEventListener("click", () => {
-      const id = pilar.id;
-      mostrarModalVision(contenidoVisiones[id] || "Este pilar aún guarda secretos.");
-    });
-  });
-
-  function mostrarModalVision(texto) {
-    const modal = document.getElementById("vision-modal");
-    const textoModal = document.getElementById("vision-texto");
-    textoModal.textContent = texto;
-    modal.style.display = "block";
-
-    document.querySelector(".cerrar-modal").onclick = () => {
-      modal.style.display = "none";
-    };
-    modal.onclick = (e) => {
-      if (e.target === modal) modal.style.display = "none";
-    };
+  if (ritualesGuardados.length > 0) {
+    const nombreRitual = ritualesGuardados[ritualesGuardados.length - 1].nombre;
+    const runaGenerada = generarRuna(nombreRitual);
+    nombreInput.value = runaGenerada;
   }
 });
