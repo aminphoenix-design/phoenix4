@@ -8,33 +8,54 @@
 </head>
 <body>
 
-<nav>
-  <ul>
-    <li><a href="index.html">Inicio</a></li>
-    <li><a href="grimorio.html">Grimorio</a></li>
-    <li><a href="ritual.html">Ritual</a></li>
-    <li><a href="visiones.html">Visiones</a></li>
-    <li><a href="profecia.html">Profecía</a></li>
-    <li><a href="contacto.html">Contacto</a></li>
-  </ul>
-</nav>
+  <nav>
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="grimorio.html">Grimorio</a></li>
+      <li><a href="ritual.html">Ritual</a></li>
+      <li><a href="visiones.html">Visiones</a></li>
+      <li><a href="profecia.html">Profecía</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
 
-<section id="ritual">
-  <h2>Invoca Tu Esencia</h2>
-  <form id="form-ritual">
-    <input type="text" id="nombre" placeholder="Nombre ritual" required>
-    <select id="tipo">
-      <option value="Tiempo">⏳ Tiempo</option>
-      <option value="Vida">🔥 Vida</option>
-      <option value="Muerte">💀 Muerte</option>
-      <option value="Poder">⚡ Poder</option>
-    </select>
-    <button type="submit">Recibir Oráculo</button>
-  </form>
-  <div id="lista-rituales"></div>
-</section>
+  <section id="ritual">
+    <h2>Invoca Tu Esencia</h2>
+    <form id="ritual-form">
+      <input type="text" id="nombre-ritual" placeholder="Nombre ritual" required>
+      <select id="elemento">
+        <option value="Tiempo">⏳ Tiempo</option>
+        <option value="Vida">🔥 Vida</option>
+        <option value="Muerte">💀 Muerte</option>
+        <option value="Poder">⚡ Poder</option>
+      </select>
+      <button type="submit">Recibir Oráculo</button>
+    </form>
+    <div id="rituales-guardados">
+      <h3>Rituales Guardados</h3>
+      <ul id="lista-rituales">
+        <!-- Aquí se mostrarán los rituales guardados -->
+      </ul>
+    </div>
+  </section>
 
-<script src="rituales.js"></script>
+  <script>
+    document.getElementById('ritual-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      // Obtener los valores del formulario
+      const nombreRitual = document.getElementById('nombre-ritual').value;
+      const elemento = document.getElementById('elemento').value;
+
+      // Crear un nuevo elemento de lista
+      const li = document.createElement('li');
+      li.textContent = `${nombreRitual} - Elemento: ${elemento}`;
+      document.getElementById('lista-rituales').appendChild(li);
+
+      // Limpiar el formulario después de enviar
+      document.getElementById('ritual-form').reset();
+    });
+  </script>
 
 </body>
 </html>
