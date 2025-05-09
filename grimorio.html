@@ -1,47 +1,62 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Grimorio</title>
-  <link rel="stylesheet" href="estilos.css">
-  <script src="scripts.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhoenixFrame - Grimorio</title>
+    <link rel="stylesheet" href="estilos.css">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="scripts.js" defer></script>
 </head>
 <body>
-  <!-- Fondo de partículas -->
-  <div id="particles-js"></div>
+    <div id="particles-js"></div>
 
-  <section id="grimorio">
-    <h1>Los Pilares del Conocimiento</h1>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="rituales.html">Rituales</a></li>
+                <li><a href="grimorio.html">Grimorio</a></li>
+                <li><a href="visiones.html">Visiones</a></li>
+                <li><a href="profecia.html">Profecía</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <div class="pilar" onclick="mostrarDescripcion('tiempo')">
-      <h3>Tiempo</h3>
-      <div class="pilar-description" id="tiempo">
-        <p>La sabiduría del tiempo es eterna. Aquellos que controlan el flujo temporal, pueden conocer el futuro y el pasado a su antojo. Esta es la fuerza que nos guía y marca nuestro destino.</p>
-      </div>
-    </div>
+    <section id="grimorio">
+        <h1>Grimorio - Los 4 Pilares del Renacimiento</h1>
 
-    <div class="pilar" onclick="mostrarDescripcion('vida')">
-      <h3>Vida</h3>
-      <div class="pilar-description" id="vida">
-        <p>La vida es la fuerza primigenia. Es el principio de todo, la energía que fluye en todos los seres. Dominarla es tener el control sobre la existencia misma.</p>
-      </div>
-    </div>
+        <div class="pilar" id="tiempo">
+            <h2>Tiempo</h2>
+            <p>El Pilar del Tiempo es la habilidad de controlar el flujo de los momentos. Los maestros del tiempo pueden prever el futuro y modificar el pasado, guiando las marcas a través de una evolución única...</p>
+        </div>
 
-    <div class="pilar" onclick="mostrarDescripcion('muerte')">
-      <h3>Muerte</h3>
-      <div class="pilar-description" id="muerte">
-        <p>La muerte no es el fin, sino un paso hacia el otro lado. Aquellos que dominan la muerte, entienden los misterios más profundos de la existencia y el ciclo interminable de la vida.</p>
-      </div>
-    </div>
+        <div class="pilar" id="vida">
+            <h2>Vida</h2>
+            <p>La Vida es el pilar que conecta a las marcas con las fuerzas creativas. Quienes dominan este pilar tienen el poder de dar vida a nuevas ideas, inspirando a su comunidad y creando algo verdaderamente original...</p>
+        </div>
 
-    <div class="pilar" onclick="mostrarDescripcion('poder')">
-      <h3>Poder</h3>
-      <div class="pilar-description" id="poder">
-        <p>El poder es la fuerza que transforma todo. Solo aquellos con un control absoluto sobre sí mismos pueden manipular las energías del universo para su beneficio.</p>
-      </div>
-    </div>
-  </section>
+        <div class="pilar" id="muerte">
+            <h2>Muerte</h2>
+            <p>La Muerte, en su sentido simbólico, es el final de lo obsoleto. Las marcas que entienden el Pilar de la Muerte tienen la habilidad de destruir lo que ya no sirve para abrir paso a la renovación y el progreso...</p>
+        </div>
+
+        <div class="pilar" id="poder">
+            <h2>Poder</h2>
+            <p>El Pilar del Poder es el dominio total. Las marcas que se empoderan con este pilar pueden desafiar las normas, redefinir el mercado y convertirse en los líderes indiscutibles en su industria...</p>
+        </div>
+
+        <div id="mensaje-renacimiento"></div>
+
+        <div>
+            <h3>Generar tu Runa:</h3>
+            <input type="text" id="nombre" placeholder="Introduce el nombre de tu marca" />
+            <button onclick="guardarRuna()">Generar Runa</button>
+            <ul id="lista-rituales"></ul>
+        </div>
+
+        <button onclick="mostrarRenacimiento()">Ver Renacimiento</button>
+    </section>
 </body>
 </html>
