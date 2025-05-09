@@ -1,145 +1,114 @@
-// Configuración de partículas (Violetas y doradas)
-particlesJS("particles-js", {
-  particles: {
-    number: {
-      value: 80,
-      density: {
-        enable: true,
-        value_area: 800
-      }
-    },
-    color: {
-      value: "#9b6cd3" // Violeta
-    },
-    shape: {
-      type: "circle",
-      stroke: {
-        width: 0,
-        color: "#000000"
-      }
-    },
-    opacity: {
-      value: 0.5,
-      random: true,
-      anim: {
-        enable: true,
-        speed: 0.3,
-        opacity_min: 0.1,
-        sync: false
-      }
-    },
-    size: {
-      value: 5,
-      random: true,
-      anim: {
-        enable: true,
-        speed: 2,
-        size_min: 0.1,
-        sync: false
-      }
-    },
-    line_linked: {
-      enable: true,
-      distance: 150,
-      color: "#facc15", // Dorado
-      opacity: 0.4,
-      width: 1
-    },
-    move: {
-      enable: true,
-      speed: 2,
-      direction: "none",
-      random: false,
-      straight: false,
-      out_mode: "out",
-      bounce: false,
-      attract: {
-        enable: false
-      }
-    }
-  },
-  interactivity: {
-    detect_on: "canvas",
-    events: {
-      onhover: {
-        enable: true,
-        mode: "repulse"
-      },
-      onclick: {
-        enable: true,
-        mode: "push"
-      }
-    },
-    modes: {
-      repulse: {
-        distance: 100,
-        duration: 0.4
-      },
-      push: {
-        particles_nb: 4
-      }
-    }
-  },
-  retina_detect: true
-});
-
-// Función para generar una runa basada en el nombre
+// Función para generar runas basadas en el nombre (en este caso, las marcas)
 function generarRuna(nombre) {
-  const caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  let runa = "";
-  for (let i = 0; i < nombre.length; i++) {
-    runa += caracteres.charAt(Math.floor(Math.random() * caracteres.length));
-  }
-  return runa;
+    const runas = ['ᛞ', 'ᚱ', 'ᚹ', 'ᛇ', 'ᛉ', 'ᛋ', 'ᛒ', 'ᛗ'];
+    let runaGenerada = '';
+    for (let i = 0; i < nombre.length; i++) {
+        const indice = nombre.charCodeAt(i) % runas.length;
+        runaGenerada += runas[indice];
+    }
+    return runaGenerada;
 }
 
-// Guardar rituales
-let ritualesGuardados = JSON.parse(localStorage.getItem("ritualesGuardados")) || [];
-
-function guardarRitual() {
-  const nombre = document.getElementById("nombre").value;
-  const runaGenerada = generarRuna(nombre);
-  const ritual = {
-    nombre: nombre,
-    runa: runaGenerada,
-    fecha: new Date().toLocaleString()
-  };
-  ritualesGuardados.push(ritual);
-  localStorage.setItem("ritualesGuardados", JSON.stringify(ritualesGuardados));
-  mostrarRitualesGuardados();
+// Función para guardar y mostrar runas generadas (ejemplo de renacimiento de marcas)
+function guardarRuna() {
+    const nombreMarca = document.getElementById('nombre').value.trim();
+    if (nombreMarca !== '') {
+        const runa = generarRuna(nombreMarca);
+        const listaRituales = document.getElementById('lista-rituales');
+        const itemRitual = document.createElement('li');
+        itemRitual.innerHTML = `<h3>Runa para ${nombreMarca}</h3><p>${runa}</p><p><strong>Renace de sus cenizas.</strong></p>`;
+        listaRituales.appendChild(itemRitual);
+    }
 }
 
-// Mostrar rituales guardados
-function mostrarRitualesGuardados() {
-  const ritualesLista = document.getElementById("lista-rituales");
-  ritualesLista.innerHTML = "";
-  ritualesGuardados.forEach(ritual => {
-    const li = document.createElement("li");
-    li.innerHTML = `Ritual de ${ritual.nombre} - Runa: ${ritual.runa} - Fecha: ${ritual.fecha}`;
-    ritualesLista.appendChild(li);
-  });
+// Función para mostrar el renacimiento de las marcas
+function mostrarRenacimiento() {
+    const mensaje = document.getElementById('mensaje-renacimiento');
+    mensaje.innerHTML = '<p><strong>PhoenixFrame es la herramienta para que las marcas dejen de seguir las tendencias y comiencen a CREARLAS.</strong></p><p>Como el fénix renace de sus cenizas, las marcas que adoptan PhoenixFrame transforman su esencia y definen su propio futuro.</p>';
 }
 
-document.addEventListener("DOMContentLoaded", mostrarRitualesGuardados);
-
-// Mostrar las publicaciones de Profecía
-function mostrarPublicaciones() {
-  const publicacionesContainer = document.getElementById("publicaciones");
-  const publicaciones = [
-    { titulo: "El amanecer del ciclo", contenido: "Un nuevo ciclo comienza, cargado de nuevas energías y posibilidades para todos." },
-    { titulo: "Los tres pilares de la transformación", contenido: "Solo aquellos que dominen los pilares podrán reescribir su destino." },
-    { titulo: "La sombra se alza", contenido: "Las fuerzas oscuras emergen, pero su destino está atado al de los valientes." }
-  ];
-
-  publicaciones.forEach(publicacion => {
-    const div = document.createElement("div");
-    div.classList.add("publicacion");
-    div.innerHTML = `
-      <h3>${publicacion.titulo}</h3>
-      <p>${publicacion.contenido}</p>
-    `;
-    publicacionesContainer.appendChild(div);
-  });
-}
-
-document.addEventListener("DOMContentLoaded", mostrarPublicaciones);
+// Inicializar partículas (con colores dorados y violetas, como un renacer dorado)
+particlesJS("particles-js", {
+    "particles": {
+        "number": {
+            "value": 80,
+            "density": {
+                "enable": true,
+                "value_area": 700
+            }
+        },
+        "color": {
+            "value": "#9b6cd3" // Violeta, representando el renacimiento
+        },
+        "shape": {
+            "type": "circle"
+        },
+        "opacity": {
+            "value": 0.5,
+            "random": true,
+            "anim": {
+                "enable": true,
+                "speed": 0.5,
+                "opacity_min": 0.1
+            }
+        },
+        "size": {
+            "value": 3,
+            "random": true,
+            "anim": {
+                "enable": true,
+                "speed": 2,
+                "size_min": 0.1
+            }
+        },
+        "line_linked": {
+            "enable": true,
+            "distance": 150,
+            "color": "#9b6cd3", // Violeta
+            "opacity": 0.4,
+            "width": 1
+        },
+        "move": {
+            "enable": true,
+            "speed": 3,
+            "direction": "random",
+            "random": true,
+            "straight": false,
+            "out_mode": "out",
+            "attract": {
+                "enable": true,
+                "rotateX": 600,
+                "rotateY": 1200
+            }
+        }
+    },
+    "interactivity": {
+        "detect_on": "window",
+        "events": {
+            "onhover": {
+                "enable": true,
+                "mode": "repulse"
+            },
+            "onclick": {
+                "enable": true,
+                "mode": "push"
+            }
+        },
+        "modes": {
+            "repulse": {
+                "distance": 200,
+                "duration": 0.4
+            },
+            "push": {
+                "particles": {
+                    "number": 4,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                }
+            }
+        }
+    },
+    "retina_detect": true
+});
