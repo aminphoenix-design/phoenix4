@@ -1,65 +1,39 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contacto</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto - PhoenixFrame</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div id="particles-js"></div>
-
   <header>
-    <h1>Contacto con los Guardianes</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="grimorio.html">Grimorio</a></li>
-        <li><a href="ritual.html">Rituales</a></li>
-        <li><a href="visiones.html">Visión del Futuro</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-      </ul>
-    </nav>
+    <h1>Contacto - PhoenixFrame</h1>
+    <p>Conéctate con nosotros</p>
   </header>
 
-  <main>
-    <h2>Solicitud de Renacimiento</h2>
-    <form id="formulario-contacto">
-      <input type="text" id="nombre" name="nombre" placeholder="Tu nombre arcano o runa" required />
-      <input type="tel" id="telefono" name="telefono" placeholder="Número de comunicación etérea" required />
-      <textarea name="razon" id="razon" placeholder="Expón tu razón para renacer..." required></textarea>
-      <button type="submit">Enviar al Éter</button>
+  <!-- Contenedor de las partículas -->
+  <div id="particles-js"></div>
+
+  <section class="contacto-formulario">
+    <form action="submit_form.php" method="POST">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" required>
+
+      <label for="telefono">Teléfono:</label>
+      <input type="tel" id="telefono" name="telefono" required>
+
+      <label for="mensaje">Mensaje:</label>
+      <textarea id="mensaje" name="mensaje" required></textarea>
+
+      <button type="submit">Enviar</button>
     </form>
-  </main>
+  </section>
 
-  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.bundle.min.js"></script>
+  <footer>
+    <p>&copy; 2025 PhoenixFrame</p>
+  </footer>
+
   <script src="script.js"></script>
-
-  <script>
-    // Cargar runa si ya hizo un ritual
-    window.addEventListener("DOMContentLoaded", () => {
-      const nombreInput = document.getElementById("nombre");
-      const ritualesGuardados = JSON.parse(localStorage.getItem("rituales")) || [];
-      if (ritualesGuardados.length > 0) {
-        // Tomar la última runa del ritual guardado
-        const ultimaRuna = ritualesGuardados[ritualesGuardados.length - 1];
-        const runaExtraida = ultimaRuna.match(/Runa: (\S+)/);
-        if (runaExtraida) {
-          nombreInput.value = runaExtraida[1];
-        }
-      }
-
-      // Manejo de envío
-      document.getElementById("formulario-contacto").addEventListener("submit", (e) => {
-        e.preventDefault();
-        const nombre = nombreInput.value;
-        const telefono = document.getElementById("telefono").value;
-        const razon = document.getElementById("razon").value;
-
-        alert(`Solicitud enviada:\n\nNombre/Runa: ${nombre}\nTeléfono: ${telefono}\nRazón: ${razon}`);
-        e.target.reset();
-      });
-    });
-  </script>
 </body>
 </html>
