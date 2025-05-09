@@ -1,7 +1,19 @@
-/* ══════════════════════════════════════════════════════
-   BASE GLOBAL — Estética Fénix: Oscuridad, Lujo & Magia
-═══════════════════════════════════════════════════════ */
+/* PhoenixFrame - Diseño Estético Oscuro y Refinado */
 
+/* === VARIABLES === */
+:root {
+  --color-bg: #0a0a0a;
+  --color-primary: #8a2be2; /* Violeta elegante */
+  --color-secondary: #bfa046; /* Dorado oscuro */
+  --color-accent: #7d0a0a; /* Rojo oscuro */
+  --color-text: #e0e0e0;
+  --font-main: 'Cinzel', serif;
+  --shadow-glow: 0 0 10px rgba(138, 43, 226, 0.5);
+  --transition-fast: 0.3s ease;
+  --transition-slow: 0.6s ease;
+}
+
+/* === RESETEO GENERAL === */
 * {
   margin: 0;
   padding: 0;
@@ -9,58 +21,31 @@
 }
 
 body {
-  background-color: #0b0b0f;
-  font-family: 'Cinzel', serif;
-  color: #f3f3f3;
+  background-color: var(--color-bg);
+  font-family: var(--font-main);
+  color: var(--color-text);
   overflow-x: hidden;
   line-height: 1.6;
+  padding-bottom: 50px;
 }
 
-a {
-  color: #c9a020;
-  text-decoration: none;
-  transition: color 0.3s ease, text-shadow 0.3s ease;
-}
-
-a:hover {
-  color: #e6dada;
-  text-shadow: 0 0 10px #a67ef1;
-}
-
-h1, h2, h3, h4 {
-  color: #f3f3f3;
-  margin-bottom: 1rem;
-  text-shadow: 0 0 5px #4c1d95;
-}
-
-section {
-  padding: 80px 10%;
-  position: relative;
-  z-index: 2;
-}
-
-/* Fondo de partículas flotantes, luz ancestral */
+/* === PARTICULAS === */
 #particles-js {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   z-index: -1;
-  pointer-events: none;
 }
 
-/* ══════════════════════════════════════════════════════
-   NAVEGACIÓN — Senda entre dimensiones
-═══════════════════════════════════════════════════════ */
-
+/* === NAVEGACIÓN === */
 nav {
-  background-color: rgba(10, 10, 15, 0.9);
-  padding: 1rem 0;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+  background: rgba(0, 0, 0, 0.6);
+  padding: 20px 0;
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 100;
 }
 
 nav ul {
@@ -70,260 +55,263 @@ nav ul {
   gap: 2rem;
 }
 
-nav li a {
-  font-size: 1.1rem;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
+nav a {
+  color: var(--color-secondary);
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: var(--transition-fast);
 }
 
-nav li a:hover {
-  background-color: #1c1b1f;
+nav a:hover {
+  color: #fff;
+  text-shadow: var(--shadow-glow);
 }
 
-/* ══════════════════════════════════════════════════════
-   INICIO — Renacer del Fénix
-═══════════════════════════════════════════════════════ */
-
+/* === HERO (INICIO) === */
 #hero {
   height: 100vh;
-  background: linear-gradient(180deg, rgba(15, 10, 20, 0.6), rgba(10, 10, 15, 0.95));
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   text-align: center;
-  color: #e8e0d2;
-  flex-direction: column;
+  background: linear-gradient(to bottom, rgba(10,10,10,0.8), rgba(10,10,10,0.9));
+  padding: 2rem;
 }
 
 #hero h1 {
   font-size: 4rem;
-  text-shadow: 0 0 10px #c9a020, 0 0 20px #4c1d95;
-  margin-bottom: 20px;
+  color: var(--color-primary);
+  text-shadow: var(--shadow-glow);
 }
 
 #hero p {
-  font-size: 1.5rem;
-  max-width: 700px;
+  margin-top: 1rem;
+  font-size: 1.4rem;
+  color: var(--color-secondary);
 }
 
-/* ══════════════════════════════════════════════════════
-   RITUALES — Inscripciones del renacer
-═══════════════════════════════════════════════════════ */
-
+/* === RITUALES === */
 #ritual {
-  background-color: #141214;
-  text-align: center;
+  padding: 60px 20px;
+  max-width: 800px;
+  margin: auto;
+  background: rgba(20, 20, 20, 0.8);
+  border: 1px solid var(--color-primary);
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
 }
 
 #ritual h2 {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
+  color: var(--color-primary);
+  text-align: center;
+  margin-bottom: 1.5rem;
 }
 
 #ritual form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  max-width: 600px;
-  margin: auto;
 }
 
-#ritual input,
-#ritual select,
-#ritual button,
-#ritual textarea {
-  padding: 0.8rem;
-  border-radius: 6px;
-  border: 1px solid #c9a020;
-  background-color: #1e1b22;
-  color: #f3f3f3;
-  font-size: 1rem;
+#ritual input, #ritual select, #ritual textarea {
+  padding: 12px;
+  background: #1c1c1c;
+  border: 1px solid var(--color-secondary);
+  color: var(--color-text);
+  border-radius: 8px;
+  transition: var(--transition-fast);
 }
 
 #ritual button {
-  background-color: #c9a020;
-  color: #0b0b0f;
-  font-weight: bold;
+  background-color: var(--color-secondary);
+  color: #000;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: var(--transition-fast);
+  font-weight: bold;
 }
 
 #ritual button:hover {
-  background-color: #a67ef1;
+  background-color: var(--color-primary);
   color: #fff;
 }
 
+#runas-generadas {
+  background: #111;
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 4px solid var(--color-primary);
+  margin-top: 30px;
+}
+
+/* === RITUALES GUARDADOS === */
 #rituales-guardados {
-  margin-top: 3rem;
-  background: #1b1b20;
-  padding: 2rem;
+  margin-top: 2rem;
+  background: #111;
+  padding: 20px;
   border-radius: 10px;
+  border: 1px solid var(--color-accent);
+}
+
+#rituales-guardados h3 {
+  color: var(--color-accent);
+  margin-bottom: 1rem;
 }
 
 #lista-rituales li {
-  padding: 0.6rem 1rem;
-  border-bottom: 1px solid #4c1d95;
-  color: #eaeaea;
+  background: #1a1a1a;
+  padding: 10px;
+  border-bottom: 1px solid #333;
+  margin-bottom: 5px;
+  border-radius: 6px;
 }
 
-/* ══════════════════════════════════════════════════════
-   GRIMORIO — Pilares del poder
-═══════════════════════════════════════════════════════ */
-
+/* === GRIMORIO === */
 #grimorio {
-  background-color: #0e0c10;
-  color: #eee;
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: auto;
 }
 
 .pilar {
-  margin-bottom: 2rem;
-  border: 1px solid #4c1d95;
-  padding: 1rem;
+  background: rgba(15, 15, 15, 0.8);
+  padding: 20px;
   border-radius: 10px;
-  background-color: #18141f;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 30px;
+  border-left: 5px solid var(--color-primary);
+  cursor: pointer;
+  transition: background 0.3s;
 }
 
 .pilar:hover {
-  transform: scale(1.02);
-  box-shadow: 0 0 15px #4c1d95;
+  background: rgba(35, 35, 35, 0.8);
 }
 
-.pilar-texto {
+.pilar h3 {
+  color: var(--color-secondary);
+}
+
+.pilar p {
   display: none;
-  margin-top: 1rem;
-  color: #ccc;
-  background: #0c0c12;
-  padding: 1rem;
-  border-radius: 5px;
+  margin-top: 10px;
 }
 
-/* ══════════════════════════════════════════════════════
-   VISIONES — Fragmentos eternos
-═══════════════════════════════════════════════════════ */
+.pilar.active p {
+  display: block;
+}
 
+/* === VISIONES === */
 #galeria {
-  background: #121012;
+  padding: 60px 20px;
+  text-align: center;
 }
 
 .imagenes-galeria {
   display: flex;
   flex-wrap: wrap;
+  gap: 20px;
   justify-content: center;
-  gap: 2rem;
 }
 
-.imagenes-galeria img,
-.imagenes-galeria video {
-  width: 100%;
+.imagenes-galeria img, .imagenes-galeria video {
   max-width: 300px;
-  border-radius: 10px;
-  border: 2px solid #c9a020;
-  transition: transform 0.3s ease, filter 0.3s ease;
+  border-radius: 12px;
+  box-shadow: var(--shadow-glow);
+  transition: transform 0.3s;
 }
 
-.imagenes-galeria img:hover,
-.imagenes-galeria video:hover {
+.imagenes-galeria img:hover, .imagenes-galeria video:hover {
   transform: scale(1.05);
-  filter: brightness(1.2);
 }
 
-/* ══════════════════════════════════════════════════════
-   PROFECÍA — Palabras que trazan destino
-═══════════════════════════════════════════════════════ */
-
+/* === PROFECÍA === */
 #profecia {
-  background: #0f0d11;
+  padding: 60px 20px;
+  max-width: 900px;
+  margin: auto;
+  background: rgba(15, 15, 15, 0.8);
+  border-left: 5px solid var(--color-accent);
+  border-radius: 12px;
 }
 
-.publicacion {
-  margin-bottom: 2rem;
-  background-color: #1a181f;
-  border-left: 5px solid #c9a020;
-  padding: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(200, 160, 32, 0.2);
+.prof-post {
+  margin-bottom: 30px;
 }
 
-.publicacion h3 {
-  margin-bottom: 0.5rem;
+.prof-post h3 {
+  color: var(--color-primary);
+  margin-bottom: 10px;
 }
 
-/* ══════════════════════════════════════════════════════
-   CONTACTO — El susurro al fuego
-═══════════════════════════════════════════════════════ */
+.prof-post p {
+  color: var(--color-text);
+  font-size: 1.1rem;
+}
 
+/* === CONTACTO === */
 #contacto {
-  background-color: #101010;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  padding: 60px 20px;
+  max-width: 600px;
+  margin: auto;
+  background: rgba(30, 30, 30, 0.8);
+  border-radius: 12px;
+  border: 1px solid var(--color-secondary);
 }
 
 #contacto form {
-  background-color: #1a1a1a;
-  padding: 2rem;
-  border-radius: 10px;
-  max-width: 500px;
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-#contacto form input,
-#contacto form textarea {
-  width: 100%;
-  margin-bottom: 1rem;
+#contacto input, #contacto textarea {
+  padding: 12px;
+  background: #1c1c1c;
+  border: 1px solid var(--color-primary);
+  color: var(--color-text);
+  border-radius: 8px;
 }
 
-/* ══════════════════════════════════════════════════════
-   PIE DE PÁGINA — Círculo eterno
-═══════════════════════════════════════════════════════ */
+#contacto button {
+  background-color: var(--color-primary);
+  color: #000;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: var(--transition-fast);
+  cursor: pointer;
+}
 
+#contacto button:hover {
+  background-color: var(--color-secondary);
+  color: #fff;
+}
+
+/* === FOOTER === */
 footer {
+  background: #000;
   text-align: center;
-  padding: 2rem;
-  background-color: #0a0a0d;
-  color: #888;
-  font-size: 0.9rem;
+  padding: 30px 0;
+  color: var(--color-secondary);
+  border-top: 1px solid #333;
+  margin-top: 60px;
 }
 
-footer a {
-  color: #c9a020;
+/* === ANIMACIONES === */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
-
-/* ══════════════════════════════════════════════════════
-   EFECTOS — Brillos del abismo
-═══════════════════════════════════════════════════════ */
 
 .fade-in {
-  animation: fadeIn 1.5s ease-out forwards;
-  opacity: 0;
+  animation: fadeIn 1.5s ease-out;
 }
 
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
-}
-
-.glow-text {
-  text-shadow: 0 0 8px #a67ef1, 0 0 12px #c9a020;
-}
-
-.runa {
-  font-family: 'Uncial Antiqua', cursive;
-  font-size: 1.5rem;
-  color: #c9a020;
-  text-shadow: 0 0 10px #a67ef1;
-  letter-spacing: 2px;
-}
-
-/* ══════════════════════════════════════════════════════
-   RESPONSIVE — Adaptación de energía
-═══════════════════════════════════════════════════════ */
-
-@media screen and (max-width: 768px) {
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
   nav ul {
     flex-direction: column;
     gap: 1rem;
@@ -333,7 +321,13 @@ footer a {
     font-size: 2.5rem;
   }
 
-  section {
-    padding: 40px 5%;
+  #hero p {
+    font-size: 1.2rem;
+  }
+
+  .imagenes-galeria {
+    flex-direction: column;
   }
 }
+
+/* === FINAL === */
